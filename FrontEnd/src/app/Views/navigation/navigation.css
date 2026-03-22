@@ -1,10 +1,21 @@
-.Navigation{
+.Navigation {
     display: flex;
     justify-content: space-between;
 
     background-color: #1A3263;
-    width: 100%;
     padding: 25px 0px 25px 0px;
+    width: 100%;
+}
+
+.section {
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-input-search {
+    border-radius: 24px;
+    height: 30px;
 }
 
 .nav-label {

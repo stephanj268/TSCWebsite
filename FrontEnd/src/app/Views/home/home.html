@@ -1,1 +1,9 @@
-<p>home works!</p>
+<div class="container">
+    <nz-carousel nzAutoPlay>
+        @for (index of array; track index) {
+        <div nz-carousel-content>
+            <h3>{{ index }}</h3>
+        </div>
+        }
+    </nz-carousel>
+</div>
