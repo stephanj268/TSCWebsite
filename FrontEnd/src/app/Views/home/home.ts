@@ -8,7 +8,6 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
   styleUrl: './home.css',
 })
 export class HomeComponent {
-  array = [1, 2, 3, 4];
 
 
 }
