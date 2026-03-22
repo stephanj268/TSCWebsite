@@ -2,12 +2,14 @@
     display: flex;
     justify-content: space-between;
 
-    background-color: rgb(177, 155, 9);
+    background-color: #1A3263;
     width: 100%;
     padding: 25px 0px 25px 0px;
 }
 
 .nav-label {
+    cursor: pointer;
+
     color: white;
     padding-left: 15px;
     padding-right: 15px;
