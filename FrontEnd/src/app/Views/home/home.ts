@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 
+
+import { ToursComponenet } from '../Body/tours/tours';
+import { ViewToursComponent } from '../Body/tours/view-tours/view-tours';
 @Component({
   selector: 'app-home',
-  imports: [NzCarouselModule],
+  imports: [
+    NzCarouselModule,
+  ],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
