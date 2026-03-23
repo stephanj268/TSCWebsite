@@ -9,7 +9,7 @@ import { AboutComponent } from '../about/about';
 
 @Component({
   selector: 'app-contact',
-  imports: [NzCarouselModule, HomeComponent, ToursComponenet, ViewToursComponent, AboutComponent  ],
+  imports: [],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })

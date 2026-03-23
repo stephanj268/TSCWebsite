@@ -8,7 +8,7 @@ import { ContactComponent } from '../contact/contact';
 
 @Component({
   selector: 'app-taxi',
-  imports: [NzCarouselModule, HomeComponent, ToursComponenet, ViewToursComponent, AboutComponent, ContactComponent  ],
+  imports: [],
   templateUrl: './taxi.html',
   styleUrl: './taxi.css',
 })

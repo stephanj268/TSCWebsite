@@ -7,7 +7,7 @@ import { HomeComponent } from '../home/home';
 
 @Component({
   selector: 'app-about',
-  imports: [NzCarouselModule, HomeComponent, ToursComponenet, ViewToursComponent ],
+  imports: [NzCarouselModule],
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
