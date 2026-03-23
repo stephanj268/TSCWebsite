@@ -3,9 +3,16 @@ import { RouterOutlet } from '@angular/router';
 import { NavigationComponent } from './Views/navigation/navigation';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
+import { Footer } from './Views/footer/footer';
+
 @Component({
   selector: 'app-root',
-  imports: [NavigationComponent, NzButtonModule, RouterOutlet],
+  imports: [
+    NavigationComponent, 
+    NzButtonModule, 
+    RouterOutlet,
+    Footer
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
