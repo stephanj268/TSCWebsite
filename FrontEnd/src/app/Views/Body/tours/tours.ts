@@ -13,10 +13,6 @@ import { NzButtonComponent, NzButtonModule } from "ng-zorro-antd/button";
   templateUrl: './tours.html',
   styleUrl: './tours.css',
 })
-export class ToursComponenet  implements OnInit{
-
-  ngOnInit(): void {
-    console.log('test')
-  }
+export class ToursComponenet {
 
 }

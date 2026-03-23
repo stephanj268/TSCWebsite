@@ -1,3 +1,36 @@
 <div class="container">
-    <button nz-button>Filters</button>
+
+    <div class="filter-style">
+        <div>
+            <label>Search</label>
+            <input nz-input class="search-box" type="text" placeholder="What are we filtering...?">
+            <button nz-button [nzSize]="size" nzType="default" class="button">Submit</button>
+        </div>
+
+
+        <div style="display: flex; flex-direction: row; width: 100%;">
+            <label>Price</label>
+            <nz-row nzGutter="8">
+                <nz-col nzSpan="12">
+                    <nz-slider [nzMin]="1" [nzMax]="20" [(ngModel)]="value1" />
+                </nz-col>
+                <div nz-col nzSpan="4">
+                    <nz-input-number [nzMin]="1" [nzMax]="20" [(ngModel)]="value1" />
+                </div>
+            </nz-row>
+
+        </div>
+
+
+        <div>
+            <label>Ratings</label>
+        </div>
+
+
+        <div class="card">
+
+        </div>
+
+    </div>
+
 </div>
