@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NzButtonModule, NzButtonSize  } from "ng-zorro-antd/button";
+import { NzButtonModule, NzButtonSize } from "ng-zorro-antd/button";
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -12,12 +12,12 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 @Component({
   selector: 'app-search-filter',
   imports: [
-    NzButtonModule, 
+    NzButtonModule,
     NzInputModule,
-    NzSelectModule, 
+    NzSelectModule,
     FormsModule,
-    NzGridModule, 
-    NzInputNumberModule, 
+    NzGridModule,
+    NzInputNumberModule,
     NzSliderModule
   ],
   templateUrl: './search-filter.html',
@@ -26,5 +26,21 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 export class SearchFilter {
   value1 = 1;
   size: NzButtonSize = 'small';
+
+
+  readonly listOfOption: Array<{ value: string; label: string }> = this.filterTypes().map(item => ({
+    label: item,
+    value: item
+  }));
+  listOfSelectedValue = ['a10', 'c12'];
+
+  filterTypes(): string[] {
+    const children: string[] = [];
+    children.push("Popular");
+    children.push("Low");
+    children.push("High")
+  
+    return children;
+  }
 
 }

@@ -9,7 +9,7 @@
     align-items: baseline;
 
     padding: 10px 10px 10px 10px;
-    border: 1px solid rgba(155, 155, 155, 0.591);
+    border-right: 1px solid rgba(155, 155, 155, 0.591);
 }
 
 .search-box {
@@ -17,7 +17,6 @@
     height: 35px;
     
     margin-left: 10px;
-
     border-radius: 15px;
 }
 
