@@ -1,0 +1,17 @@
+.container {
+    margin-left: 20px;
+}
+
+.section {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+}
+
+.image-banner {
+    
+}
