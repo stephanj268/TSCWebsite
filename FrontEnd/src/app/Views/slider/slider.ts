@@ -23,6 +23,4 @@ export class SliderComponent {
         { image: 'src/assets/img3.jpg', title: 'Slide 3' },
     ]};
 
-    export class NzDemoCarouselAutoplayComponent {
-  array = [1, 2, 3, 4];
-}
+    
