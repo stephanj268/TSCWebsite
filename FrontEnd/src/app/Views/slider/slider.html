@@ -5,12 +5,11 @@
     nzEffect="fade"
     nzDotPosition="bottom">
   <div nz-carousel-content *ngFor="let slide of slides">
-    <img [src]="slide.image" class="carousel-image" 
-            [alt]="slide.image">
+    <img [src]="img" class="carousel-image" 
+            [alt]="slide.title">
     <div class="carousel-content">
     
     </div>
   </div>
-
-  
+  }
 </nz-carousel>
