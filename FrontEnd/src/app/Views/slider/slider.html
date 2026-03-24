@@ -1,16 +1,9 @@
-<nz-carousel 
-    nzAutoPlay="true"
-    [nzAutoPlaySpeed]="3000"
-    nzDots="true"
-    nzEffect="fade"
-    nzDotPosition="bottom">
-  <div nz-carousel-content *ngFor="let slide of slides">
-    <img [src]="img" class="carousel-image" 
-            [alt]="slide.title">
-    <div class="carousel-content">
-    
-    </div>
-  </div>
+<h3>test</h3>
 
-  
+<nz-carousel nzAutoPlay>
+  @for (slide of slides; track slides) {
+  <div nz-carousel-content>
+    <img [src]="slide.image" alt="">
+  </div>
+  }
 </nz-carousel>
