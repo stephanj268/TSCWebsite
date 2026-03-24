@@ -7,4 +7,6 @@ images.forEach((img, index) => {
     });
 });
 
+
 import "./slider";
+

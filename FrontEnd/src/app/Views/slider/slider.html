@@ -1,12 +1,16 @@
-<div class="slider-container">
-
-    <div class="mySlider fade">
-        <div class="numbertext">1 / 5</div>
-        <img src="../../../assets/slider/slider1.jpg" alt="Image 1">
-        <div class="text">Caption Text 1</div>
-        <div class="overlay"></div>
-
+<nz-carousel 
+    nzAutoPlay="true"
+    [nzAutoPlaySpeed]="3000"
+    nzDots="true"
+    nzEffect="fade"
+    nzDotPosition="bottom">
+  <div nz-carousel-content *ngFor="let slide of slides">
+    <img [src]="img" class="carousel-image" 
+            [alt]="slide.title">
+    <div class="carousel-content">
+    
     </div>
+  </div>
 
-
-</div>
+  
+</nz-carousel>
