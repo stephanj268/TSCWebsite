@@ -11,11 +11,13 @@
 
         </div>
 
-
-
-        <div class="card">
+        <div class="filter-options">
+            @for (something of test; track something.label){
+            <button class="button" nz-button nz-Type="default">{{something.label}}</button>
+            }
 
         </div>
+
     </div>
 </div>
 

@@ -34,10 +34,24 @@ import { en_US, NzI18nService, zh_CN } from 'ng-zorro-antd/i18n';
   styleUrl: './search-filter.css',
 })
 export class SearchFilter {
+  test = [
+    { label: 'Full-Day Tours' },
+    { label: 'Extreme'},
+    { label: 'Calm'},
+    { label: '3+ Hours'},
+    { label: 'Adventure Tours'},
+    { label: 'Short Tours'},
+    { label: 'Canoo Tours'},
+    { label: 'Private/Luxary Tours'},
+    { label: 'Hiking Tours'},
+    { label: 'Water Tours'},
+
+  ];
+
   value1 = 1;
   size: NzButtonSize = 'small';
   date = null;
-  
+
   ratingNumber = 2
 
   // Slider Component Variables
