@@ -1,8 +1,12 @@
 <nz-carousel nzAutoPlay>
-  @for (slide of slides; track slide) {
+
+  @for (slide of slides; track slide.image) {
+
   <div nz-carousel-content>
+    <h3 class="Slider-cover-text">Space Ship <br> Tours</h3>
+
     <img class="image-format" [src]="slide.image" alt="">
 
   </div>
-}
+  }
 </nz-carousel>
