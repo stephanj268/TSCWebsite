@@ -25,6 +25,11 @@
     margin-left: 10px;
 }
 
+.apply-button {
+    background-color: #00aeff;
+    color: black;
+}
+
 .card {
 
     width: 300px;
