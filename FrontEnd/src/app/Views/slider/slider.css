@@ -1,6 +1,6 @@
 [nz-carousel-content] {
   text-align: center;
-  height: 360px;
+  height: 450px;
   line-height: 160px;
   background: #364d79;
   color: #fff;
@@ -14,7 +14,7 @@ h3 {
 }
 
 .image-format {
-  object-fit: cover;
+  object-fit:fill;
 
   width: 100%;
   height: 100%;
