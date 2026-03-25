@@ -20,7 +20,7 @@ export class SliderComponent {
   slides: Slide[] = [
     { image: 'https://th.bing.com/th/id/R.ccbaedd48377355961d828f24f35e06b?rik=96zJ0y8fRPFRzA&pid=ImgRaw&r=0', title: 'Slide 1' },
     { image: 'https://tse2.mm.bing.net/th/id/OIP.X4HE5VYNWvmSMRXXEuvHEgHaEj?rs=1&pid=ImgDetMain&o=7&rm=3', title: 'Slide 2' },
-    
+    { image: '/home/stephan/Desktop/TSCWebsite/FrontEnd/src/app/Views/assets/img2.jpg.jpg', title: 'Slide 3' },
   ]
 };
 
