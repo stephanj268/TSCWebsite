@@ -1,12 +1,9 @@
-<div class="slider-container">
+<h3>test</h3>
 
-    <div class="mySlider fade">
-        <div class="numbertext">1 / 5</div>
-        <img src="../../../assets/slider/slider1.jpg" alt="Image 1">
-        <div class="text">Caption Text 1</div>
-        <div class="overlay"></div>
-
-    </div>
-
-
-</div>
+<nz-carousel nzAutoPlay>
+  @for (slide of slides; track slides) {
+  <div nz-carousel-content>
+    <img class="image-format" [src]="slide.image" alt="">
+  </div>
+  }
+</nz-carousel>
