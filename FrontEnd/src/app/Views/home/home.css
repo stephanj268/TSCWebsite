@@ -1,52 +1,127 @@
-.container {
-    width: 100%;
+* {
+    margin: 0;
+    padding: 0;
+
 }
 
-
-h3 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-align: center ;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', Serif;
-}
-
-#para1 {
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.2rem;
-    text-align: end;
-
-    
-}
-
-#para2 {
-    text-align: right;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.2rem;
-}
-
-#para3 {
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.2rem;
-}
-
-.container{
-    display: flex;
+@media (max-width: 768px) {
+  .footer-container {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 20px;
+  } 
 }
 
-.left-image {
-    width: 300px;
-
+.home-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-style: oblique;
 }
 
-.container {
+.hero {
+    background-image: url('https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg');
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.first {
     width: 100%;
-    height: auto;
+    height: 300px;
+    object-fit: cover;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.second {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.third {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 50px;
+}
+.split {
+  display: flex;
+  align-items: center;
+  padding: 60px 40px;
+  gap: 30px;
+}
+
+.split img {
+  width: 50%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.text {
+  width: 50%;
+}
+
+.text h2 {
+  margin-bottom: 10px;
+}
+
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+
+.light {
+  background: #f5f5f5;
+}
+
+.dark {
+  background: #001529;
+  color: white;
+}
+
+.center-section {
+  text-align: center;
+  padding: 60px;
+  background: #001529;
+  color: white;
+}
+
+.gallery {
+  display: flex;
+}
+
+.galler-item {
+  width: 33.3%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100;
+  object-fit: cover;
 }
