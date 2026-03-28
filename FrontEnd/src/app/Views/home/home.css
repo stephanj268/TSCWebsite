@@ -262,18 +262,22 @@
 
 
 .gallery-images-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 15px;
+
+  margin-bottom: 30px;
 }
 
 .galler-item {
   width: 33%;
   height: 250px;
-  overflow: hidden;
 }
 
 .gallery-item img {
   width: 100%;
-  height: 100;
-  object-fit: cover;
+  height: 250px;
+  
+  object-fit: contain;
+  border-radius: 12px;
 }
