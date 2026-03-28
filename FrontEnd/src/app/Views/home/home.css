@@ -240,9 +240,30 @@
   font-weight: 600;
 }
 
-
 .gallery {
+  padding-top: 50px;
+
+}
+
+.gallery-format {
   display: flex;
+  flex-direction: column;
+
+}
+
+.gallery-header {
+  text-align: center;
+  
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 600;
+
+  margin-bottom: 20px;
+}
+
+
+.gallery-images-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .galler-item {
