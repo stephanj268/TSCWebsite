@@ -17,7 +17,6 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
-                
                 "glob": "**/*",
                 "input": "public"
               },
@@ -28,8 +27,8 @@
               }
             ],
             "styles": [
-              "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
@@ -63,6 +62,9 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "hmr": false
+          },
           "configurations": {
             "production": {
               "buildTarget": "FrontEnd:build:production"
@@ -87,8 +89,8 @@
               }
             ],
             "styles": [
-              "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
             ]
           }
         }

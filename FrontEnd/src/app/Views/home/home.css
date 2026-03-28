@@ -12,8 +12,11 @@
   }
 }
 
-.home-content h1 {
-  font-size: 36px;
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   margin-bottom: 20px;
   text-align: center;
   font-style: oblique;
@@ -146,6 +149,8 @@
 }
 
 .btn {
+  transition: 0.5s;
+
   padding: 10px 20px;
   background: #c89c22;
   color: white;
@@ -156,7 +161,9 @@
 }
 
 .btn:hover {
-  background: #c89c22;
+  transition: 0.5s;
+
+  background: #a37906;
 }
 
 .center-highlight {
@@ -178,6 +185,59 @@
 .center-highlight span {
   font-size: 14px;
   color: #555;
+}
+
+.item-info-style {
+  width: 250px;
+  display: grid;
+  grid-template-columns: auto auto;
+
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+
+.item-info {
+  width: 130px;
+  height: 70px;
+
+
+  padding-left: 10%;
+  padding-top: 10px;
+  
+  margin: 10px 10px 10px 10px;
+
+  font-size: 16px;
+
+  
+  border: 1px solid rgba(255, 255, 255, 0.505);
+
+  border-left: 3px solid rgb(196, 147, 0);
+}
+
+.item-info-label {
+  color: rgb(217, 177, 0);
+
+  font-size: 25px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.item-info-sub-label {
+  color: rgb(211, 211, 211);
+
+  line-height: 2px;
+
+  font-size: small;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.item-info-button {
+
+  border: 1px solid white;
+  background-color: transparent;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+  font-weight: 600;
 }
 
 

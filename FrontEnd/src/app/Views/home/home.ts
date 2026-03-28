@@ -6,6 +6,7 @@ import { RouterLink } from '@angular/router';
   selector: 'app-home',
   imports: [
     NzCarouselModule,
+    RouterLink
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',
