@@ -3,10 +3,13 @@ import { NzButtonComponent, NzButtonModule, NzButtonSize } from "ng-zorro-antd/b
 
 import { ToursService } from '../../../../service/tours.service';
 import { ITours } from '../../../../service/tours.service';
+import { SearchFilter } from "../../search-filter/search-filter";
+import { RouterLink } from "@angular/router";
+import { SliderComponent } from "../../../slider/slider";
 
 @Component({
   selector: 'app-list-tours',
-  imports: [NzButtonModule],
+  imports: [NzButtonModule, SearchFilter, RouterLink, SliderComponent],
   templateUrl: './list-tours.html',
   styleUrl: './list-tours.css',
 })

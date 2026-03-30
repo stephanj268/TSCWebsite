@@ -1,4 +1,13 @@
+<div>
+    <app-slider></app-slider>
+</div>
+
+
+
+
 <div class="container">
+    <app-search-filter></app-search-filter>
+    
     <h4>Showing {{this.tours.length}} results</h4>
 
     <div class="section">
@@ -17,7 +26,7 @@
                         <h3>Price <br> <span style="color: rgb(39, 167, 0);">$ {{tour.price}}</span></h3>
                     </div>
 
-                    <button style="border-radius: 9px;" nz-button nzType="default">View Booking</button>
+                    <button style="border-radius: 9px;" nz-button nzType="default" routerLink="../view/{{tour._id}}">View Booking</button>
                 </div>
 
             </div>
