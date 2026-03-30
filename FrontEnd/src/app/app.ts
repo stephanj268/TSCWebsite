@@ -12,8 +12,7 @@ import { Footer } from './Views/footer/footer';
   standalone: true,
   imports: [
     NavigationComponent, 
-    NzButtonModule, 
-    SliderComponent,
+    NzButtonModule,
     RouterOutlet,
     Footer
   ],
