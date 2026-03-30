@@ -29,7 +29,7 @@ h1 {
 
     color: rgb(0, 108, 202);
 
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 200;
 }
 
@@ -43,7 +43,15 @@ h1 {
 
     background-color: rgba(0, 157, 255, 0.247);
     padding-bottom: 50px;
-    
+
+}
+
+.card-smth {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card-heading {
@@ -69,4 +77,40 @@ h1 {
     background-color: rgb(226, 226, 226);
 
     border-radius: 30px;
+}
+
+.card-badge {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+@media only screen and (width >=300px) {
+    .section {
+        display: flex;
+        flex-direction: column;
+
+        margin-left: 20px;
+    }
+
+    .card-smth {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card-item {
+        background-color: white;
+
+        border-top: 2.5px solid rgb(32, 103, 255);
+
+        width: 100px;
+        height: 200px;
+    }
+
+
+
 }

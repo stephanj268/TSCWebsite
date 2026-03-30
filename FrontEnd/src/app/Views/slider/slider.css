@@ -1,6 +1,6 @@
 [nz-carousel-content] {
   height: 350px;
-  
+
   background: #364d79;
   color: #fff;
   overflow: hidden;
@@ -13,7 +13,7 @@ h3 {
 }
 
 .image-format {
-  object-fit:fill;
+  object-fit: fill;
 
   width: 100%;
   height: 100%;
@@ -29,4 +29,23 @@ h3 {
   left: 3%;
 
   z-index: 3;
+}
+
+@media only screen and (max-width >=600px) {
+
+  [nz-carousel-content] {
+    height: 100px;
+
+    background: #364d79;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .image-format {
+  object-fit: fill;
+
+  width: 100%;
+  height: 100%;
+}
+
 }
