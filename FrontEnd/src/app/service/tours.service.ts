@@ -15,6 +15,7 @@ export interface ITours {
 
 @Injectable()
 export class ToursService {
+    defaultImg = 'https://s3-alpha.figma.com/hub/file/4093188630/561dfe3e-e5f8-415c-9b26-fbdf94897722-cover.png'
 
     allTours: ITours[] = [
         {
@@ -69,10 +70,10 @@ export class ToursService {
             _id: 5,
             name: 'No Name',
             descrition: 'Enjoy a cosy and relaxing meal at a private restaurant on the island',
-            price: 400,
+            price: 0,
             opertaionTime: new Date(),
             available: true,
-            thumbnail: 'https://s3-alpha.figma.com/hub/file/4093188630/561dfe3e-e5f8-415c-9b26-fbdf94897722-cover.png',
+            thumbnail: this.defaultImg,
             alt: 'string',
 
         }, 
