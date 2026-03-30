@@ -5,11 +5,14 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { SliderComponent } from './Views/slider/slider';
 
 import { Footer } from './Views/footer/footer';
+import { ToursService } from './service/tours.service';
+
 
 @Component({
 
   selector: 'app-root',
   standalone: true,
+  providers: [ToursService],
   imports: [
     NavigationComponent, 
     NzButtonModule,
