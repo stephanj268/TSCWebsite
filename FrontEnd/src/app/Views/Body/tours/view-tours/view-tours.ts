@@ -26,7 +26,6 @@ export class ViewToursComponent implements OnInit {
     });
 
     this.tourservice.get(this.tour);
-    console.log(this.tour)
 
   }
 
