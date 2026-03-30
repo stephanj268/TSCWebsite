@@ -22,9 +22,7 @@ export class ViewToursComponent implements OnInit{
     this.tours = this.tourservice.allTours;
     
     // Subscribe tours to event
-    this.tourservice.getAllTours.subscribe(() => {
-      console.log(this.tours)
-    });
+    this.tourservice.getAllTours.subscribe();
 
     //Getting all Tours
     this.tourservice.get(this.tours);
