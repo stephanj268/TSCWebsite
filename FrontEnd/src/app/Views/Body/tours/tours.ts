@@ -10,10 +10,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-tours',
   imports: [
-    SearchFilter,
-    ListToursComponent,
     NzButtonModule,
-    SliderComponent,
     RouterOutlet
 ],
   templateUrl: './tours.html',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NzButtonComponent, NzButtonModule, NzButtonSize } from "ng-zorro-antd/button";
-
+import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ToursService } from '../../../../service/tours.service';
 import { ITours } from '../../../../service/tours.service';
 import { SearchFilter } from "../../search-filter/search-filter";
@@ -9,11 +9,17 @@ import { SliderComponent } from "../../../slider/slider";
 
 @Component({
   selector: 'app-list-tours',
-  imports: [NzButtonModule, SearchFilter, RouterLink, SliderComponent],
+  imports: [
+    NzButtonModule,
+    SearchFilter,
+    RouterLink,
+    SliderComponent,
+    NzIconModule
+  ],
   templateUrl: './list-tours.html',
   styleUrl: './list-tours.css',
 })
-export class ListToursComponent implements OnInit{
+export class ListToursComponent implements OnInit {
   tours?: any;
 
   constructor(private tourservice: ToursService) {
@@ -23,7 +29,7 @@ export class ListToursComponent implements OnInit{
   ngOnInit(): void {
     // Set Tours variable to data
     this.tours = this.tourservice.allTours;
-    
+
     // Subscribe tours to event
     this.tourservice.getAllTours.subscribe();
 

@@ -7,7 +7,7 @@
 
 <div class="container">
     <app-search-filter></app-search-filter>
-    
+
     <h4>Showing {{this.tours.length}} results</h4>
 
     <div class="section">
@@ -18,7 +18,11 @@
 
             <div style="margin: 10px 10px; font-family: Verdana, Geneva, Tahoma, sans-serif ;">
 
-                <h2>{{tour.name}}</h2>
+                <div>
+                    <h2>{{tour.name}}</h2>
+                    <label >{{tour.duration}}h <span nz-icon nzType="field-time" nzTheme="outline"></span></label>
+                </div>
+
                 <p>Come and enjoy a beautiful tour around <strong>Antigua</strong> </p>
 
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: auto;">
@@ -26,7 +30,8 @@
                         <h3>Price <br> <span style="color: rgb(39, 167, 0);">$ {{tour.price}}</span></h3>
                     </div>
 
-                    <button style="border-radius: 9px;" nz-button nzType="default" routerLink="../view/{{tour._id}}">View Booking</button>
+                    <button style="border-radius: 9px;" nz-button nzType="default"
+                        routerLink="../view/{{tour._id}}">View Booking</button>
                 </div>
 
             </div>

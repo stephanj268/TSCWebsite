@@ -204,12 +204,12 @@
 
   padding-left: 10%;
   padding-top: 10px;
-  
+
   margin: 10px 10px 10px 10px;
 
   font-size: 16px;
 
-  
+
   border: 1px solid rgba(255, 255, 255, 0.505);
 
   border-left: 3px solid rgb(196, 147, 0);
@@ -228,14 +228,14 @@
   line-height: 2px;
 
   font-size: small;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .item-info-button {
 
   border: 1px solid white;
   background-color: transparent;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 
   font-weight: 600;
 }
@@ -253,7 +253,7 @@
 
 .gallery-header {
   text-align: center;
-  
+
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: 600;
 
@@ -277,7 +277,42 @@
 .gallery-item img {
   width: 100%;
   height: 250px;
-  
+
   object-fit: contain;
   border-radius: 12px;
+}
+
+.info-view-container {
+  display: flex;
+  flex-direction: column;
+  background: #001529;
+  padding: 10px 10px 10px 10px;
+}
+
+.info-view-description {
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+.info-view {
+  display: flex;
+  flex-direction: row;
+  background: #001529;
+  padding: 10px 10px 10px 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .info-view {
+    display: flex;
+    flex-direction: column;
+    background: #001529;
+
+    padding: 10px 10px 10px 10px;
+  }
+
+  .info-view-description {
+    margin-left: 40px;
+    margin-top: 30px;
+  }
+
 }
