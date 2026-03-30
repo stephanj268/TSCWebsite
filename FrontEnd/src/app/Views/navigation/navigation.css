@@ -71,3 +71,12 @@
     transition: 0.5s;
 
 }
+
+
+@media only screen and (max-width: 600px) {
+    .section {
+        display: flexbox;
+        flex-direction: column;
+        width: 100%;
+    }
+}

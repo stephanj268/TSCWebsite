@@ -1,56 +1,51 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
 }
 
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  } 
-}
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-.home-content h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-style: oblique;
+  margin-bottom: 20px;
+  text-align: center;
+  font-style: oblique;
 }
 
 .hero {
-    background-image: url('https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg');
-    background-position: center;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+  background-image: url('https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg');
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
 }
 
 .first {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 15px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
 
 }
 
 .second {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 15px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 .third {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 15px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 .hero-content {
@@ -67,6 +62,7 @@
 .hero p {
   font-size: 50px;
 }
+
 .split {
   display: flex;
   align-items: center;
@@ -113,86 +109,249 @@
 }
 
 .services-split {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 30px;
-    background: linear-gradient(to right, #f5f5f5, #e6f7ff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 30px;
+  background: linear-gradient(to right, #f5f5f5, #e6f7ff);
 }
 
 
 .service-side {
-    width: 50%;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0,1);
-    font-size: 30px;
+  width: 30%;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0, 1);
 }
 
 .service-side h3 {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 
 }
 
 .service-side ul {
-    list-style: none;
-    margin-bottom: 8px;
+  list-style: none;
+  margin-bottom: 8px;
 
 }
 
 .service-side li {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .btn {
-    padding: 10px 20px;
-    background: #c89c22;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  transition: 0.5s;
+
+  padding: 10px 20px;
+  background: #c89c22;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 
 }
 
 .btn:hover {
-    background: white ;
+  transition: 0.5s;
+
+  background: #a37906;
 }
 
-.center-highlight { 
-    width: 30%;
-    text-align: center;
-    padding: 20px;
+.center-highlight {
+  width: 30%;
+  text-align: center;
+  padding: 20px;
 }
 
 .center-highlight h3 {
-    font-size: 60px;
-    margin: 10px 0px;
+  font-size: 60px;
+  margin: 10px 0px;
 }
 
 .center-highlight p {
-    font-size: 20px;
-    margin: 10px 0;
+  font-size: 20px;
+  margin: 10px 0;
 }
 
 .center-highlight span {
-    font-size: 14px;
-    color: #555;
+  font-size: 14px;
+  color: #555;
+}
+
+.item-info-style {
+  width: 250px;
+  display: grid;
+  grid-template-columns: auto auto;
+
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 
+.item-info {
+  width: 130px;
+  height: 70px;
+
+
+  padding-left: 10%;
+  padding-top: 10px;
+
+  margin: 10px 10px 10px 10px;
+
+  font-size: 16px;
+
+
+  border: 1px solid rgba(255, 255, 255, 0.505);
+
+  border-left: 3px solid rgb(196, 147, 0);
+}
+
+.item-info-label {
+  color: rgb(217, 177, 0);
+
+  font-size: 25px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.item-info-sub-label {
+  color: rgb(211, 211, 211);
+
+  line-height: 2px;
+
+  font-size: small;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.item-info-button {
+
+  border: 1px solid white;
+  background-color: transparent;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  font-weight: 600;
+}
+
 .gallery {
+  padding-top: 50px;
+
+}
+
+.gallery-format {
   display: flex;
+  flex-direction: column;
+
+}
+
+.gallery-header {
+  text-align: center;
+
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 600;
+
+  margin-bottom: 20px;
+}
+
+
+.gallery-images-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 15px;
+
+  margin-bottom: 30px;
 }
 
 .galler-item {
   width: 33%;
   height: 250px;
-  overflow: hidden;
 }
 
 .gallery-item img {
   width: 100%;
-  height: 100;
-  object-fit: cover;
+  height: 250px;
+
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.info-view-container {
+  display: flex;
+  flex-direction: column;
+  background: #001529;
+  padding: 10px 10px 10px 10px;
+}
+
+.info-view-description {
+  z-index: 2;
+  margin-left: 40px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.info-view {
+
+  display: flex;
+  flex-direction: row;
+  background: #001529;
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+
+}
+
+.info-view-earth {
+  position: absolute;
+  left: -100px;
+
+  
+  z-index: 1;
+  animation-name: rotate;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+
+
+}
+
+@keyframes rotate {
+
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+
+  }
+
+  90% {
+    transform: rotate(359deg);
+    opacity: 1;
+
+  }
+
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+
+  }
+
+}
+
+@media only screen and (width >=300px) {
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .info-view {
+    display: flex;
+    flex-direction: column;
+    background: #001529;
+
+    padding: 10px 10px 10px 10px;
+  }
+
+  .info-view-description {
+    margin-left: 40px;
+    margin-top: 30px;
+  }
+
 }

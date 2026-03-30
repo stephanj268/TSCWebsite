@@ -1,7 +1,12 @@
+<app-slider></app-slider>
+
 <section class="home">
     <div class="home-content">
+
         <h1>Welcome to Antigua & Barbuda</h1>
-        
+
+        <h3>Your gateway to the Caribbean's finest shores, guided tours and island-wide adventures</h3>
+
     </div>
 </section>
 
@@ -20,7 +25,7 @@
         </ul>
 
 
-        <button routerLink="/taxi" class="btn"> Learn More</button>
+        <button routerLink="/taxi" type="button" class="btn"> Learn More</button>
     </div>
 
 
@@ -44,33 +49,34 @@
             <li> Custom Private experience </li>
         </ul>
 
-        <button routerLink="/tour" class="btn"> Learn More</button>
+        <button routerLink="../tours/list" class="btn"> Learn More</button>
     </div>
 
 </section>
 
 <section class="split light">
-    <img src="https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg" class="first" alt="Beach" />
+    <img src="https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg" class="first"
+        alt="Beach" />
 
 
-<div class="text">
-    <h2> Explore Beautiful Beaches </h2>
-    <p>
-        Antigua & Barbuda boasts some of the most stunning beaches in the world. 
-        With our taxi and tour service, you can easily access these pristine shores 
-        and enjoy a day of sun, sand, and sea. Whether you're looking for a secluded 
-        cove or a lively beach with water sports, we have the perfect destination for you.
-    </p>
-</div>
+    <div class="text">
+        <h2> Explore Beautiful Beaches </h2>
+        <p>
+            Antigua & Barbuda boasts some of the most stunning beaches in the world.
+            With our taxi and tour service, you can easily access these pristine shores
+            and enjoy a day of sun, sand, and sea. Whether you're looking for a secluded
+            cove or a lively beach with water sports, we have the perfect destination for you.
+        </p>
+    </div>
 </section>
 
 <section class="split dark">
     <img src="https://rumporter.com/wp-content/uploads/2024/10/antigua-distillerie.jpg" class="second" alt="Tour" />
     <div class="text">
-        <h2> Discover Exciting Tours </h2>
+        <h2 style="color: rgb(255, 196, 0);"> Discover Exciting Tours </h2>
         <p>
-            Explore the rich culture and natural beauty of Antigua & Barbuda with our guided tours. 
-            From historical sites to vibrant markets, we offer a variety of experiences that showcase 
+            Explore the rich culture and natural beauty of Antigua & Barbuda with our guided tours.
+            From historical sites to vibrant markets, we offer a variety of experiences that showcase
             the best of what our islands have to offer.
         </p>
     </div>
@@ -78,15 +84,14 @@
 
 
 
-
-
 <section class="split light">
-    <img src="https://fittwotravel.com/wp-content/uploads/2024/01/Dickenson-Bay-Beach-Antigua-best-beaches-768x432.jpg" class="third" alt="Taxi" />
+    <img src="https://fittwotravel.com/wp-content/uploads/2024/01/Dickenson-Bay-Beach-Antigua-best-beaches-768x432.jpg"
+        class="third" alt="Taxi" />
     <div class="text">
         <h2> Reliable Taxi Service </h2>
         <p>
-            Our taxi service is the most reliable way to get around Antigua & Barbuda. 
-            With our experienced drivers and comfortable vehicles, you can travel with confidence 
+            Our taxi service is the most reliable way to get around Antigua & Barbuda.
+            With our experienced drivers and comfortable vehicles, you can travel with confidence
             and ease. Whether you need a ride to the airport, a day trip, or a night out, we are here to serve you.
         </p>
     </div>
@@ -94,34 +99,90 @@
 
 
 
-<section class="center-section">
-    <h2> Why Choose Us? </h2>
-    <p>
-        We are committed to providing exceptional customer service and unforgettable experiences. 
-        Our knowledgeable drivers and tour guides will ensure that you have a safe, enjoyable, and memorable time in Antigua & Barbuda. 
-        Book with us today and let us show you the best of our beautiful islands!
-    </p>    
+<section class="info-view-container">
+
+    <div class="info-view">
+
+        <img class="info-view-earth" width="300px" src="earthpng.png" alt="Taxi Service" />
+
+        <div class="info-view-description">
+
+            <h2 style="color: rgb(255, 196, 0);"> Why Choose Us? </h2>
+            <p style="color: white;">
+                We are committed to providing exceptional customer service and unforgettable experiences.
+                Our knowledgeable drivers and tour guides will ensure that you have a safe, enjoyable, and memorable
+                time in
+                Antigua & Barbuda.
+                Book with us today and let us show you the best of our beautiful islands!
+            </p>
+
+            <div class="item-info-style">
+                <div class="item-info">
+                    <label class="item-info-label">200+</label>
+                    <p class="item-info-sub-label">Happy Guest</p>
+                </div>
+
+                <div class="item-info">
+                    <label class="item-info-label">5+</label>
+                    <p class="item-info-sub-label">Years of Service</p>
+
+                </div>
+
+                <div class="item-info">
+                    <label class="item-info-label">365</label>
+                    <p class="item-info-sub-label">Beaches Covered</p>
+                </div>
+
+                <div class="item-info">
+                    <label class="item-info-label">24/7</label>
+                    <p class="item-info-sub-label">Availablity</p>
+                </div>
+
+            </div>
+
+
+
+
+            <button class="item-info-button btn" routerLink="../tours/list">Plan Your Stay!</button>
+
+        </div>
+    </div>
 
 
 </section>
 
-<section class="gallery">   
-    
-      <div class="gallery-item">
-        <img src="https://fittwotravel.com/wp-content/uploads/2024/01/Dickenson-Bay-Beach-Antigua-best-beaches-768x432.jpg" alt="Taxi Service" />
-      </div>
-     
-      <div class="gallery-item">  
-        <img src="https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg" alt="Beach" />
-      </div>
-        
-      <div class="gallery-item">         
-        <img src="https://rumporter.com/wp-content/uploads/2024/10/antigua-distillerie.jpg" alt="Tour" />
-      </div>  
-        
-        <div class="gallery-item">         
-            <img src="https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg" alt="Beach" />        
+<section class="gallery">
+
+    <div class="gallery-format">
+        <div class="gallery-header">
+            <h2 style="letter-spacing: 10px; color: rgb(196, 147, 0);">Island Life</h2>
+            <h1>Our Island Life Gallery</h1>
+
         </div>
 
+
+        <div class="gallery-images-container">
+            <div class="gallery-item">
+                <img src="https://fittwotravel.com/wp-content/uploads/2024/01/Dickenson-Bay-Beach-Antigua-best-beaches-768x432.jpg"
+                    alt="Taxi Service" />
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg"
+                    alt="Beach" />
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://rumporter.com/wp-content/uploads/2024/10/antigua-distillerie.jpg" alt="Tour" />
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg"
+                    alt="Beach" />
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
