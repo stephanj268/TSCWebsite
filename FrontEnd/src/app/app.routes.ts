@@ -5,7 +5,8 @@ import { ContactComponent } from './Views/contact/contact';
 import {AboutComponent } from './Views/about/about';
 import { TaxiComponent } from './Views/taxi/taxi';
 import { ToursComponenet } from './Views/Body/tours/tours';
-import { ViewToursComponent } from './Views/Body/tours/view-tours/view-tours';
+import { ListToursComponent } from './Views/Body/tours/list-tours/list-tours';
+import { listenerCount } from 'process';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -16,7 +17,7 @@ export const routes: Routes = [
 
 
     {path: 'tours', component: ToursComponenet},
-    {path: 'tours/view', component: ViewToursComponent},
+    {path: 'tours/list', component: ListToursComponent},
     {path: '**', component: ErrorPage},
     
 

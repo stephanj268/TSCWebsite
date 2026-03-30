@@ -5,12 +5,12 @@ import { ToursService } from '../../../../service/tours.service';
 import { ITours } from '../../../../service/tours.service';
 
 @Component({
-  selector: 'app-view-tours',
-  imports: [NzButtonComponent, NzButtonModule],
-  templateUrl: './view-tours.html',
-  styleUrl: './view-tours.css',
+  selector: 'app-list-tours',
+  imports: [NzButtonModule],
+  templateUrl: './list-tours.html',
+  styleUrl: './list-tours.css',
 })
-export class ViewToursComponent implements OnInit{
+export class ListToursComponent implements OnInit{
   tours?: any;
 
   constructor(private tourservice: ToursService) {
