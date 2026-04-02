@@ -4,7 +4,7 @@ import { Injectable, EventEmitter } from "@angular/core"
 export interface ITours {
     _id: number,
     name: string,
-    descrition: string,
+    description: string,
     price: number,
     opertaionTime?: Date,
     duration: number,
@@ -22,7 +22,7 @@ export class ToursService {
         {
             _id: 1,
             name: 'Stingray City',
-            descrition: 'sacdasc',
+            description: 'sacdasc',
             price: 300,
             opertaionTime: new Date(),
             duration: 2,
@@ -35,7 +35,7 @@ export class ToursService {
         {
             _id: 2,
             name: 'Jolly Harbour',
-            descrition: 'Come and enjoy a beautiful tour at the best hotel in Antigua',
+            description: 'Come and enjoy a beautiful tour at the best hotel in Antigua',
             price: 240,
             opertaionTime: new Date(),
             duration: 3,
@@ -48,7 +48,7 @@ export class ToursService {
         {
             _id: 3,
             name: 'C & C Wine',
-            descrition: 'Enjoy a cosy and relaxing meal at a private restaurant on the island',
+            description: 'Enjoy a cosy and relaxing meal at a private restaurant on the island',
             price: 540,
             opertaionTime: new Date(),
             duration: 4,
@@ -61,7 +61,7 @@ export class ToursService {
         {
             _id: 4,
             name: 'CJ\'s ',
-            descrition: 'Enjoy a cosy and relaxing meal at a private restaurant on the island',
+            description: 'Enjoy a cosy and relaxing meal at a private restaurant on the island',
             price: 400,
             duration: 5,
             opertaionTime: new Date(),
@@ -74,7 +74,7 @@ export class ToursService {
         {
             _id: 5,
             name: 'Zipline',
-            descrition: 'Enjoy a cosy and relaxing meal at a private restaurant on the island',
+            description: 'Enjoy a cosy and relaxing meal at a private restaurant on the island',
             price: 0,
             opertaionTime: new Date(),
             duration: 3,

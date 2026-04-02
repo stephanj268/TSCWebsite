@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToursService } from '../../../../service/tours.service';
+import { ITours, ToursService } from '../../../../service/tours.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -22,7 +22,7 @@ export class ViewToursComponent implements OnInit {
     this.tour = this.tourservice.allTours
 
     this.tourservice.getAllTours.subscribe(() => {
-      this.tour = this.tour.filter((tour: any) =>  {return tour._id == this.browserId})
+      this.tour = this.tour.filter((tour: any) =>  {return tour._id == this.browserId});
     });
 
     this.tourservice.get(this.tour);
