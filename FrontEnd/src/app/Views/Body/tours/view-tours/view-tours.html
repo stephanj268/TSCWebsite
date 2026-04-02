@@ -2,17 +2,12 @@
     <h1>{{tour[0].name}}</h1>
 
     <div class="thumbnail-layout">
-        <div style="grid-area: pic1">
-            <img [src]="tour[0].thumbnail" alt="">
-        </div>
+        <img class="img" [src]="tour[0].thumbnail" alt="">
 
-        <div style="grid-area: 2;">
-            <img style="width: 200px; height: 200px;" [src]="tour[0].thumbnail" alt="">
-        </div>
+        <img class="img-topleft" [src]="tour[0].thumbnail" alt="">
 
-        <div style="grid-area: 3;">
-            <img style="width: 200px; height: 200px;" [src]="tour[0].thumbnail" alt="">
-        </div>
+        <img class="img-bottomright" [src]="tour[0].thumbnail" alt="">
+
 
     </div>
 

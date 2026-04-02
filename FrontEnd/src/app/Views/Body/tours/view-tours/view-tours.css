@@ -10,10 +10,30 @@ h1 {
 
 .thumbnail-layout {
     display: grid;
-    grid-template-areas: 
-    "pic1 2"
-    "pic1 3";
-
-    gap: 10px;
+    grid-template-areas:
+        "pic1 pic2"
+        "pic1 pic3";
 }
 
+.img {
+    width: 200px;
+    object-fit: cover;
+    grid-area: pic1;
+    width: 200;
+    height: 100%;
+}
+
+.img-topleft {
+    object-fit: cover;
+    grid-area: pic2;
+    width: 150px;
+    height: 150px;
+}
+
+.img-bottomright {
+    object-fit: cover;
+    grid-area: pic3;
+    width: 150px;
+    height: 150px;
+
+}
