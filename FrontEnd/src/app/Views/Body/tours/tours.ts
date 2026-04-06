@@ -6,13 +6,19 @@ import { NzButtonComponent, NzButtonModule } from "ng-zorro-antd/button";
 import { SliderComponent } from "../../slider/slider";
 
 import { RouterOutlet } from '@angular/router';
+import { OperationHidden } from '../../../Directives/OperationTimeDirective';
 
 @Component({
   selector: 'app-tours',
+
+  providers: [
+    OperationHidden
+  ],
+
   imports: [
     NzButtonModule,
     RouterOutlet
-],
+  ],
   templateUrl: './tours.html',
   styleUrl: './tours.css',
 })

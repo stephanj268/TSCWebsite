@@ -12,9 +12,13 @@ import { ToursService } from './service/tours.service';
 
   selector: 'app-root',
   standalone: true,
-  providers: [ToursService],
+  providers: [
+    ToursService,
+  ],
+
+
   imports: [
-    NavigationComponent, 
+    NavigationComponent,
     NzButtonModule,
     RouterOutlet,
     Footer

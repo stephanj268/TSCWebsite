@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ITours, ToursService } from '../../../../service/tours.service';
 import { ActivatedRoute } from '@angular/router';
 
-import { OperationTimeDirectvie } from '../../../../Directives/OperationTimeDirective';
+import { OperationTimeDirectvie, OperationHidden } from '../../../../Directives/OperationTimeDirective';
 
 @Component({
   selector: 'app-view-tours',
-  imports: [OperationTimeDirectvie],
+  imports: [
+    OperationTimeDirectvie,
+    OperationHidden
+  ],
   templateUrl: './view-tours.html',
   styleUrl: './view-tours.css',
 })
@@ -24,7 +27,7 @@ export class ViewToursComponent implements OnInit {
     this.tour = this.tourservice.allTours
 
     this.tourservice.getAllTours.subscribe(() => {
-      this.tour = this.tour.filter((tour: any) =>  {return tour._id == this.browserId});
+      this.tour = this.tour.filter((tour: any) => { return tour._id == this.browserId });
     });
 
     this.tourservice.get(this.tour);
