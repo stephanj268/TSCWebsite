@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ITours, ToursService } from '../../../../service/tours.service';
 import { ActivatedRoute } from '@angular/router';
 
+import { OperationTimeDirectvie } from '../../../../Directives/OperationTimeDirective';
+
 @Component({
   selector: 'app-view-tours',
-  imports: [],
+  imports: [OperationTimeDirectvie],
   templateUrl: './view-tours.html',
   styleUrl: './view-tours.css',
 })
