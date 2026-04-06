@@ -7,6 +7,7 @@ import { SliderComponent } from './Views/slider/slider';
 import { Footer } from './Views/footer/footer';
 import { ToursService } from './service/tours.service';
 
+import { Operationservice } from './Directives/Operation-Time/Operationservice';
 
 @Component({
 
@@ -14,6 +15,7 @@ import { ToursService } from './service/tours.service';
   standalone: true,
   providers: [
     ToursService,
+    Operationservice
   ],
 
 

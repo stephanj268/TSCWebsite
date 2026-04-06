@@ -6,7 +6,9 @@ import { NzButtonComponent, NzButtonModule } from "ng-zorro-antd/button";
 import { SliderComponent } from "../../slider/slider";
 
 import { RouterOutlet } from '@angular/router';
-import { OperationHidden } from '../../../Directives/OperationTimeDirective';
+
+import { OperationHidden } from '../../../Directives/Operation-Time/OperationTimeHiddenDirective';
+
 
 @Component({
   selector: 'app-tours',

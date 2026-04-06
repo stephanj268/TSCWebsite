@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ITours, ToursService } from '../../../../service/tours.service';
 import { ActivatedRoute } from '@angular/router';
 
-import { OperationTimeDirectvie, OperationHidden } from '../../../../Directives/OperationTimeDirective';
+import { OperationTimeDirectvie } from '../../../../Directives/Operation-Time/OperationTimeDirective';
+import { OperationHidden } from '../../../../Directives/Operation-Time/OperationTimeHiddenDirective';
 
 @Component({
   selector: 'app-view-tours',

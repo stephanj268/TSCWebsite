@@ -11,7 +11,7 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+, "src/app/Directives/Operation-Time"  ],
   "exclude": [
     "src/**/*.spec.ts"
   ]
