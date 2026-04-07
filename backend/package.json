@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec \"npx tsx src/server.ts\""
+    "start": "nodemon ./src/server.ts"
   },
   "keywords": [],
   "author": "",

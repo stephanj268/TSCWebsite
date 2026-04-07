@@ -5,16 +5,18 @@ import dotenv from 'dotenv';
 //import nodemailer from 'nodemailer';
 
 const app = express();
+const PORT = 3000;
 app.use(cors());
 app.use(express.json());
-dotenv.config();
+// dotenv.config();
 
+app.listen(PORT, () => {
+    console.log('[SERVER STARTED ON]', PORT)
+})
 app.get('/', (req: Request, res: Response) => {
-    res.send('hello')
+    res.send('currry')
 
 });
-
-console.log('sadcas')
 
 // const transporter = nodemailer.createTransport({
 //     service: 'gmail',
