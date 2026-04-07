@@ -8,10 +8,7 @@ import { TourService } from '../../../../service/tours.service';
 
 @Component({
   selector: 'app-view-tours',
-  imports: [
-    OperationTimeDirectvie,
-    OperationHidden
-  ],
+  imports: [],
   templateUrl: './view-tours.html',
   styleUrl: './view-tours.css',
 })
@@ -34,6 +31,7 @@ export class ViewToursComponent implements OnInit {
 
     this.tourservice.onGetToursEvent(this.tour);
 
+    console.log(this.tour[0].name)
   }
 
 

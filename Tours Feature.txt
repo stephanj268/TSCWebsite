@@ -1,11 +1,38 @@
-Tours 
-- Half Day Tours
-- Short Tours 
-- Custom Tours
-- Full Days
+Show tours pertaining to Tour
+Filter Tours
+Tour Timing
+
+Tour Filter Stuff
+East Side
+South Side
+
+All Tours Option:
+
+Full Day Tours: 
+- Option to see a beach
+- Option to stop for lunch at their own expense
+- Option to provide lunch
+- Option to provide allergies
 
 
-Feature:
-- Ability to add lunch
+timing: 8am - 2pm, 10am - 5pm, 
+
+Half Day Tours: 
+- Carrier tells tourist where they are going
+
+timing: 8am - 12pm, 10am - 2pm, 
+
+Short Tours: 
+- Carrier gives options of tours available since it's short
+
+Custom Tours:
+- Tourist can decide where they want to go
+- Tourist can select their own timing
+- Tourist decide which side of the they are going
+
+Beach Hopping Tours:
+- Go to popular beaches
+timing: 9am - 2pm
+
 
 

@@ -2,7 +2,6 @@
     <app-slider></app-slider>
 </div>
 
-
 <div class="container">
     <app-search-filter></app-search-filter>
 
@@ -11,11 +10,11 @@
     <div class="section">
 
         @for(tour of tours; track tour) {
+
         <div class="card">
             <img class="image-banner" [src]="tour?.thumbnail" [alt]="tours.alt">
 
             <div style="margin: 10px 10px; font-family: Verdana, Geneva, Tahoma, sans-serif ;">
-
                 <div>
                     <h2>{{tour.name}}</h2>
                     <label>{{tour.duration}}h <span nz-icon nzType="field-time" nzTheme="outline"></span></label>
