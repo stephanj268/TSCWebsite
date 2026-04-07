@@ -34,11 +34,11 @@ export class TaxiService {
 
         {
             _id: 2,
-            name: 'Jolly Harbour',
-            description: 'Come and enjoy a beautiful tour at the best hotel in Antigua',
-            price: 240,
+            name: 'VIP Airport Transfer',
+            description: 'Enjoy a seamless and luxurious travel experience with our VIP airport transfer service, ensuring a comfortable and stress-free journey to and from the airport.',
+            price: 100,
             opertaionTime: new Date(),
-            duration: 3,
+            duration: .5,
             available: true,
             thumbnail: 'https://i.travelapi.com/hotels/1000000/30000/23600/23522/ea725b9b_z.jpg',
             alt: 'string',
