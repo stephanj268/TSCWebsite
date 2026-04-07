@@ -1,4 +1,5 @@
 import express, {type Request, type Response } from 'express';
+import { Mongoose } from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
