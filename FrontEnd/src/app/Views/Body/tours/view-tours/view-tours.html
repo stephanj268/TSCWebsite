@@ -12,9 +12,9 @@
 
                 <div class="tour-details-border">
                     @if (tour[0].duration > 1) {
-                    <h3>{{tour[0].duration}} hours</h3>
+                    <h3><span nz-icon nzType="clock-circle" nzTheme="outline"></span> {{tour[0].duration}} hours</h3>
                     } @else {
-                    <h3>{{tour[0].duration}} hour</h3>
+                    <h3><span nz-icon nzType="clock-circle" nzTheme="outline"></span> {{tour[0].duration}} hour</h3>
                     }
                 </div>
 
@@ -23,12 +23,22 @@
 
             <h2 style="margin-top: 50px; font-size: 30px;">Overview</h2>
             <h3>{{tour[0].description}}</h3>
-
-            <h2>Includes</h2>
             <ul>
                 <li>A view of beaches to view</li>
-                <li>Option Of Lunches</li>
+                <li>Lunches (Optional)</li>
             </ul>
+
+
+            <div class="tour-details-border">
+                <h2>Includes</h2>
+
+                <ul>
+                    <li>A view of beaches to view</li>
+                    <li>Lunches (Optional)</li>
+                </ul>
+
+            </div>
+
 
 
             <div class="section">
@@ -48,7 +58,7 @@
         </div>
 
         <div class="item-block banner">
-
+            <h1>From {{tour.pr}}</h1>
         </div>
 
     </div>

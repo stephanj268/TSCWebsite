@@ -7,7 +7,7 @@ export interface ITours {
     alt: string,
     description: string
     type: [],
-    duration: number,
+    duration: number
 }
 
 @Injectable()
