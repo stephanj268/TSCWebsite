@@ -137,3 +137,34 @@ h1 {
     width: 70%;
     height: 30px;
 }
+
+@media only screen and (max-width: 600px) {
+    .container {
+        margin-left: 20px;
+    }
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    color: #FFF;
+    text-decoration: none;
+    transform: scale(1.1);
+}
