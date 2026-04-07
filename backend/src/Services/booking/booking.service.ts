@@ -29,10 +29,8 @@ export async function createBooking(req: Request, res: Response) {
             date: req.body.date
         });
 
-        if (!newBooking.name) {
+        if (!newBooking.name || !newBooking.email) {
             res.status(400).json(`Name field is empty`)
-
-            throw new Error('hhhh');
 
             return
         }
