@@ -9,21 +9,16 @@
 
     <div class="section">
 
+        @for(tours of tour; track tours){
         <div class="card">
-            <h1>Full Day Tours</h1>
+            <img class="img" [src]="tours.img" [alt]="tours.alt">
+            <h1>{{tours.type}}</h1>
+            <h3> {{tours.description }}</h3>
+
+            <button class="button see-more-button">See More</button>
         </div>
 
-        <div class="card">
-            <h1>Half Day Tours</h1>
-        </div>
-
-        <div class="card">
-            <h1>Short Tours</h1>
-        </div>
-
-        <div class="card">
-            <h1>Custom Tours</h1>
-        </div>
+        }
 
     </div>
 

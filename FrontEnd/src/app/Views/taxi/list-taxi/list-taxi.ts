@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { NzButtonComponent, NzButtonModule, NzButtonSize } from "ng-zorro-antd/button";
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { ToursService } from '../../../service/tours.service';
-import { ITours } from '../../../service/tours.service';
+import { TaxiService } from '../../../service/taxi.service';
+import { ITaxi } from '../../../service/taxi.service';
 
 import { SearchFilter } from '../../Body/search-filter/search-filter';
 import { RouterLink } from "@angular/router";
@@ -25,7 +25,7 @@ export class ListTaxiComponenet implements OnInit {
 
   tours?: any;
 
-  constructor(private tourservice: ToursService) {
+  constructor(private tourservice: TaxiService) {
 
   }
 
