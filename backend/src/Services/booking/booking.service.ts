@@ -8,6 +8,24 @@ export async function getAllBookings(req: Request, res: Response) {
         const allBookings = await BookingModule.find();
         res.json(allBookings);
 
+
+    } catch (err) {
+        throw res.json(err);
+    }
+
+}
+
+export async function createBooking(req: Request, res: Response) {
+    try {
+
+        const newBooking = new BookingModule({
+            name: req.body.name
+        });
+
+        await newBooking.save();
+        res.json(newBooking);
+
+
         // await transporter.sendMail({
         //     from: 'booking.email',
         //     to: 'admin@gmail.com',
@@ -22,9 +40,8 @@ export async function getAllBookings(req: Request, res: Response) {
         //     Phone: ${ booking.phone }
         // });
 
-
-} catch (err) {
-    throw res.json(err);
-}
-
+    } catch(err) {
+        res.status(400).json('Error Creating Booking');
+    }
+    
 }
