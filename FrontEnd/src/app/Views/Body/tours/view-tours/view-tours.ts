@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ITaxi, TaxiService } from '../../../../service/taxi.service';
 import { ActivatedRoute } from '@angular/router';
+
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 import { OperationTimeDirectvie } from '../../../../Directives/Operation-Time/OperationTimeDirective';
 import { OperationHidden } from '../../../../Directives/Operation-Time/OperationTimeHiddenDirective';
@@ -8,7 +9,7 @@ import { TourService } from '../../../../service/tours.service';
 
 @Component({
   selector: 'app-view-tours',
-  imports: [],
+  imports: [NzIconModule],
   templateUrl: './view-tours.html',
   styleUrl: './view-tours.css',
 })

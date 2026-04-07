@@ -1,8 +1,29 @@
+nz-icon {
+    margin-right: 6px;
+    font-size: 24px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
 
     margin-left: 20px;
+    margin-right: 20px;
+}
+
+.tour-img {
+
+    background-color: red;
+    width: 90%;
+    height: 350px;
+}
+
+.tour-details {
+
+    margin-top: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
 }
 
 
@@ -14,14 +35,41 @@
 
 .card {
     width: 300px;
-    height: 190px;
+    height: fit-content;
 
-    background-color: rgb(220, 220, 220);
+    padding: 10px 10px 10px 10px;
+    margin-top: 20px;
+
+    background-color: rgb(237, 237, 237);
 
     border-radius: 10px;
 
 }
 
 .submit-button {
+    cursor: pointer;
     border: none;
+
+    width: 200px;
+    height: 30px;
+
+    background-color: rgb(255, 222, 35);
+
+    transition: 0.5s;
+
+    border-radius: 8px;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.submit-button:hover {
+    border: none;
+
+    background-color: rgb(223, 191, 10);
+
+    transition: 0.5s;
+
+    width: 200px;
+    height: 40px;
 }

@@ -1,22 +1,39 @@
 <div class="container">
-    <h1 style="text-align: center; margin-top: 50px;">{{tour[0].name}}</h1>
 
-    <label>{{tour[0].description}}</label>
+    <div style="padding-left: 10px; padding-right: 10px;">
+        <h1 style="margin-top: 50px; font-size: 30px;">{{tour[0].name}}</h1>
 
-    <label>{{tour[0].duration}}</label>
+        <div class="tour-img">
+
+        </div>
+
+        <div class="tour-details">
+            <span nzType="clock-circle" nzTheme="outline"></span>
+            <h3>{{tour[0].duration}} hours</h3>
+        </div>
+
+        <div class="card">
+            <h3>{{tour[0].description}}</h3>
+
+        </div>
+
+
+
+    </div>
+
 
     <h2>What to expect</h2>
 
-    <h2>Inlcudes</h2>
+    <h2>Includes</h2>
     <ul>
         <li>A view of beaches to view</li>
-        <li>Lunches (optional)</li>
+        <li>Option Of Lunches</li>
     </ul>
 
 
     <div class="section">
 
-        
+
 
         <div class="card">
 
@@ -29,6 +46,6 @@
     </div>
 
     <button class="submit-button">Book Now</button>
-    
+
 
 </div>

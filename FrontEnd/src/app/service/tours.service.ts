@@ -7,7 +7,7 @@ export interface ITours {
     alt: string,
     description: string
     type: [],
-    duration: Date,
+    duration: number,
 }
 
 @Injectable()
@@ -21,7 +21,7 @@ export class TourService {
             alt: 'dummy alt',
             name: 'Full Day Tours',
             type: [],
-            duration: new Date(),
+            duration: 6,
             description: 'Make the most of your time with our full day tours, designed for a deeper and more immersive experience. Explore top attractions, hidden gems, and local culture at a relaxed pace, with plenty of time to take in the sights, enjoy activities, and create lasting memories.'
         },
 
@@ -31,7 +31,7 @@ export class TourService {
             alt: 'dummy alt',
             name: 'Half Day Tours',
             type: [],
-            duration: new Date(),
+            duration: 4,
             description: 'Enjoy the perfect balance with our half day tours—ideal for exploring key highlights without taking up your entire day. Discover top sights, local culture, and scenic spots in a well-paced experience that leaves you time to relax or continue your adventures.'
         },
 
@@ -41,7 +41,7 @@ export class TourService {
             alt: 'dummy alt',
             name: 'Short Tours',
             type: [],
-            duration: new Date(),
+            duration: 1,
             description: 'Discover the highlights in just a few hours with our short day tours—perfect for travelers on a tight schedule. Enjoy guided visits to top attractions, scenic views, and cultural hotspots, all carefully planned to give you a memorable experience without taking up your entire day.'
         },
 
@@ -51,7 +51,7 @@ export class TourService {
             alt: 'dummy alt',
             name: 'Custom Tours',
             type: [],
-            duration: new Date(),
+            duration: 0,
             description: 'Create your perfect experience with our custom tours, tailored to match your interests, schedule, and travel style. Whether you’re seeking adventure, relaxation, or cultural exploration, we design a personalized journey just for you—so every moment is exactly how you want it.'
         },
 
@@ -61,7 +61,7 @@ export class TourService {
             alt: 'dummy alt',
             name: 'Beach Hopping Tours',
             type: [],
-            duration: new Date(),
+            duration: 5,
             description: 'Soak up the sun with our beach hopping tours, taking you to some of the most stunning spots in one unforgettable trip. Swim in crystal-clear waters, relax on soft, and experience the unique vibe of each beach—all in a fun and refreshing island adventure.'
         },
 
