@@ -30,7 +30,26 @@ export class TourService {
             name: 'testTOur',
             type: 'Half Day Tours',
             description: 'tour info goes here...'
-        }
+        },
+
+        {
+            _id: 3,
+            img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
+            alt: 'dummy alt',
+            name: 'testTOur',
+            type: 'Short Tours',
+            description: 'tour info goes here...'
+        },
+
+        {
+            _id: 4,
+            img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
+            alt: 'dummy alt',
+            name: 'testTOur',
+            type: 'Custom Tours',
+            description: 'tour info goes here...'
+        },
+
     ]
 
     getToursEvent = new EventEmitter<ITours>

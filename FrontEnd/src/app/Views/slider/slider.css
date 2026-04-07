@@ -1,5 +1,13 @@
+nz-carousel {
+  width: 100%;
+  height: 400px;
+
+}
+
 [nz-carousel-content] {
-  height: 350px;
+  width: 100%;
+  height: 400px;
+  
 
   background: #364d79;
   color: #fff;
@@ -16,7 +24,8 @@ h3 {
   object-fit: fill;
 
   width: 100%;
-  height: 100%;
+  height: 400px;
+  
 }
 
 .Slider-cover-text {

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { OperationTimeDirectvie } from '../../../../Directives/Operation-Time/OperationTimeDirective';
 import { OperationHidden } from '../../../../Directives/Operation-Time/OperationTimeHiddenDirective';
+import { TourService } from '../../../../service/tours.service';
 
 @Component({
   selector: 'app-view-tours',
@@ -18,7 +19,7 @@ export class ViewToursComponent implements OnInit {
   tour: any;
   browserId: any;
 
-  constructor(private tourservice: TaxiService, private activatedRoute: ActivatedRoute) {
+  constructor(private tourservice: TourService, private activatedRoute: ActivatedRoute) {
 
   }
 
@@ -27,11 +28,11 @@ export class ViewToursComponent implements OnInit {
 
     this.tour = this.tourservice.allTours
 
-    this.tourservice.getAllTours.subscribe(() => {
+    this.tourservice.getToursEvent.subscribe(() => {
       this.tour = this.tour.filter((tour: any) => { return tour._id == this.browserId });
     });
 
-    this.tourservice.get(this.tour);
+    this.tourservice.onGetToursEvent(this.tour);
 
   }
 
