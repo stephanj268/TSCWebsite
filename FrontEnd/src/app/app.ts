@@ -5,8 +5,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { SliderComponent } from './Views/slider/slider';
 
 import { Footer } from './Views/footer/footer';
-import { ToursService } from './service/tours.service';
-
+import { TaxiService } from './service/taxi.service';
+import { TourService } from './service/tours.service';
 import { Operationservice } from './Directives/Operation-Time/Operationservice';
 
 @Component({
@@ -14,8 +14,9 @@ import { Operationservice } from './Directives/Operation-Time/Operationservice';
   selector: 'app-root',
   standalone: true,
   providers: [
-    ToursService,
-    Operationservice
+    TaxiService,
+    Operationservice,
+    TourService
   ],
 
 

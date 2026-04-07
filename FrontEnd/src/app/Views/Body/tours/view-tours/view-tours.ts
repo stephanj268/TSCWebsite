@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ITours, ToursService } from '../../../../service/tours.service';
+import { ITaxi, TaxiService } from '../../../../service/taxi.service';
 import { ActivatedRoute } from '@angular/router';
 
 import { OperationTimeDirectvie } from '../../../../Directives/Operation-Time/OperationTimeDirective';
@@ -18,7 +18,7 @@ export class ViewToursComponent implements OnInit {
   tour: any;
   browserId: any;
 
-  constructor(private tourservice: ToursService, private activatedRoute: ActivatedRoute) {
+  constructor(private tourservice: TaxiService, private activatedRoute: ActivatedRoute) {
 
   }
 

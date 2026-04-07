@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ITours, ToursService } from '../../../service/tours.service';
+import { ITaxi, TaxiService } from '../../../service/taxi.service';
 import { ActivatedRoute } from '@angular/router';
 
 import { OperationTimeDirectvie } from '../../../Directives/Operation-Time/OperationTimeDirective';
@@ -16,20 +16,20 @@ export class ViewTaxiComponent implements OnInit {
   tour: any;
   browserId: any;
 
-  constructor(private tourservice: ToursService, private activatedRoute: ActivatedRoute) {
+  constructor(private taxiservice: TaxiService, private activatedRoute: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
     this.loadBorwserId();
 
-    this.tour = this.tourservice.allTours
+    this.tour = this.taxiservice.allTours
 
-    this.tourservice.getAllTours.subscribe(() => {
+    this.taxiservice.getAllTours.subscribe(() => {
       this.tour = this.tour.filter((tour: any) => { return tour._id == this.browserId });
     });
 
-    this.tourservice.get(this.tour);
+    this.taxiservice.get(this.tour);
 
   }
 
