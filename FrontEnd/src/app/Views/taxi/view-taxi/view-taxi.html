@@ -1,0 +1,59 @@
+<div class="container">
+    <h1>{{tour[0].name}}</h1>
+
+
+    <div class="thumbnail-layout">
+        <img class="img" [src]="tour[0].thumbnail" alt="">
+
+        <img class="img-topleft" [src]="tour[0].thumbnail" alt="">
+
+        <img class="img-bottomright" [src]="tour[0].thumbnail" alt="">
+
+
+    </div>
+
+    <div>
+        <h3>About</h3>
+        <p>{{tour[0].description}}</p>
+    </div>
+
+
+    <div class="card">
+        <h2  style="text-align: center;">Opertation Time <span nz-Operation> > </span></h2> 
+        <div class="show-time-hidden" nz-operation-text>
+            <p>Monday</p>
+            <p>Tuesday</p>
+            <p>Wednesday</p>
+            <p>Thrusday</p>
+            <p>Friday</p>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="section">
+        <div>
+            <h3>What's Included?</h3>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <div>
+            <h3>Meeting And Pickup</h3>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <div>
+            <h3>Help</h3>
+        </div>
+
+    </div>
+
+    <h1>{{tour[0].opertaionTime}}</h1>
+
+</div>

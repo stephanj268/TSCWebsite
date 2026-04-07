@@ -11,8 +11,7 @@ import { SliderComponent } from "../../../slider/slider";
   selector: 'app-list-tours',
   imports: [
     NzButtonModule,
-    SearchFilter,
-    RouterLink,
+    
     SliderComponent,
     NzIconModule
   ],
@@ -20,21 +19,12 @@ import { SliderComponent } from "../../../slider/slider";
   styleUrl: './list-tours.css',
 })
 export class ListToursComponent implements OnInit {
-  tours?: any;
 
   constructor(private tourservice: ToursService) {
 
   }
 
   ngOnInit(): void {
-    // Set Tours variable to data
-    this.tours = this.tourservice.allTours;
-
-    // Subscribe tours to event
-    this.tourservice.getAllTours.subscribe();
-
-    //Getting all Tours
-    this.tourservice.get(this.tours);
 
 
   }

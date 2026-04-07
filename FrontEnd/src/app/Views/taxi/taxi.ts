@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { NzCarouselModule } from 'ng-zorro-antd/carousel';
-import { ToursComponenet } from '../Body/tours/tours';
-import { ListToursComponent } from '../Body/tours/list-tours/list-tours';
-import { HomeComponent } from '../home/home'; 
-import { AboutComponent } from '../about/about';
-import { ContactComponent } from '../contact/contact';
+import { NzButtonComponent, NzButtonModule } from "ng-zorro-antd/button";
+
+import { RouterOutlet } from '@angular/router';
+
+import { OperationHidden } from '../../Directives/Operation-Time/OperationTimeHiddenDirective';
 
 @Component({
   selector: 'app-taxi',
-  imports: [],
+  imports: [RouterOutlet],
+  providers: [OperationHidden],
   templateUrl: './taxi.html',
   styleUrl: './taxi.css',
 })
