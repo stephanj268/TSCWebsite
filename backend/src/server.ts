@@ -1,7 +1,6 @@
 import express, {type Request, type Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { tourRouter } from './routes/tourRoutes';
 import nodemailer from 'nodemailer';
 
 const app = express();
