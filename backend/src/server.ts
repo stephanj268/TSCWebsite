@@ -4,19 +4,23 @@ import dotenv from 'dotenv';
 
 //import nodemailer from 'nodemailer';
 
+import { router as ApiRoutes } from './Routes/index.ts';
+
 const app = express();
 const PORT = 3000;
+
 app.use(cors());
 app.use(express.json());
 // dotenv.config();
 
-app.listen(PORT, () => {
-    console.log('[SERVER STARTED ON]', PORT)
-})
-app.get('/', (req: Request, res: Response) => {
-    res.send('currry')
 
-});
+app.use('', ApiRoutes);
+
+app.listen(PORT, () => {
+    console.log('[SERVER STARTED ON PORT]:', PORT)
+})
+
+
 
 // const transporter = nodemailer.createTransport({
 //     service: 'gmail',
