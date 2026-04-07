@@ -20,7 +20,7 @@ export const routes: Routes = [
 
     { path: 'taxi', component: TaxiComponent, children: [
         {path: 'list', component: ListTaxiComponenet },
-        {path: 'view', component: ViewTaxiComponent}
+        {path: 'view/:id', component: ViewTaxiComponent}
             
         ]
     },

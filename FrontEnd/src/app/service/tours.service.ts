@@ -20,7 +20,7 @@ export class TourService {
             alt: 'dummy alt',
             name: 'testTOur',
             type: 'Full Day Tours',
-            description: 'tour info goes here...'
+            description: 'Make the most of your time with our full day tours, designed for a deeper and more immersive experience. Explore top attractions, hidden gems, and local culture at a relaxed pace, with plenty of time to take in the sights, enjoy activities, and create lasting memories.'
         },
 
         {
@@ -29,8 +29,27 @@ export class TourService {
             alt: 'dummy alt',
             name: 'testTOur',
             type: 'Half Day Tours',
-            description: 'tour info goes here...'
-        }
+            description: 'Enjoy the perfect balance with our half day tours—ideal for exploring key highlights without taking up your entire day. Discover top sights, local culture, and scenic spots in a well-paced experience that leaves you time to relax or continue your adventures.'
+        },
+
+        {
+            _id: 3,
+            img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
+            alt: 'dummy alt',
+            name: 'testTOur',
+            type: 'Short Tours',
+            description: 'Discover the highlights in just a few hours with our short day tours—perfect for travelers on a tight schedule. Enjoy guided visits to top attractions, scenic views, and cultural hotspots, all carefully planned to give you a memorable experience without taking up your entire day.'
+        },
+
+        {
+            _id: 4,
+            img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
+            alt: 'dummy alt',
+            name: 'testTOur',
+            type: 'Custom Tours',
+            description: 'Create your perfect experience with our custom tours, tailored to match your interests, schedule, and travel style. Whether you’re seeking adventure, relaxation, or cultural exploration, we design a personalized journey just for you—so every moment is exactly how you want it.'
+        },
+
     ]
 
     getToursEvent = new EventEmitter<ITours>

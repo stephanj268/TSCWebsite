@@ -8,8 +8,8 @@
 
 .card {
 
-    margin: 10px 10px 10px 10px;
-    width: fit-content;
+    margin: 10px 10px 50px 10px;
+    width: 350px;
 
 }
 
@@ -22,13 +22,13 @@
 
     object-fit: fill;
     margin-bottom: 10px;
-    width: 300px;
+    width: 350px;
     
     height: 190px;
 
     border-radius: 10px;
     
-    background-color: red;
+    background-color: rgb(190, 190, 190);
 }
 
 .button {
@@ -38,19 +38,22 @@
 }
 
 .see-more-button {
-    transition:  0.5s;
+    transition:  0.3s;
 
-    width: 120px;
-    height: 50px;
+    width: 150px;
+    height: 40px;
 
     font-size: large;
+
+    
+    background-color: rgb(255, 212, 19);
 }
 
 
 .see-more-button:hover {
     cursor: pointer;
-    transition:  0.5s;
-
+    transition:  0.3s;
+    background-color: rgb(216, 178, 9);
 
     font-size: large;
 }
