@@ -19,19 +19,19 @@ export async function getAllBookings(req: Request, res: Response) {
 
 export async function createBooking(req: Request, res: Response) {
     try {
-
-        const newBooking = new BookingModule({
+        const newBooking = new BookingModule<IBooking>({
             name: req.body.name,
             email: req.body.email,
-            tour: req.body.tour,
-            pickup: req.body.pickup,
-            phone: req.body.phone,
-            date: req.body.date
+            phonenumber: req.body.phonenumber,
+            type: req.body.type,
+            maxPersons: req.body.maxPersons,
+            startDate: req.body.startDate,
+            endDate: req.body.endDate,
+            date: req.body.date,
         });
 
-        if (!newBooking.name || !newBooking.email) {
+        if (!newBooking.name || !newBooking.email || !newBooking.phonenumber) {
             res.status(400).json(`Name field is empty`)
-
             return
         }
 
@@ -68,7 +68,7 @@ export async function updateBooking(id: any, req: Request, res: Response) {
             return;
         }
 
-        res.json(`Sucessfully Updated ${booking?.name}`);
+        res.json(`Sucessfully Updated ${booking.name}`);
 
     } catch (err) {
         res.status(400).json(`Error Updating ${id}`);
@@ -90,7 +90,7 @@ export async function deleteBooking(id: any, req: Request, res: Response) {
         res.json(`deleted ${booking.name}`);
 
     } catch (err) {
-        res.status(400).json('Error Deleting Booking');
+        res.status(400).json(`Error Deleting booking`);
     }
 
 }

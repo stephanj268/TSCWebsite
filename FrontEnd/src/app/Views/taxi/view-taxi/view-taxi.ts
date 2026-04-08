@@ -24,6 +24,7 @@ export class ViewTaxiComponent implements OnInit {
   selectedTime: string = '';
 
   whatsAppLink: string = '12687884966'; 
+  
   goBack(): void {
     this.location.back();
   }
