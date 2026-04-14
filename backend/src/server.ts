@@ -10,8 +10,15 @@ import { database } from '../config/database.ts';
 
 const app = express();
 
+mongoose.connect(database);
+
+mongoose.connection.on('connected', () => {
+    console.log('[SERVER] CONNECTION TO ' + database + '🚀 ESTABLISHED');
+})
+
+bodyParser.urlencoded({extended: true});
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(cors());
 
 
@@ -21,14 +28,13 @@ const PORT = 3000;
 //use JSON
 app.use(express.json());
 
-
-app.use('/', async (req, res) => {
-    res.send("kkkk")
-
-})
-
 //Use api
 app.use('/', ApiRoutes);
+
+//Listen to port 3000 
+app.listen(PORT, () => {
+    console.log('[SERVER STARTED ON PORT]:', PORT)
+});
 
 //email admin
 const ADMIN_EMAIL = 'spaceship1268@gmail.com';
@@ -98,14 +104,6 @@ const ADMIN_EMAIL = 'spaceship1268@gmail.com';
     
     
 
-mongoose.connect(database).then( () => {
-    console.log('[SERVER STARTED ON ]', database)
-});
-
-//Listen to port 3000 
-app.listen(PORT, () => {
-    console.log('[SERVER STARTED ON PORT]:', PORT)
-});
 
 
 
