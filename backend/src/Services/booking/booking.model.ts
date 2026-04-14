@@ -3,9 +3,11 @@ export interface IBooking {
     lastname: string;
     email: string;
     phonenumber?: string;
-    type: string;
+    tourType: string;
     maxPersons: number;
     startDate: Date;
     endDate:Date
-    date: string;
+    createdAt: Date;
+
+    
 }

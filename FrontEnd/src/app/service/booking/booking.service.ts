@@ -19,6 +19,6 @@ export class BookingService {
             'Content-Type': 'application/json'
         });
         
-        return this.http.post(`${URL}:${PORT}/booking/`, data, {headers: httpheader})
+        return this.http.post(`${URL}:${PORT}/booking`, data, {headers: httpheader})
     }
 }

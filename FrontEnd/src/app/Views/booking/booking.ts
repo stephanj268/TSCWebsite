@@ -1,5 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { BookingService } from '../../service/booking/booking.service';
 
@@ -13,6 +12,10 @@ import { getISOWeek } from 'date-fns';
 
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { en_US, NzI18nService, zh_CN } from 'ng-zorro-antd/i18n';
+
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+import { Console, error } from 'console';
 
 interface BookingForm {
   name: string;
@@ -33,12 +36,18 @@ interface BookingForm {
     NzButtonModule,
     NzDatePickerModule,
     FormsModule,
-    NzSelectModule
+    NzSelectModule,
+
+    ToastModule,
   ],
+  providers: [MessageService],
   templateUrl: './booking.html',
   styleUrl: './booking.css',
 })
 export class BookingComponent {
+
+  private messageService = inject(MessageService);
+
   firstname: string = '';
   lastname: string = '';
   email: string = '';
@@ -51,7 +60,7 @@ export class BookingComponent {
   plainFooter = 'plain extra footer';
   footerRender = (): string => 'extra footer';
 
-  date = null;
+  date: any;
 
   successMessage: string = '';
   errorMessage: string = '';
@@ -63,18 +72,22 @@ export class BookingComponent {
       firstname: this.firstname,
       lastname: this.lastname,
       email: this.email,
-      phone: this.phone,
-      passengers: this.passengers,
+      phonenumber: this.phone,
       tourType: this.tourType,
-      pickupLocation: this.pickupLocation,
-      specialRequests: this.specialRequests
+      maxPersons: this.passengers,
+      startDate: this.date ? new Date(this.date) : new Date(),
+      endDate: this.date ? new Date(this.date) : new Date(),
+      createdAt: this.date ? new Date(this.date) : new Date()
 
     };
 
-    this.bookingservice.createBooking(build).subscribe((data) => {
-      console.log(data);
+    console.log(build);
 
-    })
+    this.bookingservice.createBooking(build).subscribe((data) => {
+      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
+    }, (error) => {
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error}` });
+    });
 
   }
 

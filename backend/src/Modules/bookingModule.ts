@@ -1,6 +1,7 @@
 import mongoose, { Schema } from 'mongoose'
+import { type IBooking } from '../Services/booking/booking.model.ts';
 
-const BookingSchema = new Schema({
+const BookingSchema = new Schema<IBooking>({
   firstname: {
     type: String,
     required: true
@@ -20,7 +21,7 @@ const BookingSchema = new Schema({
   phonenumber: {
     type: String,
   },
-  type: {
+  tourType: {
     type: String,
     required: true
   },
@@ -34,10 +35,6 @@ const BookingSchema = new Schema({
   },
   endDate: {
     type: Date,
-    required: true
-  },
-  date: {
-    type: String,
     required: true
   },
 });

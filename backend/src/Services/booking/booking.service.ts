@@ -23,15 +23,15 @@ export async function createBooking(req: Request, res: Response) {
             lastname: req.body.lastname,
             email: req.body.email,
             phonenumber: req.body.phonenumber,
-            type: req.body.type,
+            tourType: req.body.tourType,
             maxPersons: req.body.maxPersons,
             startDate: req.body.startDate,
             endDate: req.body.endDate,
-            date: req.body.date,
+            createdAt: req.body.createdAt
         });
 
         if (!newBooking.firstname || !newBooking.lastname || !newBooking.email || !newBooking.phonenumber) {
-            res.status(400).json(`Name field is empty`)
+            res.status(400).json(`Missing fields are empty!`)
             return
         }
 
