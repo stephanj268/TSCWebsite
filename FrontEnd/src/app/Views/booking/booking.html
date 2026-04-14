@@ -47,45 +47,45 @@
         <nz-date-picker [nzRenderExtraFooter]="plainFooter" nzShowTime />
       </div>
 
-      <div class="form-group">
+      <div class="form-item">
         <label class="form-label">Passenger(s)</label>
         <input type="number" class="form-label-int" min="1" required>
-
-        <div class="form-group">
-          <label for="serviceType">Service Type:</label>
-          <select id="serviceType" name="serviceType" required>
-            <option value="">Select a service type</option>
-            <option value="city-tour">Tour</option>
-            <option value="nature-tour">Taxi Service</option>
-          </select>
-        </div>
-
-        <div class="form-group" *ngIf="form.serviceType === 'tour'">
-          <label for="tourType">Tour Type:</label>
-          <select id="tourType" name="tourType" [(ngModel)]="form.tourType" required>
-            <option value="">Select a Tour</option>
-            <option value="half-day tour">Half-Day Tour</option>
-            <option value="full-day tour">Full-Day Tour</option>
-            <option value="custom-tour">Custom Tour</option>
-          </select>
-        </div>
-
-        <div class="form-group" *ngIf="form.serviceType === 'taxi'">
-          <label for="taxiType">Taxi Type:</label>
-          <select id="taxiType" name="taxiType" required>
-            <option value="">Select a taxi type</option>
-            <option value="vip airport transfer">Vip Airport Transfer</option>
-            <option value="stingraycity">Stingray City</option>
-            <option value="resturant">Restaurant</option>
-          </select>
-
-          <button type="submit">Submit</button>
-        </div>
 
         <p *ngIf="submissionSuccess" class="success-message">{{ successMessage }}</p>
         <p *ngIf="submissionError" class="error-message">{{ errorMessage }}</p>
 
+      </div>
 
+      <div class="form-item">
+        <label class="form-label">Service Type</label>
+
+        <nz-select ngModel="default">
+          <nz-option nzValue="default" nzLabel="Select a service type" />
+          <nz-option nzValue="city-tour" nzLabel="city-tour" />
+          <nz-option nzValue="nature-tour" nzLabel="nature-tour" />
+        </nz-select>
+
+      </div>
+
+      <div class="form-item">
+        <label class="form-label">Tour Type</label>
+
+        <nz-select ngModel="default">
+          <nz-option nzValue="default" nzLabel="Select a Tour" />
+          <nz-option nzValue="Half-Day Tour" nzLabel="Half-Day Tour" />
+          <nz-option nzValue="Full-Day Tour" nzLabel="Full-Day Tour" />
+          <nz-option nzValue="Custom Tour" nzLabel="Custom Tour" />
+        </nz-select>
+      </div>
+
+      <div class="form-item">
+        <label for="taxiType">Taxi Type:</label>
+        <select id="taxiType" name="taxiType" required>
+          <option value="">Select a taxi type</option>
+          <option value="vip airport transfer">Vip Airport Transfer</option>
+          <option value="stingraycity">Stingray City</option>
+          <option value="resturant">Restaurant</option>
+        </select>
       </div>
 
       <button class="submit-button">Submit</button>

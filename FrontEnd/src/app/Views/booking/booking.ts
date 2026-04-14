@@ -5,6 +5,7 @@ import { BookingService } from '../../service/booking/booking.service';
 
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
 import { FormsModule } from '@angular/forms';
 
@@ -31,7 +32,8 @@ interface BookingForm {
     NzInputModule,
     NzButtonModule,
     NzDatePickerModule,
-    FormsModule
+    FormsModule,
+    NzSelectModule
   ],
   templateUrl: './booking.html',
   styleUrl: './booking.css',
