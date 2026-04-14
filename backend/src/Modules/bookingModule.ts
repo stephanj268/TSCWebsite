@@ -1,10 +1,17 @@
 import mongoose, { Schema } from 'mongoose'
 
 const BookingSchema = new Schema({
-  name: {
+  firstname: {
     type: String,
     required: true
   },
+
+  lastname: {
+    type: String,
+    required: true
+
+  },
+
   email: {
     type: String,
     required: true

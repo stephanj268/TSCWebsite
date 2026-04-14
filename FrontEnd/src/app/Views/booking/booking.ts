@@ -39,51 +39,43 @@ interface BookingForm {
   styleUrl: './booking.css',
 })
 export class BookingComponent {
+  firstname: string = '';
+  lastname: string = '';
+  email: string = '';
+  phone: string = '';
+  passengers: number = 1;
+  tourType: string = 'default';
+  pickupLocation: string = '';
+  specialRequests: boolean = false;
 
   plainFooter = 'plain extra footer';
   footerRender = (): string => 'extra footer';
 
   date = null;
 
-  form: BookingForm = {
-    name: '',
-    email: '',
-    phone: '',
-    date: '',
-    time: '',
-    passengers: 1,
-    tourType: '',
-    pickupLocation: '',
-    specialRequests: ''
-  };
-
   successMessage: string = '';
   errorMessage: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private bookingservice: BookingService) { }
 
   onSubmit() {
-    this.http.post('/api/bookings', this.form).subscribe(
-      response => {
-        this.successMessage = 'Booking submitted successfully! Check your email for confirmation.';
-        this.errorMessage = '';
-        this.form = {
-          name: '',
-          email: '',
-          phone: '',
-          date: '',
-          time: '',
-          passengers: 1,
-          tourType: '',
-          pickupLocation: '',
-          specialRequests: ''
-        };
-      },
-      error => {
-        this.errorMessage = 'Failed to submit booking.';
-        this.successMessage = '';
-      }
-    );
+    const build = {
+      firstname: this.firstname,
+      lastname: this.lastname,
+      email: this.email,
+      phone: this.phone,
+      passengers: this.passengers,
+      tourType: this.tourType,
+      pickupLocation: this.pickupLocation,
+      specialRequests: this.specialRequests
+
+    };
+
+    this.bookingservice.createBooking(build).subscribe((data) => {
+      console.log(data);
+
+    })
+
   }
 
   onChange(result: Date): void {

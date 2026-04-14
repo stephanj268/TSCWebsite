@@ -4,6 +4,6 @@ import { router as bookingRouter } from '../Services/booking/booking.controller.
 
 const router = express.Router()
 
-router.use('/booking', bookingRouter);
+router.use('booking', bookingRouter);
 
-export {router}
+export {router};

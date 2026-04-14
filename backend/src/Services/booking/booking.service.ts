@@ -1,7 +1,6 @@
 import express, { type Request, type Response } from 'express';
 import { BookingModule } from '../../Modules/bookingModule.ts';
 import type { IBooking } from './booking.model.ts';
-import { error } from 'node:console';
 
 
 export async function getAllBookings(req: Request, res: Response) {
@@ -20,7 +19,8 @@ export async function getAllBookings(req: Request, res: Response) {
 export async function createBooking(req: Request, res: Response) {
     try {
         const newBooking = new BookingModule<IBooking>({
-            name: req.body.name,
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
             email: req.body.email,
             phonenumber: req.body.phonenumber,
             type: req.body.type,
@@ -30,7 +30,7 @@ export async function createBooking(req: Request, res: Response) {
             date: req.body.date,
         });
 
-        if (!newBooking.name || !newBooking.email || !newBooking.phonenumber) {
+        if (!newBooking.firstname || !newBooking.lastname || !newBooking.email || !newBooking.phonenumber) {
             res.status(400).json(`Name field is empty`)
             return
         }
@@ -54,7 +54,7 @@ export async function createBooking(req: Request, res: Response) {
         // });
 
     } catch (err) {
-        res.status(400).json('Error Creating Booking');
+        res.status(400).json( {message: `Error Creating Booking: ${err}`});
     }
 
 }
@@ -68,7 +68,7 @@ export async function updateBooking(id: any, req: Request, res: Response) {
             return;
         }
 
-        res.json(`Sucessfully Updated ${booking.name}`);
+        res.status(200).json(`Sucessfully Updated ${booking.firstname} ${booking.lastname}`);
 
     } catch (err) {
         res.status(400).json(`Error Updating ${id}`);
@@ -87,7 +87,7 @@ export async function deleteBooking(id: any, req: Request, res: Response) {
             return
         }
 
-        res.json(`deleted ${booking.name}`);
+        res.json(`deleted ${booking.firstname} ${booking.lastname}`);
 
     } catch (err) {
         res.status(400).json(`Error Deleting booking`);
