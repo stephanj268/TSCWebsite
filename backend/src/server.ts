@@ -4,6 +4,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import { router as ApiRoutes } from './Routes/index.ts';
 import { database } from '../config/database.ts';
+
 //import nodemailer from nodemailer;
 
 
