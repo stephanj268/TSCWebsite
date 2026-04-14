@@ -1,0 +1,57 @@
+.booking-form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #f0f8ff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    display: block;
+}
+
+input, select {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:disabled {
+    background-color: #28a745;
+    cursor: not-allowed;
+    margin-top: 15px;
+}
+
+.success-message {
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+.error-message {
+    margin-top: 20px;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}   

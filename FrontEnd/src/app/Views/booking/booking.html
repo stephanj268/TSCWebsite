@@ -1,0 +1,76 @@
+<div class="booking-form-container">
+
+    <h1>Book Your Next Journey</h1>
+    <p>Fill out the form below to book your next tour with us. We look forward to providing you with an unforgettable experience!</p>
+ <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
+
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="form.name" required>
+    </div>
+
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="form.email" required>
+    </div>
+
+
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" [(ngModel)]="form.phone" required>
+    </div>
+
+
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" id="date" [(ngModel)]="form.date" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="time">Time:</label>
+      <input type="time" id="time" [(ngModel)]="form.time" required>
+    </div>
+
+    <div class="form-group">
+      <label for="passengers">Passengers:</label>
+      <input type="number" id="passengers" [(ngModel)]="form.passengers" min="1" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="serviceType">Service Type:</label>
+      <select id="serviceType" name="serviceType" [(ngModel)]="form.serviceType" required (change)="onServiceTypeChange($event)">
+        <option value="">Select a service type</option>
+        <option value="city-tour">Tour</option>
+        <option value="nature-tour">Taxi Service</option>
+      </select>
+    </div>
+    <div class="form-group" *ngIf="form.serviceType === 'tour'">
+      <label for="tourType">Tour Type:</label>
+      <select id="tourType" name="tourType" [(ngModel)]="form.tourType" required>
+        <option value="">Select a Tour</option>
+        <option value="half-day tour">Half-Day Tour</option>
+        <option value="full-day tour">Full-Day Tour</option>
+        <option value="custom-tour">Custom Tour</option>
+      </select>
+    </div>
+
+    <div class="form-group" *ngIf="form.serviceType === 'taxi'">
+      <label for="taxiType">Taxi Type:</label>
+      <select id="taxiType" name="taxiType" [(ngModel)]="form.taxiType" required>
+        <option value="">Select a taxi type</option>
+        <option value="vip airport transfer">Vip Airport Transfer</option>
+        <option value="stingraycity">Stingray City</option>
+        <option value="resturant">Restaurant</option>
+      </select>
+
+      <button type="submit" [disabled]="!bookingForm.form.valid">Submit</button>
+    </div>
+
+    </form>
+
+    <p *ngIf="submissionSuccess" class="success-message">{{ successMessage }}</p>
+    <p *ngIf="submissionError" class="error-message">{{ errorMessage }}</p>    
+
+</div>
