@@ -5,6 +5,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { SliderComponent } from './Views/slider/slider';
 
 import { Footer } from './Views/footer/footer';
+
+import { BookingService } from './service/booking/booking.service';
 import { TaxiService } from './service/taxi.service';
 import { TourService } from './service/tours.service';
 import { Operationservice } from './Directives/Operation-Time/Operationservice';
@@ -16,7 +18,8 @@ import { Operationservice } from './Directives/Operation-Time/Operationservice';
   providers: [
     TaxiService,
     Operationservice,
-    TourService
+    TourService,
+    BookingService
   ],
 
 

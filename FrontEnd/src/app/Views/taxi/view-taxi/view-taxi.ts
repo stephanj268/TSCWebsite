@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
 import { ITaxi, TaxiService } from '../../../service/taxi.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { OperationTimeDirectvie } from '../../../Directives/Operation-Time/OperationTimeDirective';
 import { OperationHidden } from '../../../Directives/Operation-Time/OperationTimeHiddenDirective';
 
 @Component({
   selector: 'app-view-taxi',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './view-taxi.html',
   styleUrl: './view-taxi.css',
 })

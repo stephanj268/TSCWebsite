@@ -1,5 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { BookingService } from '../../service/booking/booking.service';
+
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputModule } from 'ng-zorro-antd/input';
+
 
 interface BookingForm {
   name: string;
@@ -15,7 +20,7 @@ interface BookingForm {
 
 @Component({
   selector: 'app-booking',
-  imports: [],
+  imports: [NzInputModule, NzButtonModule],
   templateUrl: './booking.html',
   styleUrl: './booking.css',
 })

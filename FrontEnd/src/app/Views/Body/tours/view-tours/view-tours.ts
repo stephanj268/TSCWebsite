@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
@@ -9,7 +9,7 @@ import { TourService } from '../../../../service/tours.service';
 
 @Component({
   selector: 'app-view-tours',
-  imports: [NzIconModule],
+  imports: [NzIconModule, RouterLink],
   templateUrl: './view-tours.html',
   styleUrl: './view-tours.css',
 })

@@ -11,6 +11,7 @@ import { listenerCount } from 'process';
 import { ViewToursComponent } from './Views/Body/tours/view-tours/view-tours';
 import { ListTaxiComponenet } from './Views/taxi/list-taxi/list-taxi';
 import { ViewTaxiComponent } from './Views/taxi/view-taxi/view-taxi';
+import { BookingComponent } from './Views/booking/booking';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -31,6 +32,10 @@ export const routes: Routes = [
             { path: 'view/:id', component: ViewToursComponent },
 
         ]
+    },
+
+    {
+        path: 'booking', component: BookingComponent
     },
 
     { path: '**', component: ErrorPage },
