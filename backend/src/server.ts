@@ -8,6 +8,7 @@ import { database } from '../config/database.ts';
 
 
 const app = express();
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
@@ -19,6 +20,11 @@ const PORT = 3000;
 //use JSON
 app.use(express.json());
 
+
+app.use('/', async (req, res) => {
+    res.send("kkkk")
+
+})
 
 //Use api
 app.use('/', ApiRoutes);
@@ -93,8 +99,7 @@ const ADMIN_EMAIL = 'spaceship1268@gmail.com';
 
 mongoose.connect(database).then( () => {
     console.log('[SERVER STARTED ON ]', database)
-})
-
+});
 
 //Listen to port 3000 
 app.listen(PORT, () => {
