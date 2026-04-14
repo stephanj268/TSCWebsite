@@ -67,9 +67,17 @@ export class TourService {
 
     ]
 
+
+
+
     getToursEvent = new EventEmitter<ITours>
 
     onGetToursEvent(data: ITours) {
         this.getToursEvent.emit(data);
     }
+
+    getImages() {
+        return this;
+    }
+
 }

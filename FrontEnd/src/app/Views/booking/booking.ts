@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 
 import { BookingService } from '../../service/booking/booking.service';
 
@@ -15,7 +15,11 @@ import { en_US, NzI18nService, zh_CN } from 'ng-zorro-antd/i18n';
 
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
-import { Console, error } from 'console';
+import { validateEmail } from '../../../environment';
+
+import { InputTextModule } from 'primeng/inputtext';
+
+
 
 interface BookingForm {
   name: string;
@@ -27,6 +31,7 @@ interface BookingForm {
   tourType: string;
   pickupLocation: string;
   specialRequests: string;
+
 }
 
 @Component({
@@ -39,12 +44,15 @@ interface BookingForm {
     NzSelectModule,
 
     ToastModule,
+    InputTextModule,
   ],
   providers: [MessageService],
   templateUrl: './booking.html',
   styleUrl: './booking.css',
 })
-export class BookingComponent {
+export class BookingComponent implements OnInit {
+
+  booking: any;
 
   private messageService = inject(MessageService);
 
@@ -67,6 +75,10 @@ export class BookingComponent {
 
   constructor(private bookingservice: BookingService) { }
 
+  ngOnInit(): void {
+    this.booking = this.bookingservice
+  }
+
   onSubmit() {
     const build = {
       firstname: this.firstname,
@@ -81,9 +93,40 @@ export class BookingComponent {
 
     };
 
+    if (!build.firstname || !build.lastname) {
+      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Incomplete name fields!', styleClass: 'blue' });
+    }
+
+    if (!validateEmail(build.email)) {
+      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Email' });
+    }
+
+    if (!build.phonenumber || typeof build.phonenumber != "number") {
+      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number Field Invalid!' });
+    }
+
+    if (!build.tourType) {
+      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Tour Type field Empty!' });
+    }
+
+    if (build.maxPersons < 1) {
+      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Persons!' });
+    }
+
+    if (!build.startDate) {
+      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Start Date field Empty!' });
+    }
+
+    if (!build.maxPersons) {
+      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number field Empty!' });
+    }
+
+
+
     console.log(build);
 
     this.bookingservice.createBooking(build).subscribe((data) => {
+
       this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
     }, (error) => {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error}` });

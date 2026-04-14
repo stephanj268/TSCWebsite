@@ -18,7 +18,10 @@ export const appConfig: ApplicationConfig = {
   providers: [
     providePrimeNG({
       theme: {
-        preset: Aura
+        preset: Aura,
+        options: {
+          darkModeSelector: false  // ✅ disables dark mode, forces light
+        }
       }
     }),
 
