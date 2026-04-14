@@ -35,6 +35,12 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.card p {
+    padding: 0px 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px 0px;
+    font-size: large;
+}
 .image-banner {
     padding: 5px 5px 5px 5px;
     object-fit: contain;
