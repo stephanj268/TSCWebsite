@@ -1,10 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+
 import { BookingService } from '../../service/booking/booking.service';
 
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 
+import { FormsModule } from '@angular/forms';
+
+import { getISOWeek } from 'date-fns';
+
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { en_US, NzI18nService, zh_CN } from 'ng-zorro-antd/i18n';
 
 interface BookingForm {
   name: string;
@@ -20,11 +27,21 @@ interface BookingForm {
 
 @Component({
   selector: 'app-booking',
-  imports: [NzInputModule, NzButtonModule],
+  imports: [
+    NzInputModule,
+    NzButtonModule,
+    NzDatePickerModule,
+    FormsModule
+  ],
   templateUrl: './booking.html',
   styleUrl: './booking.css',
 })
 export class BookingComponent {
+
+  plainFooter = 'plain extra footer';
+  footerRender = (): string => 'extra footer';
+
+  date = null;
 
   form: BookingForm = {
     name: '',
@@ -41,7 +58,7 @@ export class BookingComponent {
   successMessage: string = '';
   errorMessage: string = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   onSubmit() {
     this.http.post('/api/bookings', this.form).subscribe(
@@ -65,5 +82,9 @@ export class BookingComponent {
         this.successMessage = '';
       }
     );
+  }
+
+  onChange(result: Date): void {
+    console.log('onChange: ', result);
   }
 }

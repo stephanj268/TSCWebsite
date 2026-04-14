@@ -1,6 +1,11 @@
+nz-date-picker, nz-range-picker {
+    margin: 0 8px 12px 0;
+}
+
 .container {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .form {
@@ -13,6 +18,10 @@
 
 .form-content {
     padding: 20px 20px 20px 20px;
+}
+
+.form-label-int {
+    width: 60px;
 }
 
 .booking-form-container {
@@ -39,7 +48,8 @@
     font-size: 16px;
 }
 
-input, select {
+input,
+select {
     padding: 10px;
     margin-top: 20px;
     border: 1px solid #ccc;
@@ -65,7 +75,7 @@ button {
 }
 
 button:hover {
-    
+
     background-color: #0667cf;
 }
 
@@ -87,4 +97,4 @@ button:disabled {
     color: red;
     font-weight: bold;
     text-align: center;
-}   
+}
