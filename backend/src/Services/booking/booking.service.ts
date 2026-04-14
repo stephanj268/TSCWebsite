@@ -11,7 +11,7 @@ export async function getAllBookings(req: Request, res: Response) {
 
 
     } catch (err) {
-        throw res.json(err);
+        res.status(500).json(err);
     }
 
 }
