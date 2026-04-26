@@ -97,7 +97,13 @@
 
 
 
-      <button class="submit-button" (click)="onSubmit()">Submit</button>
+      @if(serviceType == "Taxi" ){
+      <button class="submit-button" (click)="onTaxiServiceSubmit()">Submit</button>
+      } @else {
+      <button class="submit-button" (click)="onTourServiceSubmit()">Submit</button>
+
+      }
+
     </div>
 
 

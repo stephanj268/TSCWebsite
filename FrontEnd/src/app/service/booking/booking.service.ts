@@ -12,24 +12,32 @@ export class BookingService {
         private http: HttpClient
     ){
 
-    }
+    };
 
 
-    createBooking(data: any){
+    createTaxiBooking(data: any){
         const httpheader = new HttpHeaders({
             'Content-Type': 'application/json'
         });
         
-        return this.http.post(`${URL}:${PORT}/booking`, data, {headers: httpheader})
-    }
+        return this.http.post(`${URL}:${PORT}/booking/taxi`, data, {headers: httpheader})
+    };
+
+    createTourBooking(data: any){
+        const httpheader = new HttpHeaders({
+            'Content-Type': 'application/json'
+        });
+        
+        return this.http.post(`${URL}:${PORT}/booking/tour`, data, {headers: httpheader})
+    };
 
 
 
     set _FieldError(error: string) {
         error = error
-    }
+    };
 
     get FieldError() {
         return this._FieldError
-    }
+    };
 }

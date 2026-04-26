@@ -16,17 +16,60 @@ export async function getAllBookings(req: Request, res: Response) {
 
 }
 
-export async function createBooking(req: Request, res: Response) {
+export async function createTaxiBooking(req: Request, res: Response) {
     try {
         const newBooking = new BookingModule<IBooking>({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
             phonenumber: req.body.phonenumber,
-            tourType: req.body.tourType,
             maxPersons: req.body.maxPersons,
             serviceType: req.body.serviceType,
             taxiType: req.body.taxiType,
+            startDate: req.body.startDate,
+            endDate: req.body.endDate,
+            createdAt: req.body.createdAt
+        });
+
+        if (!newBooking.firstname || !newBooking.lastname || !newBooking.email || !newBooking.phonenumber) {
+            res.status(400).json(`Missing fields are empty!`)
+            return
+        }
+
+        await newBooking.save();
+        res.json(newBooking);
+
+
+        // await transporter.sendMail({
+        //     from: 'booking.email',
+        //     to: 'admin@gmail.com',
+        //     subject: 'New Tour Booking',
+        //     text: 'New Booking',
+
+        //     Date: ${ booking.date }
+        //     Name: ${ booking.name }
+        //     Email: ${ booking.email }
+        //     Tour: ${ booking.tour }
+        //     Pickup: ${ booking.pickup }
+        //     Phone: ${ booking.phone }
+        // });
+
+    } catch (err) {
+        res.status(400).json( {message: `Error Creating Booking: ${err}`});
+    }
+
+}
+
+export async function createTourBooking(req: Request, res: Response) {
+    try {
+        const newBooking = new BookingModule<IBooking>({
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            phonenumber: req.body.phonenumber,
+            maxPersons: req.body.maxPersons,
+            serviceType: req.body.serviceType,
+            tourType: req.body.tourType,
             startDate: req.body.startDate,
             endDate: req.body.endDate,
             createdAt: req.body.createdAt

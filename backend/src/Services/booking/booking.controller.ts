@@ -1,5 +1,5 @@
 import express, {type Request, type Response } from 'express';
-import { getAllBookings, createBooking, deleteBooking, updateBooking } from './booking.service.ts';
+import { getAllBookings, createTaxiBooking, createTourBooking, deleteBooking, updateBooking } from './booking.service.ts';
 
 const router = express.Router();
 
@@ -8,9 +8,14 @@ router.get('/', (req: Request, res: Response) => {
     getAllBookings(req, res);
 });
 
-// create
-router.post('/', (req: Request, res: Response) => {
-    createBooking(req, res);
+// create taxi
+router.post('/taxi', (req: Request, res: Response) => {
+    createTaxiBooking(req, res);
+});
+
+// create tour
+router.post('/tour', (req: Request, res: Response) => {
+    createTourBooking(req, res);
 });
 
 router.put('/:id', (req: Request, res: Response) => {

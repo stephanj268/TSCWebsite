@@ -82,7 +82,7 @@ export class BookingComponent implements OnInit {
     this.booking = this.bookingservice
   }
 
-  onSubmit() {
+  onTaxiServiceSubmit() {
     const build = {
       firstname: this.firstname,
       lastname: this.lastname,
@@ -122,23 +122,24 @@ export class BookingComponent implements OnInit {
       return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Service type!' });
     }
 
-    if (build.tourType == "default") {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Tour Type field Empty!' });
-    }
-
     if (build.taxiType == 'default') {
       return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Taxi Type is Empty!' });
     }
 
     console.log(build);
 
-    this.bookingservice.createBooking(build).subscribe((data) => {
+    this.bookingservice.createTaxiBooking(build).subscribe((data) => {
       console.log(data)
       this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
     }, (error) => {
       console.log(error)
       this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error}` });
     });
+
+  };
+
+
+  onTourServiceSubmit() {
 
   }
 
