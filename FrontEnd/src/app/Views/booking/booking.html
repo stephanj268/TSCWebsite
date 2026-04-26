@@ -56,7 +56,7 @@
       <div class="form-item">
         <label class="form-label">Service Type</label>
 
-        <nz-select [ngModel]="serviceType">
+        <nz-select [ngModel]="serviceType" (ngModelChange)="onServiceTypeChange($event)">
           <nz-option nzValue="default" nzLabel="Select a service type" />
           <nz-option nzValue="city-tour" nzLabel="city-tour" />
           <nz-option nzValue="nature-tour" nzLabel="nature-tour" />
@@ -67,7 +67,7 @@
       <div class="form-item">
         <label class="form-label">Tour Type</label>
 
-        <nz-select [(ngModel)]="tourType">
+        <nz-select [(ngModel)]="tourType" (ngModelChange)="onTourTypeChange($event)">
           <nz-option nzValue="default" nzLabel="Select a Tour" />
           <nz-option nzValue="Half-Day Tour" nzLabel="Half-Day Tour" />
           <nz-option nzValue="Full-Day Tour" nzLabel="Full-Day Tour" />
@@ -79,7 +79,7 @@
         <label class="form-label">Taxi Type</label>
 
 
-        <nz-select [ngModel]="taxiType">
+        <nz-select [ngModel]="taxiType" (ngModelChange)="onTaxiTypeChange($event)">
           <nz-option nzValue="default" nzLabel="Select a taxi type" />
           <nz-option nzValue="Vip Airport Transfer" nzLabel="Vip Airport Transfer" />
           <nz-option nzValue="Vip Airport Transfer" nzLabel="Vip Airport Transfer" />

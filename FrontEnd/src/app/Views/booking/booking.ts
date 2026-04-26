@@ -106,7 +106,7 @@ export class BookingComponent implements OnInit {
       return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Email' });
     }
 
-    if (!build.phonenumber || typeof build.phonenumber != "number") {
+    if (!build.phonenumber && build.phonenumber.length >= 5) {
       return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number Field Invalid!' });
     }
 
@@ -119,7 +119,7 @@ export class BookingComponent implements OnInit {
     }
 
     if (build.serviceType == 'default') {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number field Empty!' });
+      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Service type!' });
     }
 
     if (build.tourType == "default") {
@@ -127,7 +127,7 @@ export class BookingComponent implements OnInit {
     }
 
     if (build.taxiType == 'default') {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number field Empty!' });
+      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Taxi Type is Empty!' });
     }
 
     console.log(build);
@@ -145,4 +145,19 @@ export class BookingComponent implements OnInit {
   onChange(result: Date): void {
     console.log('onChange: ', result);
   }
+
+  onServiceTypeChange(data: any) {
+    this.serviceType = data
+
+  }
+
+  onTourTypeChange(data: any) {
+    this.tourType = data
+  }
+
+  onTaxiTypeChange(data: any) {
+    this.taxiType = data
+  }
+
+
 }
