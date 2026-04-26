@@ -61,7 +61,10 @@ export class BookingComponent implements OnInit {
   email: string = '';
   phone: string = '';
   passengers: number = 1;
+  serviceType: string = 'default';
+  taxiType: string = 'default';
   tourType: string = 'default';
+
   pickupLocation: string = '';
   specialRequests: boolean = false;
 
@@ -87,8 +90,10 @@ export class BookingComponent implements OnInit {
       phonenumber: this.phone,
       tourType: this.tourType,
       maxPersons: this.passengers,
-      startDate: this.date ? new Date(this.date) : new Date(),
-      endDate: this.date ? new Date(this.date) : new Date(),
+      serviceType: this.serviceType,
+      taxiType: this.taxiType,
+      startDate: this.date,
+      endDate: this.date,
       createdAt: this.date ? new Date(this.date) : new Date()
 
     };
@@ -105,32 +110,35 @@ export class BookingComponent implements OnInit {
       return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number Field Invalid!' });
     }
 
-    if (!build.tourType) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Tour Type field Empty!' });
+    if (!build.startDate) {
+      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Date field Empty!' });
     }
 
     if (build.maxPersons < 1) {
       return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Persons!' });
     }
 
-    if (!build.startDate) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Start Date field Empty!' });
-    }
-
-    if (!build.maxPersons) {
+    if (build.serviceType == 'default') {
       return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number field Empty!' });
     }
 
+    if (build.tourType == "default") {
+      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Tour Type field Empty!' });
+    }
 
+    if (build.taxiType == 'default') {
+      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number field Empty!' });
+    }
 
     console.log(build);
 
-    this.bookingservice.createBooking(build).subscribe((data) => {
+    // this.bookingservice.createBooking(build).subscribe((data) => {
 
-      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
-    }, (error) => {
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error}` });
-    });
+    //   this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
+    // }, (error) => {
+    //   console.log(error)
+    //   this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error}` });
+    // });
 
   }
 

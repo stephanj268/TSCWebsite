@@ -25,6 +25,8 @@ export async function createBooking(req: Request, res: Response) {
             phonenumber: req.body.phonenumber,
             tourType: req.body.tourType,
             maxPersons: req.body.maxPersons,
+            serviceType: req.body.serviceType,
+            taxiType: req.body.taxiType,
             startDate: req.body.startDate,
             endDate: req.body.endDate,
             createdAt: req.body.createdAt

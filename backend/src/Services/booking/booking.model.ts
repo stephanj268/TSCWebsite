@@ -5,8 +5,10 @@ export interface IBooking {
     phonenumber?: string;
     tourType: string;
     maxPersons: number;
+    serviceType: string;
+    taxiType: string;
     startDate: Date;
-    endDate:Date
+    endDate:Date;
     createdAt: Date;
 
     
