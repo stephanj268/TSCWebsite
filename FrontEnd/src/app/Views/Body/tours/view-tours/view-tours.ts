@@ -16,10 +16,11 @@ import { TourService } from '../../../../service/tours.service';
 })
 export class ViewToursComponent implements OnInit {
   tour: any;
+  tourIncludedDetails: any = [];
   browserId: any;
 
   private photoService = inject(TourService);
-  
+
   images: any = model([]);
   responsiveOptions?: any[];
 
@@ -34,12 +35,19 @@ export class ViewToursComponent implements OnInit {
 
     this.tourservice.getToursEvent.subscribe(() => {
       this.tour = this.tour.filter((tour: any) => { return tour._id == this.browserId });
-      this.images.set(this.tour.img)
+      this.images.set(this.tour.img);
+
+      console.log(this.tour[0].tourOptions)
+
+      for (let i = 0; i <= this.tour[0].tourOptions.length; i++) {
+        let data = {label: this.tour[0].tourOptions[i].label};
+        this.tourIncludedDetails.push(data);
+      }
+
+
     });
 
-    this.tourservice.onGetToursEvent(this.tour)
-
-    
+    this.tourservice.onGetToursEvent(this.tour);
 
   }
 

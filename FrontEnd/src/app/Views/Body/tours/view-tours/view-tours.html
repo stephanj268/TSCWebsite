@@ -13,8 +13,8 @@
     <div class="item">
         <div class="item-block">
 
-            <div style="padding-left: 10px; padding-right: 10px; width: 600px">
-                <h1 style="margin-top: 50px; font-size: 30px;">{{tour[0].name}}</h1>
+            <div style="padding-left: 10px; padding-right: 10px; width: 100%">
+                <h1 style="margin-top: 50px; font-size: 60px;">{{tour[0].name}}</h1>
 
                 <div class="tour-img">
 
@@ -31,7 +31,9 @@
             </div>
 
 
-            <h2 style="margin-top: 50px; font-size: 30px;">Overview</h2>
+            <h2 style="margin-top: 50px; font-size: 15px; color: #15376f;">Overview -></h2>
+            <h1 style="font-family: 'Times New Roman', Times, serif;">The Perfect Island <br> <span
+                    style="color: rgb(194, 151, 10);">Experience</span></h1>
             <h3>{{tour[0].description}}</h3>
             <ul>
                 <li>A view of beaches to view</li>
@@ -40,12 +42,14 @@
 
 
             <div class="tour-details-border">
-                <h2>Includes</h2>
+                <h2>What's Included?</h2>
 
                 <ul>
-                    <li>An option to view beaches</li>
-                    <li>Lunches (Optional)</li>
+                    @for (item of tourIncludedDetails; track item) {
+                    <li>{{item.label}} </li>
+                    }
                 </ul>
+
 
             </div>
 
@@ -67,16 +71,12 @@
 
         </div>
 
-        <div class="item-block banner">
-            <h1>From {{tour.pr}}</h1>
-        </div>
-
     </div>
 
 
 
 
-    <button class="submit-button" routerLink="../../../booking">Book Now</button>
+    <button class="submit-button" routerLink="../../../booking/{{browserId}}">Book Now</button>
 
 
 </div>

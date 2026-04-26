@@ -5,8 +5,10 @@ export interface ITours {
     name: string,
     img: string,
     alt: string,
-    description: string
+    description: string,
+    slogo?: string,
     type: [],
+    tourOptions?: object[],
     duration: number
 }
 
@@ -22,6 +24,11 @@ export class TourService {
             name: 'Full Day Tours',
             type: [],
             duration: 6,
+            tourOptions: [
+                {label: "lunches"},
+                {label: "24/7 wifi"}
+            ],
+            
             description: 'Make the most of your time with our full day tours, designed for a deeper and more immersive experience. Explore top attractions, hidden gems, and local culture at a relaxed pace, with plenty of time to take in the sights, enjoy activities, and create lasting memories.'
         },
 
@@ -32,7 +39,7 @@ export class TourService {
             name: 'Half Day Tours',
             type: [],
             duration: 4,
-            description: 'Enjoy the perfect balance with our half day tours—ideal for exploring key highlights without taking up your entire day. Discover top sights, local culture, and scenic spots in a well-paced experience that leaves you time to relax or continue your adventures.'
+            description: 'Enjoy the perfect balance with our half day tours ideal for exploring key highlights without taking up your entire day. Discover top sights, local culture, and scenic spots in a well-paced experience that leaves you time to relax or continue your adventures.'
         },
 
         {

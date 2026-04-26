@@ -58,7 +58,7 @@ export async function createTaxiBooking(req: Request, res: Response) {
         // });
 
     } catch (err) {
-        res.status(400).json( {message: `Error Creating Booking: ${err}`});
+        res.status(400).json({ message: `Error Creating Booking: ${err}` });
     }
 
 }
@@ -67,7 +67,7 @@ export async function getTaxiBooking(req: Request, res: Response) {
 
     const allbooking = await TaxiBooking.find();
     res.status(200).json(allbooking)
-    
+
 }
 
 export async function updateTaxiBooking(id: any, req: Request, res: Response) {
@@ -130,6 +130,7 @@ export async function createTourBooking(req: Request, res: Response) {
         }
 
         await newBooking.save();
+
         res.json(newBooking);
 
 
@@ -148,7 +149,7 @@ export async function createTourBooking(req: Request, res: Response) {
         // });
 
     } catch (err) {
-        res.status(400).json( {message: `Error Creating Booking: ${err}`});
+        res.status(400).json({ message: `Error Creating Booking: ${err}` });
     }
 
 }
@@ -157,7 +158,7 @@ export async function getTourBooking(req: Request, res: Response) {
 
     const allbooking = await TourBooking.find();
     res.status(200).json(allbooking)
-    
+
 }
 
 export async function updateTourBooking(id: any, req: Request, res: Response) {
