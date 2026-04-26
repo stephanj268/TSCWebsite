@@ -28,6 +28,12 @@ const BookingSchema = new Schema<IBooking>({
     required: true
   },
 
+
+  serviceType: {
+    type: String,
+    required: true
+  },
+
   startDate: {
     type: Date,
     required: true

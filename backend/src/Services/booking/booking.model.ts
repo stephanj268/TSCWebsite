@@ -2,7 +2,7 @@ export interface IBooking {
     firstname: string;
     lastname: string;
     email: string;
-    phonenumber?: string;
+    phonenumber: string;
     tourType?: string;
     taxiType?: string;
     maxPersons: number;
@@ -11,5 +11,4 @@ export interface IBooking {
     endDate:Date;
     createdAt: Date;
 
-    
 }
