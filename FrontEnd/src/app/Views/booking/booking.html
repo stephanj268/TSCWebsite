@@ -58,23 +58,15 @@
 
         <nz-select [ngModel]="serviceType" (ngModelChange)="onServiceTypeChange($event)">
           <nz-option nzValue="default" nzLabel="Select a service type" />
-          <nz-option nzValue="city-tour" nzLabel="city-tour" />
-          <nz-option nzValue="nature-tour" nzLabel="nature-tour" />
+          <nz-option nzValue="Tour" nzLabel="Tour" />
+          <nz-option nzValue="Taxi" nzLabel="Taxi" />
         </nz-select>
 
       </div>
 
-      <div class="form-item">
-        <label class="form-label">Tour Type</label>
+      @if (serviceType == "default") {
 
-        <nz-select [(ngModel)]="tourType" (ngModelChange)="onTourTypeChange($event)">
-          <nz-option nzValue="default" nzLabel="Select a Tour" />
-          <nz-option nzValue="Half-Day Tour" nzLabel="Half-Day Tour" />
-          <nz-option nzValue="Full-Day Tour" nzLabel="Full-Day Tour" />
-          <nz-option nzValue="Custom Tour" nzLabel="Custom Tour" />
-        </nz-select>
-      </div>
-
+      } @else if(serviceType == "Taxi") {
       <div class="form-item">
         <label class="form-label">Taxi Type</label>
 
@@ -87,6 +79,23 @@
         </nz-select>
 
       </div>
+
+      } @else {
+
+      <div class="form-item">
+        <label class="form-label">Tour Type</label>
+
+        <nz-select [(ngModel)]="tourType" (ngModelChange)="onTourTypeChange($event)">
+          <nz-option nzValue="default" nzLabel="Select a Tour" />
+          <nz-option nzValue="Half-Day Tour" nzLabel="Half-Day Tour" />
+          <nz-option nzValue="Full-Day Tour" nzLabel="Full-Day Tour" />
+          <nz-option nzValue="Custom Tour" nzLabel="Custom Tour" />
+        </nz-select>
+      </div>
+      }
+
+
+
 
       <button class="submit-button" (click)="onSubmit()">Submit</button>
     </div>
