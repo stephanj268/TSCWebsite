@@ -11,7 +11,6 @@ const BookingSchema = new Schema<IBooking>({
   lastname: {
     type: String,
     required: true
-
   },
 
   email: {
@@ -27,7 +26,6 @@ const BookingSchema = new Schema<IBooking>({
     type: Number,
     required: true
   },
-
 
   serviceType: {
     type: String,
