@@ -132,13 +132,13 @@ export class BookingComponent implements OnInit {
 
     console.log(build);
 
-    // this.bookingservice.createBooking(build).subscribe((data) => {
-
-    //   this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
-    // }, (error) => {
-    //   console.log(error)
-    //   this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error}` });
-    // });
+    this.bookingservice.createBooking(build).subscribe((data) => {
+      console.log(data)
+      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
+    }, (error) => {
+      console.log(error)
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error}` });
+    });
 
   }
 
