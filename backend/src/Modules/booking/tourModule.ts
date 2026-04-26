@@ -1,7 +1,8 @@
 import mongoose, { Schema } from 'mongoose'
-import { type IBooking } from '../Services/booking/booking.model.ts';
+import { type IBooking } from '../../Services/booking/booking.model.ts';
 
 const BookingSchema = new Schema<IBooking>({
+
   firstname: {
     type: String,
     required: true
@@ -21,23 +22,28 @@ const BookingSchema = new Schema<IBooking>({
   phonenumber: {
     type: String,
   },
-  tourType: {
-    type: String,
-    required: true
-  },
+
   maxPersons: {
     type: Number,
     required: true
   },
+
   startDate: {
     type: Date,
     required: true
   },
+
+  tourType: {
+    type: String,
+    required: true
+  },
+
   endDate: {
     type: Date,
     required: true
   },
+
 });
 
 
-export const BookingModule = mongoose.model('booking', BookingSchema)
+export const BookingModule = mongoose.model('tourbooking', BookingSchema)

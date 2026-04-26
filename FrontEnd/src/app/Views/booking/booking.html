@@ -74,7 +74,6 @@
         <nz-select [ngModel]="taxiType" (ngModelChange)="onTaxiTypeChange($event)">
           <nz-option nzValue="default" nzLabel="Select a taxi type" />
           <nz-option nzValue="Vip Airport Transfer" nzLabel="Vip Airport Transfer" />
-          <nz-option nzValue="Vip Airport Transfer" nzLabel="Vip Airport Transfer" />
           <nz-option nzValue="Restaurant" nzLabel="Restaurant" />
         </nz-select>
 
@@ -95,13 +94,10 @@
       }
 
 
-
-
       @if(serviceType == "Taxi" ){
       <button class="submit-button" (click)="onTaxiServiceSubmit()">Submit</button>
       } @else {
       <button class="submit-button" (click)="onTourServiceSubmit()">Submit</button>
-
       }
 
     </div>
