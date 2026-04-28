@@ -34,33 +34,34 @@
             <div>
                 <h1>What's Included?</h1>
                 <ul>
-                    
-                    <li>Professional Chauffeur Service: Our experienced and courteous chauffeurs will ensure a safe and comfortable journey to and from the airport.</li>
-                    <li>Luxury Vehicles: Travel in style with our fleet of high-end vehicles, including sedans, SUVs, and limousines, all equipped with modern amenities for your comfort.</li>
-                    <li>24/7 Availability: We understand that flight schedules can be unpredictable, which is why our VIP airport transfer service is available around the clock to accommodate your needs.</li>
-                    <li>Flight Monitoring: We keep track of your flight status to ensure timely pickups and drop-offs, even in the case of delays or early arrivals.</li>
-                    <li>Personalized Service: Whether you need assistance with luggage or have specific preferences for your ride, our team is dedicated to providing a personalized experience tailored to your requirements.</li>
+
+                    @for (item of taxiOptions; track item) {
+                        <li> {{item?.label}}</li>
+                    }
+
                 </ul>
             </div>
-        
-            
+
+
             <div class="section">
                 <div>
                     <h1>Meeting And Pickup</h1>
-                    <p>Our chauffeurs will meet you at the airport with a personalized sign, assist you with your luggage, and ensure a smooth transition to your luxury vehicle for a comfortable ride to your destination.</p>
+                    <p>Our chauffeurs will meet you at the airport with a personalized sign, assist you with your
+                        luggage, and ensure a smooth transition to your luxury vehicle for a comfortable ride to your
+                        destination.</p>
                 </div>
 
 
-              <div class="cta">
-                <button routerLink="../../../booking">Book Now</button>
-              </div>  
-    </div>
+                <div class="cta">
+                    <button routerLink="../../../booking">Book Now</button>
+                </div>
+            </div>
 
-    
-<!-- <app-shared-map 
+
+            <!-- <app-shared-map 
   *ngIf="taxi?.lat && taxi?.lng"
   [lat]="taxi.lat" 
   [lng]="taxi.lng">
 </app-shared-map> -->
 
-</div>
+        </div>
