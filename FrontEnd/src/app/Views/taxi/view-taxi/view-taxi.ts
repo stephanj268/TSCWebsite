@@ -39,7 +39,7 @@ export class ViewTaxiComponent implements OnInit {
 
     this.taxi = this.taxiService.getTaxiById(id);
 
-    for(let i = 0; i<this.taxi.taxiOptions.length; i++){
+    for(let i = 0; i < this.taxi.taxiOptions.length; i++){
       this.taxiOptions.push(this.taxi.taxiOptions[i])
     }
 

@@ -37,7 +37,6 @@ export class TaxiService {
                 { label: '24/7 Availability: We understand that flight schedules can be unpredictable, which is why our VIP airport transfer service is available around the clock to accommodate your needs.' },
                 { label: 'Flight Monitoring: We keep track of your flight status to ensure timely pickups and drop-offs, even in the case of delays or early arrivals.' },
                 { label: 'Personalized Service: Whether you need assistance with luggage or have specific preferences for your ride, our team is dedicated to providing a personalized experience tailored to your requirements.' }
-
             ]
 
         },
