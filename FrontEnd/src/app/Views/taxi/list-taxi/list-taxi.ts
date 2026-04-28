@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { TaxiService, ITaxi } from '../../../service/taxi.service';
 import { MapComponent } from '../../../shared/map/map';
 import { SliderComponent } from '../../slider/slider';
 
-
+import { SearchFilter } from '../../Body/search-filter/search-filter';
 
 
 @Component({
   selector: 'app-list-taxi',
   templateUrl: './list-taxi.html',
+  imports: [SearchFilter, SliderComponent, RouterLink],
   styleUrl: './list-taxi.css',
 })
 export class ListTaxiComponenet implements OnInit {
