@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { TaxiService, ITaxi } from '../../../service/taxi.service';
+import { MapComponent } from '../../../shared/map/map';
  
 @Component({
   selector: 'app-view-taxi',
   templateUrl: './view-taxi.html',
   styleUrl: './view-taxi.css',
+  imports: [MapComponent]
 })
 export class ViewTaxiComponent implements OnInit {
  

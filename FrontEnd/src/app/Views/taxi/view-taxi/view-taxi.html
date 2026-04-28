@@ -48,10 +48,10 @@
       </div>
  
       @if (taxi?.lat && taxi?.lng) {
-        <app-shared-map
-          [lat]="taxi!.lat"
-          [lng]="taxi!.lng">
-        </app-shared-map>
+        <app-map
+          [lat]="taxi!.lat!"
+          [lng]="taxi!.lng!">
+        </app-map>
       }
  
     </div>
