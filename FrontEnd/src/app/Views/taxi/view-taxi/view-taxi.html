@@ -36,7 +36,7 @@
                 <ul>
 
                     @for (item of taxiOptions; track item) {
-                        <li> {{item?.label}}</li>
+                    <li> {{item?.label}}</li>
                     }
 
                 </ul>
@@ -53,15 +53,12 @@
 
 
                 <div class="cta">
-                    <button routerLink="../../../booking">Book Now</button>
+                    <button routerLink="../../booking">Book Now</button>
                 </div>
             </div>
 
 
-            <!-- <app-shared-map 
-  *ngIf="taxi?.lat && taxi?.lng"
-  [lat]="taxi.lat" 
-  [lng]="taxi.lng">
-</app-shared-map> -->
+            <app-map [lat]="taxi.lat" [lng]="taxi.lng">
+            </app-map>
 
         </div>

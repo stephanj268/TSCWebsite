@@ -3,12 +3,11 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { MapComponent } from '../../../shared/map/map';
 import { TaxiService, ITaxi } from '../../../service/taxi.service';
-
 @Component({
   selector: 'app-view-taxi',
   templateUrl: './view-taxi.html',
+  imports: [MapComponent],
   styleUrl: './view-taxi.css',
-  imports: [MapComponent]
 })
 
 

@@ -30,6 +30,6 @@ export class ListTaxiComponenet implements OnInit {
 
   viewDetails(id: number) {
   console.log('Navigating with ID:', id); //debug
-  this.router.navigate(['/view-taxi', id]);
+  this.router.navigate(['/taxi/view', id]);
 }
 }
