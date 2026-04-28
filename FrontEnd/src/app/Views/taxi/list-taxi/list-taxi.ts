@@ -1,43 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-
-import { NzButtonComponent, NzButtonModule, NzButtonSize } from "ng-zorro-antd/button";
-import { NzIconModule } from 'ng-zorro-antd/icon';
-import { TaxiService } from '../../../service/taxi.service';
-import { ITaxi } from '../../../service/taxi.service';
-
-import { SearchFilter } from '../../Body/search-filter/search-filter';
-import { RouterLink } from "@angular/router";
+import { Router } from '@angular/router';
+import { TaxiService, ITaxi } from '../../../service/taxi.service';
+import { MapComponent } from '../../../shared/map/map';
 import { SliderComponent } from '../../slider/slider';
+
+
+
 
 @Component({
   selector: 'app-list-taxi',
-  imports: [
-    NzButtonModule,
-    SearchFilter,
-    RouterLink,
-    SliderComponent,
-    NzIconModule
-  ],
   templateUrl: './list-taxi.html',
   styleUrl: './list-taxi.css',
 })
 export class ListTaxiComponenet implements OnInit {
 
-  tours?: any;
+  
 
-  constructor(private tourservice: TaxiService) {
+  tours: ITaxi[] = [];
 
-  }
+  constructor(
+    private tourservice: TaxiService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    // Set Tours variable to data
     this.tours = this.tourservice.allTours;
-
-    // Subscribe tours to event
-    this.tourservice.getAllTours.subscribe();
-
-    //Getting all Tours
-    this.tourservice.get(this.tours);
   }
 
+  viewDetails(id: number) {
+  console.log('Navigating with ID:', id); //debug
+  this.router.navigate(['/view-taxi', id]);
+}
 }
