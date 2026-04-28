@@ -1,65 +1,60 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-
-import { ITaxi, TaxiService } from '../../../service/taxi.service';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-
-import { OperationTimeDirectvie } from '../../../Directives/Operation-Time/OperationTimeDirective';
-import { OperationHidden } from '../../../Directives/Operation-Time/OperationTimeHiddenDirective';
+import { ActivatedRoute } from '@angular/router';
+import { MapComponent } from '../../../shared/map/map';
+import { TaxiService, ITaxi } from '../../../service/taxi.service';
 
 @Component({
   selector: 'app-view-taxi',
-  imports: [RouterLink],
   templateUrl: './view-taxi.html',
   styleUrl: './view-taxi.css',
+  imports: [MapComponent]
 })
-export class ViewTaxiComponent implements OnInit {
-  tour: any;
-  browserId: any;
 
-  constructor(private taxiservice: TaxiService, private activatedRoute: ActivatedRoute, private location: Location) {
-}
+
+export class ViewTaxiComponent implements OnInit {
+
+  taxi?: ITaxi;
 
   selectedDate: string = '';
   selectedTime: string = '';
 
-  whatsAppLink: string = '12687884966'; 
-  
+  whatsappNumber: string = '12687884966';
+
+  constructor(
+    private taxiService: TaxiService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) {}
+
+ ngOnInit(): void {
+  this.route.paramMap.subscribe(params => {
+    const rawId = params.get('id');
+    const id = Number(rawId);
+
+    console.log('RAW ID:', rawId);
+    console.log('NUMBER ID:', id);
+    console.log('ALL IDS:', this.taxiService.allTours.map(t => t._id));
+
+    this.taxi = this.taxiService.getTaxiById(id);
+
+    console.log('RESULT:', this.taxi);
+  });
+}
+
   goBack(): void {
     this.location.back();
   }
 
   getWhatsAppLink(): string {
-    const message = encodeURIComponent(`Hello, I would like to book a VIP airport transfer.
-    Date: ${this.selectedDate || 'Not selected'} 
-    Time: ${this.selectedTime || 'Not selected'}`);
-    return `https://wa.me/${this.whatsAppLink}?text=${message}`;
+    const message = encodeURIComponent(
+      `Hello, I would like to book:
+      
+Service: ${this.taxi?.name}
+Date: ${this.selectedDate || 'Not selected'}
+Time: ${this.selectedTime || 'Not selected'}`
+    );
+
+    return `https://wa.me/${this.whatsappNumber}?text=${message}`;
   }
-
-
-
-
-  ngOnInit(): void {
-    this.loadBorwserId();
-
-    this.tour = this.taxiservice.allTours
-
-    this.taxiservice.getAllTours.subscribe(() => {
-      this.tour = this.tour.filter((tour: any) => { return tour._id == this.browserId });
-    });
-
-    this.taxiservice.get(this.tour);
-
-  }
-
-
-
-  loadBorwserId() {
-    this.activatedRoute.paramMap.subscribe(params => {
-      const id = params.get("id")
-      this.browserId = id;
-    });
-
-  }
-
 }

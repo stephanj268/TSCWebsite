@@ -1,20 +1,20 @@
 <div class="container">
-    <h1>{{tour[0].name}}</h1>
+    <h1>{{taxi?.name}}</h1>
 
 
     <div class="thumbnail-layout">
-        <img class="img" [src]="tour[0].thumbnail" alt="">
+        <img class="img" [src]="taxi?.thumbnail" alt="">
 
-        <img class="img-topleft" [src]="tour[0].thumbnail" alt="">
+        <img class="img-topleft" [src]="taxi?.thumbnail" alt="">
 
-        <img class="img-bottomright" [src]="tour[0].thumbnail" alt="">
+        <img class="img-bottomright" [src]="taxi?.thumbnail" alt="">
 
 
     </div>
 
     <div>
         <h3>Description</h3>
-        <p>{{tour[0].description}}</p>
+        <p>{{taxi?.description}}</p>
     </div>
 
 
@@ -26,7 +26,7 @@
         </button>
 
         <div class="hero">
-            <h1>{{tour[0].name}}</h1>
+            <h1>{{taxi?.name}}</h1>
             <p> Luxury, Comfort, and Reliability </p>
         </div>
 
@@ -55,20 +55,10 @@
                 <button routerLink="../../../booking">Book Now</button>
               </div>  
     </div>
-
-    <a
-        class="whatsapp-float"
-        href="getWhatsappLink()"
-        target="_blank"
-    >
-    </a>
-
-
-
-
-    <a class="whatsapp-float" href="https://wa.me/12687884966" target="_blank">
-        <span nz-icon nzType="whatsapp" nzTheme="outline"></span>
-        
-    </a>
+<app-shared-map 
+  *ngIf="taxi?.lat && taxi?.lng"
+  [lat]="taxi.lat" 
+  [lng]="taxi.lng">
+</app-shared-map>
 
 </div>
