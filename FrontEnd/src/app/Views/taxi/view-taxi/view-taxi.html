@@ -41,21 +41,39 @@
           <h1>Meeting And Pickup</h1>
           <p>Our chauffeurs will meet you at the airport with a personalized sign, assist you with your luggage, and ensure a smooth transition to your luxury vehicle for a comfortable ride to your destination.</p>
         </div>
- 
-        <div class="cta">
-          <button routerLink="../../../booking">Book Now</button>
+
+        <div class="section">
+            <div>
+                <h1>What's Included?</h1>
+                <ul>
+
+                    @for (item of taxiOptions; track item) {
+                        <li> {{item?.label}}</li>
+                    }
+
+                </ul>
+            </div>
+
+
+            <div class="section">
+                <div>
+                    <h1>Meeting And Pickup</h1>
+                    <p>Our chauffeurs will meet you at the airport with a personalized sign, assist you with your
+                        luggage, and ensure a smooth transition to your luxury vehicle for a comfortable ride to your
+                        destination.</p>
+                </div>
+
+
+                <div class="cta">
+                    <button routerLink="../../../booking">Book Now</button>
+                </div>
+            </div>
+
+
+            <!-- <app-shared-map 
+  *ngIf="taxi?.lat && taxi?.lng"
+  [lat]="taxi.lat" 
+  [lng]="taxi.lng">
+</app-shared-map> -->
+
         </div>
-      </div>
- 
-      @if (taxi?.lat && taxi?.lng) {
-        <app-map
-          [lat]="taxi!.lat!"
-          [lng]="taxi!.lng!">
-        </app-map>
-      }
- 
-    </div>
- 
-  </div>
- 
-</div>

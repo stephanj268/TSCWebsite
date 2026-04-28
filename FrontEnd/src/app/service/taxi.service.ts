@@ -11,6 +11,7 @@ export interface ITaxi {
     alt: string,
     lat?: number,
     lng?: number,
+    taxiOptions?: object[],
 
 }
 
@@ -28,7 +29,15 @@ export class TaxiService {
             thumbnail: 'https://www.royalcaribbean.com/media-assets/pmc/content/dam/shore-x/st-johns-anu/anf1-stingray-and-kayak-adventure/stock-photo-stingrays-at-stingray-city-in-grand-cayman-islands-284293250.jpg?w=1440',
             alt: 'string',
             lat: 17.9000,
-            lng: -61.7500
+            lng: -61.7500,
+
+            taxiOptions: [
+                { label: 'Professional Chauffeur Service: Our experienced and courteous chauffeurs will ensure a safe and comfortable journey to and from the airport.' },
+                { label: 'Luxury Vehicles: Travel in style with our fleet of high-end vehicles, including sedans, SUVs, and limousines, all equipped with modern amenities for your comfort.' },
+                { label: '24/7 Availability: We understand that flight schedules can be unpredictable, which is why our VIP airport transfer service is available around the clock to accommodate your needs.' },
+                { label: 'Flight Monitoring: We keep track of your flight status to ensure timely pickups and drop-offs, even in the case of delays or early arrivals.' },
+                { label: 'Personalized Service: Whether you need assistance with luggage or have specific preferences for your ride, our team is dedicated to providing a personalized experience tailored to your requirements.' }
+            ]
 
         },
 
@@ -43,7 +52,7 @@ export class TaxiService {
             lat: 17.9000,
             lng: -61.7500
 
-        }, 
+        },
 
         {
             _id: 3,
@@ -55,7 +64,7 @@ export class TaxiService {
             alt: 'string',
             lat: 17.9000,
             lng: -61.7500
-        }, 
+        },
 
         {
             _id: 4,
@@ -68,7 +77,7 @@ export class TaxiService {
             lat: 17.9000,
             lng: -61.7500
 
-        }, 
+        },
 
         {
             _id: 5,
@@ -81,7 +90,7 @@ export class TaxiService {
             lat: 17.9000,
             lng: -61.7500
 
-        }, 
+        },
 
 
         {
@@ -95,7 +104,7 @@ export class TaxiService {
             lat: 17.9000,
             lng: -61.7500
 
-        }, 
+        },
 
 
 
@@ -110,7 +119,7 @@ export class TaxiService {
             lat: 17.9000,
             lng: -61.7500
 
-        }, 
+        },
 
 
         {
@@ -124,7 +133,7 @@ export class TaxiService {
             lat: 17.9000,
             lng: -61.7500
 
-        }, 
+        },
 
 
         {
@@ -138,7 +147,7 @@ export class TaxiService {
             lat: 17.9000,
             lng: -61.7500
 
-        }, 
+        },
 
 
 
@@ -153,7 +162,7 @@ export class TaxiService {
             lat: 17.9000,
             lng: -61.7500
 
-        }, 
+        },
 
 
         {
@@ -166,7 +175,7 @@ export class TaxiService {
             alt: 'string',
             lat: 17.9000,
             lng: -61.7500
-        }, 
+        },
 
 
         {
@@ -180,7 +189,7 @@ export class TaxiService {
             lat: 17.9000,
             lng: -61.7500
 
-        }, 
+        },
 
         {
             _id: 13,
@@ -193,7 +202,7 @@ export class TaxiService {
             lat: 17.9000,
             lng: -61.7500
 
-        }, 
+        },
 
 
         {
@@ -228,12 +237,12 @@ export class TaxiService {
 
 
 
-        
+
     ]
 
 
     getTaxiById(id: number): ITaxi | undefined {
-    return this.allTours.find(t => t._id === id);
-}
+        return this.allTours.find(t => t._id === id);
+    }
 
 }
