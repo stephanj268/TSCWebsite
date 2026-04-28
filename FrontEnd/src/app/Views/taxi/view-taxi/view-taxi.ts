@@ -1,60 +1,52 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { MapComponent } from '../../../shared/map/map';
 import { TaxiService, ITaxi } from '../../../service/taxi.service';
-
+ 
 @Component({
   selector: 'app-view-taxi',
   templateUrl: './view-taxi.html',
   styleUrl: './view-taxi.css',
-  imports: [MapComponent]
 })
-
-
 export class ViewTaxiComponent implements OnInit {
-
+ 
   taxi?: ITaxi;
-
+ 
   selectedDate: string = '';
   selectedTime: string = '';
-
+ 
   whatsappNumber: string = '12687884966';
-
+ 
   constructor(
     private taxiService: TaxiService,
     private route: ActivatedRoute,
     private location: Location
   ) {}
-
- ngOnInit(): void {
-  this.route.paramMap.subscribe(params => {
-    const rawId = params.get('id');
-    const id = Number(rawId);
-
-    console.log('RAW ID:', rawId);
-    console.log('NUMBER ID:', id);
-    console.log('ALL IDS:', this.taxiService.allTours.map(t => t._id));
-
-    this.taxi = this.taxiService.getTaxiById(id);
-
-    console.log('RESULT:', this.taxi);
-  });
-}
-
+ 
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const rawId = params.get('id');
+      const id = Number(rawId);
+ 
+      console.log('RAW ID:', rawId);
+      console.log('NUMBER ID:', id);
+      console.log('ALL IDS:', this.taxiService.allTours.map(t => t._id));
+ 
+      this.taxi = this.taxiService.getTaxiById(id);
+ 
+      console.log('RESULT:', this.taxi);
+    });
+  }
+ 
   goBack(): void {
     this.location.back();
   }
-
+ 
   getWhatsAppLink(): string {
     const message = encodeURIComponent(
-      `Hello, I would like to book:
-      
-Service: ${this.taxi?.name}
-Date: ${this.selectedDate || 'Not selected'}
-Time: ${this.selectedTime || 'Not selected'}`
+      `Hello, I would like to book:\n\nService: ${this.taxi?.name ?? 'Unknown'}\nDate: ${this.selectedDate || 'Not selected'}\nTime: ${this.selectedTime || 'Not selected'}`
     );
-
+ 
     return `https://wa.me/${this.whatsappNumber}?text=${message}`;
   }
 }
