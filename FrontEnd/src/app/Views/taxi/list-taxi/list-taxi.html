@@ -4,6 +4,8 @@
  
 <div class="page">
  
+  <app-search-filter></app-search-filter>
+ 
   <h4 class="results-text">Showing {{ tours.length }} results</h4>
  
   <div class="grid">
@@ -34,10 +36,10 @@
               <span class="rating-text">4.5</span>
             </div>
  
+            <button (click)="viewDetails(tour._id)">View More Details</button>
+ 
             <div class="cta">
-              <button class="view-btn" (click)="viewDetails(tour._id)">
-                View More Details
-              </button>
+              <button [routerLink]="['../../booking', tour._id]">Book Now</button>
             </div>
  
           </div>

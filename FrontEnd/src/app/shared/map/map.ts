@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import { Component, OnChanges, Input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
@@ -8,16 +8,20 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   templateUrl: './map.html',
   styleUrl: './map.css',
 })
-export class MapComponent implements OnChanges  {
-  @Input() lat!: number;
-  @Input() lng!: number;
-  mapUrl!: SafeResourceUrl;
+export class MapComponent implements OnChanges, OnInit {
+  @Input() lat?: number;
+  @Input() lng?: number;
+  mapUrl?: SafeResourceUrl;
 
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(private sanitizer: DomSanitizer) { }
 
   ngOnChanges() {
     const url = `https://www.google.com/maps?q=${this.lat},${this.lng}&output=embed`;
-         this.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    this.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+
+  ngOnInit(): void {
+    console.log(this.lat)
   }
 
 }

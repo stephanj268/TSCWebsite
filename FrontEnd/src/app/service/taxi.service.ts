@@ -28,8 +28,8 @@ export class TaxiService {
             available: true,
             thumbnail: 'https://www.royalcaribbean.com/media-assets/pmc/content/dam/shore-x/st-johns-anu/anf1-stingray-and-kayak-adventure/stock-photo-stingrays-at-stingray-city-in-grand-cayman-islands-284293250.jpg?w=1440',
             alt: 'string',
-            lat: 17.9000,
-            lng: -61.7500,
+            lat: 17.10202,
+            lng: -61.72411,
 
             taxiOptions: [
                 { label: 'Professional Chauffeur Service: Our experienced and courteous chauffeurs will ensure a safe and comfortable journey to and from the airport.' },
@@ -49,8 +49,8 @@ export class TaxiService {
             available: true,
             thumbnail: 'https://antigua.news/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-26-at-8.42.36-AM-e1740573825587.jpeg',
             alt: 'string',
-            lat: 17.9000,
-            lng: -61.7500
+            lat: 17.14413,
+            lng: -61.79006
 
         },
 
@@ -87,8 +87,8 @@ export class TaxiService {
             available: true,
             thumbnail: 'https://mediaim.expedia.com/localexpert/307516/388d0227-b286-4590-9ec8-97aced0908ee.jpg',
             alt: 'string',
-            lat: 17.9000,
-            lng: -61.7500
+            lat: 17.04289,
+            lng: -61.82283
 
         },
 
