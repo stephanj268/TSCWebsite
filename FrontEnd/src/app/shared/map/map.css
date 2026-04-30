@@ -1,7 +1,20 @@
-.map-container {
-  position: relative;
-  width: 150%;
-  height: 450px;
+.map-wrapper {
+  width: 100%;
+  height: 100%;
   border-radius: 12px;
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
   border: none;
+  display: block;
+}
+
+.map-wrapper {
+  border: 1px solid #e0dbd4;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
 }
