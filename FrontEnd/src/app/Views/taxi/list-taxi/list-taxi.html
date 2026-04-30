@@ -1,42 +1,54 @@
 <div>
-    <app-slider></app-slider>
+  <app-slider></app-slider>
 </div>
-
-<div class="container">
-    <app-search-filter></app-search-filter>
-
-    <h4>Showing {{this.tours.length}} results</h4>
-
-    <div class="section">
-
-        @for(tour of tours; track tour) {
-
-        <div class="card">
-            <img class="image-banner" [src]="tour?.thumbnail" [alt]="tours.alt">
-
-            <div style="margin: 10px 10px; font-family: Verdana, Geneva, Tahoma, sans-serif ;">
-                <div>
-                    <h1>{{tour.name}}</h1>
-                    <label>{{tour.duration}}h <span nz-icon nzType="field-time" nzTheme="outline"></span></label>
-                </div>
-
-                <p>Come and enjoy a beautiful VIP service around <strong>Antigua</strong> </p>
-
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: auto;">
-                    <div>
-                        <h3>Price <br> <span style="color: rgb(39, 167, 0);">$ {{tour.price}}</span></h3>
-                    </div>
-
-                    <button style="border-radius: 9px;" nz-button nzType="default"
-                        routerLink="../view/{{tour._id}}">View Booking</button>
-                </div>
-
-            </div>
-
+ 
+<div class="page">
+ 
+  <app-search-filter></app-search-filter>
+ 
+  <h4 class="results-text">Showing {{ tours.length }} results</h4>
+ 
+  <div class="grid">
+ 
+    @for (tour of tours; track tour._id) {
+      <div class="card">
+ 
+        <!-- IMAGE -->
+        <div class="image-wrapper">
+          <img class="image-banner" [src]="tour?.thumbnail" [alt]="tour.name">
         </div>
-
-        }
-
-
-    </div>
+ 
+        <!-- CONTENT -->
+        <div class="card-body">
+ 
+          <h2 class="title">{{ tour.name }}</h2>
+ 
+          <p class="desc">{{ tour.description }}</p>
+ 
+          <!-- FOOTER -->
+          <div class="card-footer">
+ 
+            <div class="rating">
+              <span nz-icon nzType="star" nzTheme="fill"></span>
+              <span nz-icon nzType="star" nzTheme="fill"></span>
+              <span nz-icon nzType="star" nzTheme="fill"></span>
+              <span nz-icon nzType="star" nzTheme="fill"></span>
+              <span class="rating-text">4.5</span>
+            </div>
+ 
+            <button (click)="viewDetails(tour._id)">View More Details</button>
+ 
+            <div class="cta">
+              <button [routerLink]="['../../booking', tour._id]">Book Now</button>
+            </div>
+ 
+          </div>
+ 
+        </div>
+ 
+      </div>
+    }
+ 
+  </div>
+ 
 </div>
