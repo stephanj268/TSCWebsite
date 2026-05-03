@@ -30,26 +30,47 @@
         <div style="display: flex; flex-direction: column;">
 
           <input nz-input type="text" [(ngModel)]="firstname" class="input" placeholder="First Name">
-          <span style="position: relative; bottom: 27px; left: 10px; z-index: 2; width: max-content;" nz-icon nzType="user" nzTheme="outline"></span>
+          <span style="position: relative; bottom: 27px; left: 10px; z-index: 2; width: max-content;" nz-icon
+            nzType="user" nzTheme="outline"></span>
 
         </div>
 
         <div class="left">
           <input nz-input type="text" [(ngModel)]="lastname" class="input" placeholder="Last Name">
-          <span style="position: relative; bottom: 27px; left: 10px; z-index: 2; width: max-content;" nz-icon nzType="user" nzTheme="outline"></span>
+          <span style="position: relative; bottom: 27px; left: 10px; z-index: 2; width: max-content;" nz-icon
+            nzType="user" nzTheme="outline"></span>
 
         </div>
 
       </div>
 
       <div class="form-item">
+        <div style="display: flex; flex-direction: column;">
+          <h2 class="form-label">Email Address</h2>
+          <input nz-input type="text" [(ngModel)]="email" class="input-email" placeholder="example@gmail.com">
 
-        <label class="form-label">Email</label>
-        <div>
-          <input nz-input type="text" [(ngModel)]="email" class="input-email" placeholder="ex: example@gmail.com">
           <p style="color: rgb(115, 115, 115); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 13px;">Make
             sure your email is correct</p>
 
+          <span style="position: relative; left: 10px; bottom: 60px;" nz-icon nzType="mail" nzTheme="outline"></span>
+
+        </div>
+
+
+
+
+
+      </div>
+
+      <div class="form-item">
+
+        <div class="column">
+
+          <h2 class="form-label">Phone number</h2>
+          <input nz-input type="text" class="input-email" [(ngModel)]="phone" placeholder="(000) 000-000">
+          <span style="position: relative; bottom: 25px; left: 15px; z-index: 2; width: max-content;" nz-icon
+            nzType="phone" [nzRotate]="90" nzTheme="outline"></span>
+
         </div>
 
 
@@ -57,31 +78,30 @@
 
       <div class="form-item">
 
-        <label class="form-label">Phone number</label>
-        <input nz-input type="text" class="input" [(ngModel)]="phone" placeholder="(000) 000-000">
-        <span style="position: relative; right: 190px; z-index: 2;" nz-icon nzType="phone" [nzRotate]="90" nzTheme="outline"></span>
-        
+        <div class="column">
+          <h2 class="form-label">Desired Booking Date & Time</h2>
+          <nz-date-picker [nzRenderExtraFooter]="plainFooter" [(ngModel)]="date" nzShowTime />
+        </div>
+
       </div>
 
       <div class="form-item">
-        <label class="form-label">Desired Booking Date & Time</label>
-        <nz-date-picker [nzRenderExtraFooter]="plainFooter" [(ngModel)]="date" nzShowTime />
-      </div>
-
-      <div class="form-item">
-        <label class="form-label">Passenger(s)</label>
+        <h2 class="form-label">Passenger(s)</h2>
         <input type="number" class="form-label-int" min="1" [(ngModel)]="passengers" placeholder="1">
 
       </div>
 
       <div class="form-item">
-        <label class="form-label">Service Type</label>
 
-        <nz-select [ngModel]="serviceType" (ngModelChange)="onServiceTypeChange($event)">
-          <nz-option nzValue="default" nzLabel="Select a service type" />
-          <nz-option nzValue="Tour" nzLabel="Tour" />
-          <nz-option nzValue="Taxi" nzLabel="Taxi" />
-        </nz-select>
+        <div class="column">
+          <h2 class="form-label">Service Type</h2>
+
+          <nz-select [ngModel]="serviceType" (ngModelChange)="onServiceTypeChange($event)">
+            <nz-option nzValue="default" nzLabel="Select a service type" />
+            <nz-option nzValue="Tour" nzLabel="Tour" />
+            <nz-option nzValue="Taxi" nzLabel="Taxi" />
+          </nz-select>
+        </div>
 
       </div>
 
