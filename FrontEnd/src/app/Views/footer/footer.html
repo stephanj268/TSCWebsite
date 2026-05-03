@@ -2,12 +2,17 @@
     <div class="footer-container">
 
         <div class="footer-section">
-            <img src="" alt="">
 
-            <div style="margin-bottom: 30px;">
-                <h1 style="color: white; font-size: 30px; line-height: 0.2;">SPACESHIP</h1>
-                <label style="color: white; text-align: center;">Taxi & Tours</label>
+            <div style="display: flex; flex-direction: row;">
+                <img class="footer-ico" src="icon.png" alt="">
+
+                <div style="margin-bottom: 30px;">
+                    <h1 style="color: white; font-size: 30px; line-height: 0.2;">SPACESHIP</h1>
+                    <label style="color: white; text-align: center;">Taxi & Tours</label>
+                </div>
+
             </div>
+
 
 
             <p>
@@ -25,19 +30,22 @@
             </div>
 
             <div>
-                <p class="link"> <span nz-icon nzType="calendar" nzTheme="outline"></span> Book Now</p>
+                <p class="link" routerLink="booking"> <span nz-icon nzType="calendar" nzTheme="outline"></span> Book Now
+                </p>
             </div>
 
             <div>
-                <p class="link"><span nz-icon nzType="search" nzTheme="outline"></span> View Tours</p>
+                <p class="link" routerLink="tours/list"><span nz-icon nzType="search" nzTheme="outline"></span> View
+                    Tours</p>
             </div>
 
             <div>
-                <p class="link"><span nz-icon nzType="car" nzTheme="outline"></span> Our Services</p>
+                <p class="link" routerLink="taxi/list"><span nz-icon nzType="car" nzTheme="outline"></span> Our Services
+                </p>
             </div>
 
             <div>
-                <p class="link"><span nz-icon nzType="team" nzTheme="outline"></span> About Us</p>
+                <p class="link" routerLink="about"><span nz-icon nzType="team" nzTheme="outline"></span> About Us</p>
             </div>
 
         </div>

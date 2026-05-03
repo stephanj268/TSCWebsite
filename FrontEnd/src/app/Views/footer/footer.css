@@ -21,6 +21,12 @@
   padding: 20px;
 }
 
+.footer-ico {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
 .footer-container {
   display: flex;
   flex-direction: row;
@@ -47,6 +53,12 @@
 .link {
   padding-bottom: 10px;
   border-bottom: 1px rgba(216, 216, 216, 0.459) solid;
+}
+
+
+.footer-section p:hover {
+  color: white;
+
 }
 
 .link-line {
