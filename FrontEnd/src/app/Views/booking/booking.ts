@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { BookingService } from '../../service/booking/booking.service';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -44,6 +45,7 @@ interface BookingForm {
     NzDatePickerModule,
     FormsModule,
     NzSelectModule,
+    NzIconModule,
 
     ToastModule,
     InputTextModule,

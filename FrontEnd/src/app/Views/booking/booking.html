@@ -2,27 +2,41 @@
   <div class="form">
 
     <!--This is the header-->
-    <div style="border-bottom: 2px solid rgb(229, 229, 229); padding: 20px 20px 20px 20px;">
-      <h1>Form</h1>
+    <div class="footer-tile">
+      <div style="display: flex; flex-direction: row;">
+
+        <img class="footer-ico" src="icon.png" alt="">
+
+        <div>
+
+          <h1>Book Your Ride</h1>
+          <p>Fast, safe and reliable island transfers</p>
+
+        </div>
+
+      </div>
+
+
     </div>
 
 
     <!-- Form Content-->
     <div class="form-content">
 
-      <h2>Name</h2>
+      <h2>Full Name</h2>
 
       <div class="form-item">
 
         <div style="display: flex; flex-direction: column;">
-          <input nz-input type="text" [(ngModel)]="firstname" class="input">
-          <label class="form-label">First Name</label>
+
+          <input nz-input type="text" [(ngModel)]="firstname" class="input" placeholder="First Name">
+          <span style="position: relative; bottom: 27px; left: 10px; z-index: 2; width: max-content;" nz-icon nzType="user" nzTheme="outline"></span>
 
         </div>
 
         <div class="left">
-          <input nz-input type="text" [(ngModel)]="lastname" class="input">
-          <label class="form-label">Last Name</label>
+          <input nz-input type="text" [(ngModel)]="lastname" class="input" placeholder="Last Name">
+          <span style="position: relative; bottom: 27px; left: 10px; z-index: 2; width: max-content;" nz-icon nzType="user" nzTheme="outline"></span>
 
         </div>
 
@@ -33,7 +47,8 @@
         <label class="form-label">Email</label>
         <div>
           <input nz-input type="text" [(ngModel)]="email" class="input-email" placeholder="ex: example@gmail.com">
-          <p style="color: rgb(115, 115, 115); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 13px;">Make sure your email is correct</p>
+          <p style="color: rgb(115, 115, 115); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 13px;">Make
+            sure your email is correct</p>
 
         </div>
 
@@ -44,7 +59,8 @@
 
         <label class="form-label">Phone number</label>
         <input nz-input type="text" class="input" [(ngModel)]="phone" placeholder="(000) 000-000">
-
+        <span style="position: relative; right: 190px; z-index: 2;" nz-icon nzType="phone" [nzRotate]="90" nzTheme="outline"></span>
+        
       </div>
 
       <div class="form-item">
