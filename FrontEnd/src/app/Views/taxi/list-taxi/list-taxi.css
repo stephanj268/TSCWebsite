@@ -107,13 +107,14 @@
   border-radius: 10px;
   border: none;
   background: var(--primary);
-  color: blue;
+  color: rgb(40, 209, 167);
   cursor: pointer;
   transition: 0.3s;
 }
 
 .view-btn:hover {
   background: var(--primary-dark);
+
 }
 
 /* MOBILE */

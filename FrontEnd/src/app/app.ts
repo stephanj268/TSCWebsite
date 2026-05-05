@@ -19,7 +19,8 @@ import { Operationservice } from './Directives/Operation-Time/Operationservice';
     TaxiService,
     Operationservice,
     TourService,
-    BookingService
+    BookingService,
+    SliderComponent
   ],
 
 
