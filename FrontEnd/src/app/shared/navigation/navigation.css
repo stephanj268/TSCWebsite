@@ -5,28 +5,37 @@
     display: flex;
     flex-direction: row;
 
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 3;
 
     justify-content: space-between;
 
-    background-color: transparent;
     padding: 20px 0px 20px 0px;
     width: 100%;
 
-    animation: nav;
+    animation: nav-transition;
     animation-timeline: scroll(y);
 
 
 }
 
-@keyframes nav {
+@keyframes nav-transition {
+    1% {
+        color: rgba(255, 255, 255, 0.525);
+    }
 
-    to {
-        position: sticky;
-        top: 0;
+    6% {
+        background-color: rgb(255, 255, 255);
+        color: #333333;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+
+    100% {
+        color: #000000;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
     }
 
 }
@@ -73,6 +82,7 @@
 }
 
 .nav-label {
+    color: rgba(255, 255, 255, 0.607);
 
     transition: 0.5s;
     cursor: pointer;
@@ -80,7 +90,6 @@
 
     border-radius: 20px;
 
-    color: rgba(240, 240, 240, 0.744);
     padding-left: 15px;
     padding-right: 15px;
 
@@ -88,7 +97,26 @@
     margin-right: 5px;
     font-size: 18px;
 
+    animation: nav-label-transition;
+    animation-timeline: scroll(y);
+
     font-family: monospace
+}
+
+@keyframes nav-label-transition {
+    0% {
+        color: rgba(255, 255, 255, 0.607);
+    }
+
+    10% {
+        color: #232323;
+    }
+
+    100% {
+        color: #000000;
+
+    }
+
 }
 
 .nav-label:hover {
