@@ -36,10 +36,7 @@ export const routes: Routes = [
     },
 
     {
-        path: 'booking', component: BookingComponent, children: [{
-            path: ':booking_id', component: BookingComponent
-        }],
-
+        path: 'booking/:booking_id', component: BookingComponent,
     },
 
     { path: '**', component: ErrorPage },

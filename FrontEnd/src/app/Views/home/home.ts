@@ -1,14 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
 import { NzCarouselModule, NzCarouselComponent } from 'ng-zorro-antd/carousel';
 import { RouterLink } from '@angular/router';
-import { SliderComponent } from "../slider/slider";
-
+import { SliderComponent } from "../../shared/slider/slider";
+import { NavigationComponent } from '../../shared/navigation/navigation';
 @Component({
   selector: 'app-home',
   imports: [
     NzCarouselModule,
     RouterLink,
-    SliderComponent
+    SliderComponent,
+    NavigationComponent
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',

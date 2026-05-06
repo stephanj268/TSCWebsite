@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NzButtonComponent, NzButtonModule, NzButtonSize } from "ng-zorro-antd/button";
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { TourService } from '../../../../service/tours.service';
-import { SliderComponent } from "../../../slider/slider";
+import { SliderComponent } from "../../../../shared/slider/slider";
 import { RouterLink } from "@angular/router";
 
 @Component({

@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavigationComponent } from './Views/navigation/navigation';
+import { NavigationComponent } from './shared/navigation/navigation';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { SliderComponent } from './Views/slider/slider';
+import { SliderComponent } from './shared/slider/slider';
 
-import { Footer } from './Views/footer/footer';
+import { Footer } from './shared/footer/footer';
 
 import { BookingService } from './service/booking/booking.service';
 import { TaxiService } from './service/taxi.service';

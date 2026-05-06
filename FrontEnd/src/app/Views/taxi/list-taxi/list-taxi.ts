@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { TaxiService, ITaxi } from '../../../service/taxi.service';
-import { SliderComponent } from '../../slider/slider';
+import { SliderComponent } from '../../../shared/slider/slider';
 import { SearchFilter } from '../../Body/search-filter/search-filter';
 
 

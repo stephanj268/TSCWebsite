@@ -19,10 +19,11 @@ import { MessageService } from 'primeng/api';
 import { validateEmail } from '../../../environment';
 
 import { InputTextModule } from 'primeng/inputtext';
-import { TourService } from '../../service/tours.service';
+import { ITours, TourService } from '../../service/tours.service';
 import { ActivatedRoute } from '@angular/router';
+import { TaxiService } from '../../service/taxi.service';
 
-
+import { NavigationComponent } from '../../shared/navigation/navigation';
 
 interface BookingForm {
   name: string;
@@ -49,6 +50,8 @@ interface BookingForm {
 
     ToastModule,
     InputTextModule,
+
+    NavigationComponent,
   ],
   providers: [MessageService],
   templateUrl: './booking.html',
@@ -57,8 +60,11 @@ interface BookingForm {
 export class BookingComponent implements OnInit {
 
   booking: any;
+
   tour: any;
-  id: any;
+  taxi:any;
+  
+  browserId: any;
 
   private messageService = inject(MessageService);
 
@@ -85,30 +91,35 @@ export class BookingComponent implements OnInit {
   constructor(
     private bookingservice: BookingService,
     private tourservice: TourService,
+    private taxiservice: TaxiService,
     private activatedRoute: ActivatedRoute
   ) { }
+
 
   ngOnInit(): void {
     this.booking = this.bookingservice;
     this.tour = this.tourservice.allTours;
-
-    //Get appropriate tour
-    this.tourservice.getToursEvent.subscribe((data) => {
-
-      this.tour = data;
-
-      // Filter out appropirate tour data
-      this.tour = this.tour.filter((tour: any) => this.id == tour._id);
-    });
-
+    this.taxi = this.taxiservice.allTours;
+    
     //get id from browser
     this.activatedRoute.paramMap.subscribe(params => {
       const id = params.get("booking_id");
-      this.id = id;
-    })
+      this.browserId = id; 
+    });
 
-    this.tourservice.onGetToursEvent(this.tour)
+    
 
+    //Get appropriate tour
+    this.tourservice.getToursEvent.subscribe((data) => {
+      this.tour = data;
+      console.log(this.browserId)
+
+      // Filter out appropriate tour data
+      this.tour = this.tour.filter((tour: ITours) => this.browserId == tour._id);
+      console.log("tour: ", this.tour);
+    });
+
+    this.tourservice.onGetToursEvent(this.tour);
 
   }
 
@@ -167,7 +178,6 @@ export class BookingComponent implements OnInit {
         type: build.serviceType,       // ← was "Service:", now must be "type"
         date: build.startDate,              // ← was "Date:"
         time: build.startDate,              // ← was "Time:"
-        duration: `${this.tour[0].duration} hours`, // ← was "Duration:"
         persons: build.maxPersons,    // ← was "Persons:"
         phone: build.phonenumber,     // ← was "Phone:"
         email: build.email,           // ← "{{email}}" in template body
@@ -176,7 +186,7 @@ export class BookingComponent implements OnInit {
       };
 
       console.log({ ...emailTemplate })
-      emailjs.send("service_qczeclo", "template_nj864t5", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
+      emailjs.send("service_qczeclo", "template_vjcukzya", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
         .then(() => {
           console.log("sent!")
         }, (error) => {
@@ -241,6 +251,8 @@ export class BookingComponent implements OnInit {
     this.bookingservice.createTourBooking(build).subscribe((data) => {
       this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
 
+      console.log(build.startDate - build.endDate);
+
 
       // email JS Build Data
       const emailTemplate = {
@@ -250,7 +262,7 @@ export class BookingComponent implements OnInit {
         type: build.serviceType,       // ← was "Service:", now must be "type"
         date: build.startDate,              // ← was "Date:"
         time: build.startDate,              // ← was "Time:"
-        duration: `${this.tour[0].duration} hours`, // ← was "Duration:"
+        duration: `${this.tour.duration} hours`, // ← was "Duration:"
         persons: build.maxPersons,    // ← was "Persons:"
         phone: build.phonenumber,     // ← was "Phone:"
         email: build.email,           // ← "{{email}}" in template body
@@ -259,13 +271,13 @@ export class BookingComponent implements OnInit {
       };
 
       console.log({ ...emailTemplate })
-      emailjs.send("service_qczeclo", "template_nj864t5", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
-        .then(() => {
-          console.log("sent!")
-        }, (error) => {
-          console.log(error)
-        }
-        );
+      // emailjs.send("service_qczeclo", "template_nj864t5", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
+      //   .then(() => {
+      //     console.log("sent!")
+      //   }, (error) => {
+      //     console.log(error)
+      //   }
+      // );
 
     }, (error) => {
       console.log(error)

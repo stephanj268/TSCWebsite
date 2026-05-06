@@ -77,9 +77,9 @@ export class TourService {
 
 
 
-    getToursEvent = new EventEmitter<ITours>
+    getToursEvent = new EventEmitter<ITours[]>();
 
-    onGetToursEvent(data: ITours) {
+    onGetToursEvent(data: ITours[]) {
         this.getToursEvent.emit(data);
     }
 
