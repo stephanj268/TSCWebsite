@@ -25,11 +25,10 @@ import { Operationservice } from './Directives/Operation-Time/Operationservice';
 
 
   imports: [
-    NavigationComponent,
     NzButtonModule,
     RouterOutlet,
-    Footer
-  ],
+    Footer,
+],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

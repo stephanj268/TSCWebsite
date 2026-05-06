@@ -11,11 +11,11 @@
   <!-- HERO IMAGE GRID -->
   <div class="photo-grid">
     <div class="photo-main">
-      <img [src]="taxi?.thumbnail" [alt]="taxi?.name">
+      <img [src]="taxi[0].thumbnail" [alt]="taxi?.name">
     </div>
     <div class="photo-side">
-      <img [src]="taxi?.thumbnail" [alt]="taxi?.name">
-      <img [src]="taxi?.thumbnail" [alt]="taxi?.name">
+      <img [src]="taxi[0].thumbnail" [alt]="taxi?.name">
+      <img [src]="taxi[0].thumbnail" [alt]="taxi?.name">
     </div>
   </div>
  
@@ -28,7 +28,7 @@
       <!-- Title -->
       <div class="title-block">
         <span class="category-tag">Experience · Antigua</span>
-        <h1>{{ taxi?.name }}</h1>
+        <h1>{{ taxi[0].name }}</h1>
         <p class="tagline">Luxury, Comfort, and Reliability</p>
       </div>
  
@@ -37,7 +37,7 @@
       <!-- Description -->
       <div class="section-block">
         <h2>About this experience</h2>
-        <p>{{ taxi?.description }}</p>
+        <p>{{ taxi[0].description }}</p>
       </div>
  
       <hr class="divider">
@@ -120,9 +120,9 @@
             Book via WhatsApp
           </a>
  
-          <a class="book-btn" [routerLink]="['/../../booking',taxi?._id]">
+          <button class="book-btn" (click)="onBookNowClicked()">
             Book Now
-          </a>
+          </button>
         </div>
  
         <div class="booking-card-footer">

@@ -1,9 +1,12 @@
 .Navigation {
+    user-select: none;
+
+    transition: 0.5s;
     display: flex;
     flex-direction: row;
 
     position: absolute;
-
+    top: 0;
     z-index: 3;
 
     justify-content: space-between;
@@ -11,7 +14,23 @@
     background-color: transparent;
     padding: 20px 0px 20px 0px;
     width: 100%;
+
+    animation: nav;
+    animation-timeline: scroll(y);
+
+
 }
+
+@keyframes nav {
+
+    to {
+        position: sticky;
+        top: 0;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+
+}
+
 
 .section {
     display: flex;
@@ -36,7 +55,7 @@
 
 .nav-input-search:focus {
     transition: 0.5s;
-    
+
     width: 500px;
     font-size: 120%;
 
@@ -61,15 +80,15 @@
 
     border-radius: 20px;
 
-    color: rgba(240, 240, 240, 0.836);
+    color: rgba(240, 240, 240, 0.744);
     padding-left: 15px;
     padding-right: 15px;
 
     margin-left: 5px;
     margin-right: 5px;
     font-size: 18px;
-    
-    font-family:monospace
+
+    font-family: monospace
 }
 
 .nav-label:hover {

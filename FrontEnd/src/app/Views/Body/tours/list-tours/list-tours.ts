@@ -31,9 +31,6 @@ export class ListToursComponent implements OnInit {
 
     this.tourservice.onGetToursEvent(this.tour);
 
-    console.log(this.tour)
-
-
   }
 
 }

@@ -20,10 +20,15 @@ import { validateEmail } from '../../../environment';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { ITours, TourService } from '../../service/tours.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { TaxiService } from '../../service/taxi.service';
 
 import { NavigationComponent } from '../../shared/navigation/navigation';
+
+
+import { TaxiBookingComponent } from '../../shared/taxi-booking/taxi-booking';
+import { TourBookingComponent } from '../../shared/tour-booking/tour-booking';
+
 
 interface BookingForm {
   name: string;
@@ -47,12 +52,12 @@ interface BookingForm {
     FormsModule,
     NzSelectModule,
     NzIconModule,
-
     ToastModule,
     InputTextModule,
-
     NavigationComponent,
-  ],
+    RouterOutlet,
+
+],
   providers: [MessageService],
   templateUrl: './booking.html',
   styleUrl: './booking.css',
@@ -97,215 +102,215 @@ export class BookingComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.booking = this.bookingservice;
-    this.tour = this.tourservice.allTours;
-    this.taxi = this.taxiservice.allTours;
+    // this.booking = this.bookingservice;
+    // this.tour = this.tourservice.allTours;
+    // this.taxi = this.taxiservice.allTours;
     
-    //get id from browser
-    this.activatedRoute.paramMap.subscribe(params => {
-      const id = params.get("booking_id") ? params.get("booking_id") : 0;
-      this.browserId = id; 
-    });
+    // //get id from browser
+    // this.activatedRoute.paramMap.subscribe(params => {
+    //   const id = params.get("booking_id") ? params.get("booking_id") : 0;
+    //   this.browserId = id; 
+    // });
 
     
 
-    //Get appropriate tour
-    this.tourservice.getToursEvent.subscribe((data) => {
-      this.tour = data;
-      console.log(this.browserId)
+    // //Get appropriate tour
+    // this.tourservice.getToursEvent.subscribe((data) => {
+    //   this.tour = data;
+    //   console.log(this.browserId)
 
-      // Filter out appropriate tour data
-      this.tour = this.tour.filter((tour: ITours) => this.browserId == tour._id);
-      console.log("tour: ", this.tour);
-    });
+    //   // Filter out appropriate tour data
+    //   this.tour = this.tour.filter((tour: ITours) => this.browserId == tour._id);
+    //   console.log("tour: ", this.tour);
+    // });
 
-    this.tourservice.onGetToursEvent(this.tour);
-
-  }
-
-  // When server type is Taxi
-  onTaxiServiceSubmit() {
-    const build = {
-      firstname: this.firstname,
-      lastname: this.lastname,
-      email: this.email,
-      phonenumber: this.phone,
-      tourType: this.tourType,
-      maxPersons: this.passengers,
-      serviceType: this.serviceType,
-      taxiType: this.taxiType,
-      startDate: this.date,
-      endDate: this.date,
-      createdAt: this.date ? new Date(this.date) : new Date()
-
-    };
-
-    if (!build.firstname || !build.lastname) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Incomplete name fields!', styleClass: 'blue' });
-    }
-
-    if (!validateEmail(build.email)) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Email' });
-    }
-
-    if (!build.phonenumber && build.phonenumber.length >= 5) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number Field Invalid!' });
-    }
-
-    if (!build.startDate) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Date field Empty!' });
-    }
-
-    if (build.maxPersons < 1) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Persons!' });
-    }
-
-    if (build.serviceType == 'default') {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Service type!' });
-    }
-
-    if (build.taxiType == 'default') {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Taxi Type is Empty!' });
-    }
-
-
-    this.bookingservice.createTaxiBooking(build).subscribe((data) => {
-      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
-
-      const emailTemplate = {
-        to_email: build.email,        // ← recipient (set {{to_email}} in EmailJS "To" field)
-        first_name: build.firstname,       // ← "Hi {{first_name}},"  (use whatever field has their name)
-        type: build.serviceType,       // ← was "Service:", now must be "type"
-        date: build.startDate,              // ← was "Date:"
-        time: build.startDate,              // ← was "Time:"
-        persons: build.maxPersons,    // ← was "Persons:"
-        phone: build.phonenumber,     // ← was "Phone:"
-        email: build.email,           // ← "{{email}}" in template body
-        company_email: 'info@spaceshiptaxi.com', // ← footer
-        company_name: 'Space Ship Taxi & Tours', // ← footer
-      };
-
-      console.log({ ...emailTemplate })
-      emailjs.send("service_qczeclo", "template_vjcukzya", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
-        .then(() => {
-          console.log("sent!")
-        }, (error) => {
-          console.log(error)
-        }
-        );
-
-    }, (error) => {
-      console.log(error)
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error}` });
-    });
-
-  };
-
-
-  onTourServiceSubmit() {
-
-    // HTMl Build Data
-    const build = {
-      firstname: this.firstname,
-      lastname: this.lastname,
-      email: this.email,
-      phonenumber: this.phone,
-      maxPersons: this.passengers,
-      serviceType: this.serviceType,
-      tourType: this.tourType,
-      startDate: this.date,
-      endDate: this.date,
-      createdAt: this.date ? new Date(this.date) : new Date()
-
-    };
-
-    if (!build.firstname || !build.lastname) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Incomplete name fields!', styleClass: 'blue' });
-    }
-
-    if (!validateEmail(build.email)) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Email' });
-    }
-
-    if (!build.phonenumber && build.phonenumber.length >= 5) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number Field Invalid!' });
-    }
-
-    if (!build.startDate) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Date field Empty!' });
-    }
-
-    if (build.maxPersons < 1) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Persons!' });
-    }
-
-    if (build.serviceType == 'default') {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Service type!' });
-    }
-
-    if (build.tourType == 'default') {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Tour Type is Empty!' });
-    }
-
-
-    this.bookingservice.createTourBooking(build).subscribe((data) => {
-      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
-
-      console.log(build.startDate - build.endDate);
-
-
-      // email JS Build Data
-      const emailTemplate = {
-        to_email: build.email,        // ← recipient (set {{to_email}} in EmailJS "To" field)
-        first_name: build.firstname,       // ← "Hi {{first_name}},"  (use whatever field has their name)
-        last_name: build.lastname,
-        type: build.serviceType,       // ← was "Service:", now must be "type"
-        date: build.startDate,              // ← was "Date:"
-        time: build.startDate,              // ← was "Time:"
-        duration: `${this.tour.duration} hours`, // ← was "Duration:"
-        persons: build.maxPersons,    // ← was "Persons:"
-        phone: build.phonenumber,     // ← was "Phone:"
-        email: build.email,           // ← "{{email}}" in template body
-        company_email: 'info@spaceshiptaxi.com', // ← footer
-        company_name: 'Space Ship Taxi & Tours', // ← footer
-      };
-
-      console.log({ ...emailTemplate })
-      // emailjs.send("service_qczeclo", "template_nj864t5", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
-      //   .then(() => {
-      //     console.log("sent!")
-      //   }, (error) => {
-      //     console.log(error)
-      //   }
-      // );
-
-    }, (error) => {
-      console.log(error)
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error}` });
-    });
+    // this.tourservice.onGetToursEvent(this.tour);
 
   }
 
+  // // When server type is Taxi
+  // onTaxiServiceSubmit() {
+  //   const build = {
+  //     firstname: this.firstname,
+  //     lastname: this.lastname,
+  //     email: this.email,
+  //     phonenumber: this.phone,
+  //     tourType: this.tourType,
+  //     maxPersons: this.passengers,
+  //     serviceType: this.serviceType,
+  //     taxiType: this.taxiType,
+  //     startDate: this.date,
+  //     endDate: this.date,
+  //     createdAt: this.date ? new Date(this.date) : new Date()
+
+  //   };
+
+  //   if (!build.firstname || !build.lastname) {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Incomplete name fields!', styleClass: 'blue' });
+  //   }
+
+  //   if (!validateEmail(build.email)) {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Email' });
+  //   }
+
+  //   if (!build.phonenumber && build.phonenumber.length >= 5) {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number Field Invalid!' });
+  //   }
+
+  //   if (!build.startDate) {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Date field Empty!' });
+  //   }
+
+  //   if (build.maxPersons < 1) {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Persons!' });
+  //   }
+
+  //   if (build.serviceType == 'default') {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Service type!' });
+  //   }
+
+  //   if (build.taxiType == 'default') {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Taxi Type is Empty!' });
+  //   }
 
 
-  // Events
+  //   this.bookingservice.createTaxiBooking(build).subscribe((data) => {
+  //     this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
 
-  onChange(result: Date): void {
-    console.log('onChange: ', result);
-  }
+  //     const emailTemplate = {
+  //       to_email: build.email,        // ← recipient (set {{to_email}} in EmailJS "To" field)
+  //       first_name: build.firstname,       // ← "Hi {{first_name}},"  (use whatever field has their name)
+  //       type: build.serviceType,       // ← was "Service:", now must be "type"
+  //       date: build.startDate,              // ← was "Date:"
+  //       time: build.startDate,              // ← was "Time:"
+  //       persons: build.maxPersons,    // ← was "Persons:"
+  //       phone: build.phonenumber,     // ← was "Phone:"
+  //       email: build.email,           // ← "{{email}}" in template body
+  //       company_email: 'info@spaceshiptaxi.com', // ← footer
+  //       company_name: 'Space Ship Taxi & Tours', // ← footer
+  //     };
 
-  onServiceTypeChange(data: any) {
-    this.serviceType = data
+  //     console.log({ ...emailTemplate })
+  //     emailjs.send("service_qczeclo", "template_vjcukzya", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
+  //       .then(() => {
+  //         console.log("sent!")
+  //       }, (error) => {
+  //         console.log(error)
+  //       }
+  //       );
 
-  }
+  //   }, (error) => {
+  //     console.log(error)
+  //     this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error}` });
+  //   });
 
-  onTourTypeChange(data: any) {
-    this.tourType = data
-  }
+  // };
 
-  onTaxiTypeChange(data: any) {
-    this.taxiType = data
-  }
+
+  // onTourServiceSubmit() {
+
+  //   // HTMl Build Data
+  //   const build = {
+  //     firstname: this.firstname,
+  //     lastname: this.lastname,
+  //     email: this.email,
+  //     phonenumber: this.phone,
+  //     maxPersons: this.passengers,
+  //     serviceType: this.serviceType,
+  //     tourType: this.tourType,
+  //     startDate: this.date,
+  //     endDate: this.date,
+  //     createdAt: this.date ? new Date(this.date) : new Date()
+
+  //   };
+
+  //   if (!build.firstname || !build.lastname) {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Incomplete name fields!', styleClass: 'blue' });
+  //   }
+
+  //   if (!validateEmail(build.email)) {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Email' });
+  //   }
+
+  //   if (!build.phonenumber && build.phonenumber.length >= 5) {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number Field Invalid!' });
+  //   }
+
+  //   if (!build.startDate) {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Date field Empty!' });
+  //   }
+
+  //   if (build.maxPersons < 1) {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Persons!' });
+  //   }
+
+  //   if (build.serviceType == 'default') {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Service type!' });
+  //   }
+
+  //   if (build.tourType == 'default') {
+  //     return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Tour Type is Empty!' });
+  //   }
+
+
+  //   this.bookingservice.createTourBooking(build).subscribe((data) => {
+  //     this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
+
+  //     console.log(build.startDate - build.endDate);
+
+
+  //     // email JS Build Data
+  //     const emailTemplate = {
+  //       to_email: build.email,        // ← recipient (set {{to_email}} in EmailJS "To" field)
+  //       first_name: build.firstname,       // ← "Hi {{first_name}},"  (use whatever field has their name)
+  //       last_name: build.lastname,
+  //       type: build.serviceType,       // ← was "Service:", now must be "type"
+  //       date: build.startDate,              // ← was "Date:"
+  //       time: build.startDate,              // ← was "Time:"
+  //       duration: `${this.tour.duration} hours`, // ← was "Duration:"
+  //       persons: build.maxPersons,    // ← was "Persons:"
+  //       phone: build.phonenumber,     // ← was "Phone:"
+  //       email: build.email,           // ← "{{email}}" in template body
+  //       company_email: 'info@spaceshiptaxi.com', // ← footer
+  //       company_name: 'Space Ship Taxi & Tours', // ← footer
+  //     };
+
+  //     console.log({ ...emailTemplate })
+  //     // emailjs.send("service_qczeclo", "template_nj864t5", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
+  //     //   .then(() => {
+  //     //     console.log("sent!")
+  //     //   }, (error) => {
+  //     //     console.log(error)
+  //     //   }
+  //     // );
+
+  //   }, (error) => {
+  //     console.log(error)
+  //     this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error}` });
+  //   });
+
+  // }
+
+
+
+  // // Events
+
+  // onChange(result: Date): void {
+  //   console.log('onChange: ', result);
+  // }
+
+  // onServiceTypeChange(data: any) {
+  //   this.serviceType = data
+
+  // }
+
+  // onTourTypeChange(data: any) {
+  //   this.tourType = data
+  // }
+
+  // onTaxiTypeChange(data: any) {
+  //   this.taxiType = data
+  // }
 
 
 }

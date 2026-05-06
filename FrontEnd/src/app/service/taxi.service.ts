@@ -1,4 +1,6 @@
-import { Injectable } from "@angular/core"
+import { EventEmitter, Injectable } from "@angular/core"
+import { it_IT } from "ng-zorro-antd/i18n";
+import { emit } from "process";
 
 
 export interface ITaxi {
@@ -326,11 +328,20 @@ export class TaxiService {
 
 
 
-    ]
+    ];
 
 
-    getTaxiById(id: number): ITaxi | undefined {
-        return this.allTours.find(t => t._id === id);
+
+    getAllTaxiEvent = new EventEmitter<ITaxi[]>();
+
+
+    getTaxiById(data: any ) {
+        const taxi = this.allTours.filter(t => t._id == data);
+        return taxi
+    }
+
+    onGetTaxiEvent(data: any) {
+        this.getAllTaxiEvent.emit(data);
     }
 
 }

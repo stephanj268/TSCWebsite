@@ -28,4 +28,12 @@ export class ListTaxiComponenet implements OnInit {
     console.log('Navigating with ID:', id);
     this.router.navigate(['/taxi/view', id]);
   }
+
+
+
+  onBookClicked(data: any){
+
+    this.router.navigateByUrl(`/booking/taxi/${data._id}`)
+    console.log(data)
+  }
 }

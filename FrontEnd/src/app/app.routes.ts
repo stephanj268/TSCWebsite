@@ -12,6 +12,8 @@ import { ViewToursComponent } from './Views/Body/tours/view-tours/view-tours';
 import { ListTaxiComponenet } from './Views/taxi/list-taxi/list-taxi';
 import { ViewTaxiComponent } from './Views/taxi/view-taxi/view-taxi';
 import { BookingComponent } from './Views/booking/booking';
+import { TourBookingComponent } from './shared/tour-booking/tour-booking';
+import { TaxiBookingComponent } from './shared/taxi-booking/taxi-booking';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -37,13 +39,11 @@ export const routes: Routes = [
 
 
     // Booking Route 📖
-
     {
-        path: 'booking', component: BookingComponent, children: [],
-    },
-
-    {
-        path: 'booking/:booking_id', component: BookingComponent, children: [],
+        path: 'booking', component: BookingComponent, children: [
+            { path: 'taxi/:booking_id', component: TaxiBookingComponent },
+            { path: 'tour/:booking_id', component: TourBookingComponent },
+        ]
     },
 
     // ‼️

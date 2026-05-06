@@ -39,7 +39,7 @@
             <button (click)="viewDetails(tour._id)">View More Details</button>
  
             <div class="cta">
-              <button [routerLink]="['../../booking', tour._id]">Book Now</button>
+              <button (click)="onBookClicked(tour)">Book Now</button>
             </div>
  
           </div>
