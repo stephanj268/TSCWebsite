@@ -2,38 +2,74 @@
   <div class="form">
 
     <!--This is the header-->
-    <div style="border-bottom: 2px solid rgb(229, 229, 229); padding: 20px 20px 20px 20px;">
-      <h1>Form</h1>
+    <div class="footer-tile">
+      <div style="display: flex; flex-direction: row;">
+
+        <img class="footer-ico" src="icon.png" alt="">
+
+        <div>
+
+          <h1>Book Your Ride</h1>
+          <p>Fast, safe and reliable island transfers</p>
+
+        </div>
+
+      </div>
+
+
     </div>
 
 
     <!-- Form Content-->
     <div class="form-content">
 
-      <h2>Name</h2>
+      <h2>Full Name</h2>
 
       <div class="form-item">
 
         <div style="display: flex; flex-direction: column;">
-          <input nz-input type="text" [(ngModel)]="firstname" class="input">
-          <label class="form-label">First Name</label>
+
+          <input nz-input type="text" [(ngModel)]="firstname" class="input" placeholder="First Name">
+          <span style="position: relative; bottom: 27px; left: 10px; z-index: 2; width: max-content;" nz-icon
+            nzType="user" nzTheme="outline"></span>
 
         </div>
 
         <div class="left">
-          <input nz-input type="text" [(ngModel)]="lastname" class="input">
-          <label class="form-label">Last Name</label>
+          <input nz-input type="text" [(ngModel)]="lastname" class="input" placeholder="Last Name">
+          <span style="position: relative; bottom: 27px; left: 10px; z-index: 2; width: max-content;" nz-icon
+            nzType="user" nzTheme="outline"></span>
 
         </div>
 
       </div>
 
       <div class="form-item">
+        <div style="display: flex; flex-direction: column;">
+          <h2 class="form-label">Email Address</h2>
+          <input nz-input type="text" [(ngModel)]="email" class="input-email" placeholder="example@gmail.com">
 
-        <label class="form-label">Email</label>
-        <div>
-          <input nz-input type="text" [(ngModel)]="email" class="input-email" placeholder="ex: example@gmail.com">
-          <p style="color: rgb(115, 115, 115); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 13px;">Make sure your email is correct</p>
+          <p style="color: rgb(115, 115, 115); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 13px;">Make
+            sure your email is correct</p>
+
+          <span style="position: relative; left: 10px; bottom: 60px;" nz-icon nzType="mail" nzTheme="outline"></span>
+
+        </div>
+
+
+
+
+
+      </div>
+
+      <div class="form-item">
+
+        <div class="column">
+
+          <h2 class="form-label">Phone number</h2>
+          <input nz-input type="text" class="input-email" [(ngModel)]="phone" placeholder="(000) 000-000">
+          <span style="position: relative; bottom: 25px; left: 15px; z-index: 2; width: max-content;" nz-icon
+            nzType="phone" [nzRotate]="90" nzTheme="outline"></span>
 
         </div>
 
@@ -42,30 +78,37 @@
 
       <div class="form-item">
 
-        <label class="form-label">Phone number</label>
-        <input nz-input type="text" class="input" [(ngModel)]="phone" placeholder="(000) 000-000">
+        <div class="column">
+          <h2 class="form-label">Desired Booking Date & Time</h2>
+          <nz-date-picker [nzRenderExtraFooter]="plainFooter" [(ngModel)]="date" nzShowTime />
+        </div>
+
+      </div>
+
+      <div style="display: flex; flex-direction: row; justify-content: space-between;">
+
+        <div class="column">
+          <h2 class="form-label">Number of Passenger(s)</h2>
+          <input type="number" class="form-label-int" min="1" [(ngModel)]="passengers" placeholder="1">
+
+
+        </div>
+
+        <div class="column">
+          <h2 class="form-label">Service Type</h2>
+
+          <nz-select [ngModel]="serviceType" (ngModelChange)="onServiceTypeChange($event)">
+            <nz-option nzValue="default" nzLabel="Select a service type" />
+            <nz-option nzValue="Tour" nzLabel="Tour" />
+            <nz-option nzValue="Taxi" nzLabel="Taxi" />
+          </nz-select>
+        </div>
 
       </div>
 
       <div class="form-item">
-        <label class="form-label">Desired Booking Date & Time</label>
-        <nz-date-picker [nzRenderExtraFooter]="plainFooter" [(ngModel)]="date" nzShowTime />
-      </div>
 
-      <div class="form-item">
-        <label class="form-label">Passenger(s)</label>
-        <input type="number" class="form-label-int" min="1" [(ngModel)]="passengers" placeholder="1">
 
-      </div>
-
-      <div class="form-item">
-        <label class="form-label">Service Type</label>
-
-        <nz-select [ngModel]="serviceType" (ngModelChange)="onServiceTypeChange($event)">
-          <nz-option nzValue="default" nzLabel="Select a service type" />
-          <nz-option nzValue="Tour" nzLabel="Tour" />
-          <nz-option nzValue="Taxi" nzLabel="Taxi" />
-        </nz-select>
 
       </div>
 
@@ -99,10 +142,40 @@
       }
 
 
+      <div style="
+      display: flex;
+      align-items: center;
+
+
+      width: 100%; 
+      height: 65px; 
+
+      border: 2px solid rgb(198, 213, 237);
+      border-radius: 5px;
+
+      background-color: rgba(182, 205, 239, 0.176);
+
+      margin-top: 20px;
+      ">
+
+        <span nz-icon nzType="dashboard"
+          style="font-size: 25px; color: rgb(15, 15, 85); background-color: rgba(88, 140, 244, 0.315); border-radius: 30px; padding: 5px; margin-left: 10px;"
+          nzTheme="outline"></span>
+
+        <div style="display: flex; flex-direction: column; margin-left: 10px;">
+          <label style="color: #014389; font-weight: 700; ">Safe. Reliable. On Time</label>
+          <label style="color: #014389; font-weight: 400;">Your comfort and saftey are our top priority</label>
+
+
+        </div>
+
+      </div>
+
+
       @if(serviceType == "Taxi" ){
-      <button class="submit-button" (click)="onTaxiServiceSubmit()">Submit</button>
+      <button class="submit-button" (click)="onTaxiServiceSubmit()">Submit Booking</button>
       } @else {
-      <button class="submit-button" (click)="onTourServiceSubmit()">Submit</button>
+      <button class="submit-button" (click)="onTourServiceSubmit()">Submit Booking</button>
       }
 
     </div>

@@ -19,10 +19,11 @@ export const routes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactComponent },
 
-    { path: 'taxi', component: TaxiComponent, children: [
-        {path: 'list', component: ListTaxiComponenet },
-        {path: 'view/:id', component: ViewTaxiComponent}
-            
+    {
+        path: 'taxi', component: TaxiComponent, children: [
+            { path: 'list', component: ListTaxiComponenet },
+            { path: 'view/:id', component: ViewTaxiComponent }
+
         ]
     },
 
@@ -35,7 +36,10 @@ export const routes: Routes = [
     },
 
     {
-        path: 'booking/:booking_id', component: BookingComponent
+        path: 'booking', component: BookingComponent, children: [{
+            path: ':booking_id', component: BookingComponent
+        }],
+
     },
 
     { path: '**', component: ErrorPage },
