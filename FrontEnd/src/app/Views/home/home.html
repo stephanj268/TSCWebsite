@@ -1,188 +1,262 @@
-<app-slider></app-slider>
+<div class="home-page">
+ 
+  <!-- SLIDER -->
+  <app-slider></app-slider>
 
-<section class="home">
-    <div class="home-content">
-
-        <h1>Welcome to Antigua & Barbuda</h1>
-
-        <h3>Your gateway to the Caribbean's finest shores, guided tours and island-wide adventures</h3>
-
+  <br><br>
+ 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-eyebrow">Welcome to Antigua &amp; Barbuda</span>
+      <h1>The Caribbean's<br>Finest Shores</h1>
+      <p>Guided tours, island adventures and reliable taxi services — all in one place.</p>
+      <div class="hero-cta">
+        <button routerLink="/taxi/list" class="btn-primary">Book a Taxi</button>
+        <button routerLink="/tours/list" class="btn-outline">Explore Tours</button>
+      </div>
     </div>
-</section>
-
-
-
-<section class="services-split">
-
-    <div class="service-side left">
-        <h3> Taxi Services </h3>
-
+    <div class="hero-scroll-hint">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+ 
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="stat">
+      <span class="stat-number">200+</span>
+      <span class="stat-label">Happy Guests</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-number">365</span>
+      <span class="stat-label">Beaches Covered</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-number">5+</span>
+      <span class="stat-label">Years of Service</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-number">24/7</span>
+      <span class="stat-label">Availability</span>
+    </div>
+  </section>
+ 
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="services-header">
+      <span class="section-eyebrow">What We Offer</span>
+      <h2>Experience Antigua Like Never Before</h2>
+      <p>365 Beaches · Endless Adventures · One Journey</p>
+    </div>
+ 
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h3>Taxi Services</h3>
         <ul>
-            <li> Airport pickups and drop-offs</li>
-            <li>24/7 availability</li>
-            <li>Comfortable, air-conditioned vehicles</li>
-            <li> Fast and Reliable services</li>
+          <li>Airport pickups and drop-offs</li>
+          <li>24/7 availability</li>
+          <li>Air-conditioned vehicles</li>
+          <li>Fast and reliable service</li>
         </ul>
-
-
-        <button routerLink="/taxi/list" type="button" class="btn"> Learn More</button>
-    </div>
-
-
-
-    <div class="center-highlight">
-
-        <p> Exerience Antigua Like Never Before</p>
-        <span>365 Beaches - Endless Adventures - One Journey</span>
-    </div>
-
-
-    <div class="service-side right">
-
-        <h3> Tour Services </h3>
-
+        <button routerLink="/taxi/list" class="btn-primary">Learn More</button>
+      </div>
+ 
+      <div class="service-card featured">
+        <div class="service-card-badge">Most Popular</div>
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>Island Tours</h3>
         <ul>
-
-            <li> Island-wide guided tour</li>
-            <li> Visit top beaches and Historical sites</li>
-            <li> Try lots of our local dishes</li>
-            <li> Custom Private experience </li>
+          <li>Island-wide guided tours</li>
+          <li>Top beaches &amp; historical sites</li>
+          <li>Local cuisine experiences</li>
+          <li>Custom private experiences</li>
         </ul>
-
-        <button routerLink="../tours/list" class="btn"> Learn More</button>
+        <button routerLink="/tours/list" class="btn-primary">Learn More</button>
+      </div>
     </div>
-
-</section>
-
-<section class="split light">
-    <img src="https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg" class="first"
-        alt="Beach" />
-
-
-    <div class="text">
-        <h2> Explore Beautiful Beaches </h2>
-        <p>
-            Antigua & Barbuda boasts some of the most stunning beaches in the world.
-            With our taxi and tour service, you can easily access these pristine shores
-            and enjoy a day of sun, sand, and sea. Whether you're looking for a secluded
-            cove or a lively beach with water sports, we have the perfect destination for you.
-        </p>
+  </section>
+ 
+  <!-- FEATURE SECTIONS -->
+  <section class="feature light">
+    <div class="feature-img">
+      <img src="https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg" alt="Beach">
     </div>
-</section>
-
-<section class="split dark">
-    <img src="https://rumporter.com/wp-content/uploads/2024/10/antigua-distillerie.jpg" class="second" alt="Tour" />
-    <div class="text">
-        <h2 style="color: rgb(255, 196, 0);"> Discover Exciting Tours </h2>
-        <p>
-            Explore the rich culture and natural beauty of Antigua & Barbuda with our guided tours.
-            From historical sites to vibrant markets, we offer a variety of experiences that showcase
-            the best of what our islands have to offer.
-        </p>
+    <div class="feature-text">
+      <span class="section-eyebrow">Sun, Sand &amp; Sea</span>
+      <h2>Explore Beautiful Beaches</h2>
+      <p>Antigua &amp; Barbuda boasts some of the most stunning beaches in the world. With our taxi and tour service, you can easily access these pristine shores and enjoy a day of sun, sand, and sea.</p>
+      <button routerLink="/tours/list" class="btn-primary">Explore Beaches</button>
     </div>
-</section>
-
-
-
-<section class="split light">
-    <img src="https://fittwotravel.com/wp-content/uploads/2024/01/Dickenson-Bay-Beach-Antigua-best-beaches-768x432.jpg"
-        class="third" alt="Taxi" />
-    <div class="text">
-        <h2> Reliable Taxi Service </h2>
-        <p>
-            Our taxi service is the most reliable way to get around Antigua & Barbuda.
-            With our experienced drivers and comfortable vehicles, you can travel with confidence
-            and ease. Whether you need a ride to the airport, a day trip, or a night out, we are here to serve you.
-        </p>
+  </section>
+ 
+  <section class="feature dark">
+    <div class="feature-text">
+      <span class="section-eyebrow">Culture &amp; History</span>
+      <h2>Discover Exciting Tours</h2>
+      <p>Explore the rich culture and natural beauty of Antigua &amp; Barbuda with our guided tours. From historical sites to vibrant markets, we offer a variety of experiences that showcase the best of what our islands have to offer.</p>
+      <button routerLink="/tours/list" class="btn-gold">View All Tours</button>
     </div>
-</section>
-
-
-
-<section class="info-view-container">
-
-    <div class="info-view">
-
-        <img class="info-view-earth" width="300px" src="earthpng.png" alt="Taxi Service" />
-
-        <div class="info-view-description">
-
-            <h2 style="color: rgb(255, 196, 0);"> Why Choose Us? </h2>
-            <p style="color: white;">
-                We are committed to providing exceptional customer service and unforgettable experiences.
-                Our knowledgeable drivers and tour guides will ensure that you have a safe, enjoyable, and memorable
-                time in
-                Antigua & Barbuda.
-                Book with us today and let us show you the best of our beautiful islands!
-            </p>
-
-            <div class="item-info-style">
-                <div class="item-info">
-                    <label class="item-info-label">200+</label>
-                    <p class="item-info-sub-label">Happy Guest</p>
-                </div>
-
-                <div class="item-info">
-                    <label class="item-info-label">5+</label>
-                    <p class="item-info-sub-label">Years of Service</p>
-
-                </div>
-
-                <div class="item-info">
-                    <label class="item-info-label">365</label>
-                    <p class="item-info-sub-label">Beaches Covered</p>
-                </div>
-
-                <div class="item-info">
-                    <label class="item-info-label">24/7</label>
-                    <p class="item-info-sub-label">Availablity</p>
-                </div>
-
-            </div>
-
-
-
-
-            <button class="item-info-button btn" routerLink="/tours/list">Plan Your Stay!</button>
-
+    <div class="feature-img">
+      <img src="https://rumporter.com/wp-content/uploads/2024/10/antigua-distillerie.jpg" alt="Tour">
+    </div>
+  </section>
+ 
+  <section class="feature light">
+    <div class="feature-img">
+      <img src="https://fittwotravel.com/wp-content/uploads/2024/01/Dickenson-Bay-Beach-Antigua-best-beaches-768x432.jpg" alt="Taxi">
+    </div>
+    <div class="feature-text">
+      <span class="section-eyebrow">Getting Around</span>
+      <h2>Reliable Taxi Service</h2>
+      <p>Our taxi service is the most reliable way to get around Antigua &amp; Barbuda. With our experienced drivers and comfortable vehicles, you can travel with confidence and ease.</p>
+      <button routerLink="/taxi/list" class="btn-primary">Book a Ride</button>
+    </div>
+  </section>
+ 
+  <!-- WHY CHOOSE US + SIDE SLIDER -->
+  <section class="why-us">
+    <div class="why-us-inner">
+ 
+      <!-- LEFT: text + stats -->
+      <div class="why-us-text">
+        <span class="section-eyebrow gold">Why Choose Us</span>
+        <h2>Unforgettable Experiences, Every Time</h2>
+        <p>We are committed to providing exceptional customer service and unforgettable experiences. Our knowledgeable drivers and tour guides will ensure that you have a safe, enjoyable, and memorable time in Antigua &amp; Barbuda.</p>
+ 
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-card-number">200+</span>
+            <span class="stat-card-label">Happy Guests</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card-number">5+</span>
+            <span class="stat-card-label">Years of Service</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card-number">365</span>
+            <span class="stat-card-label">Beaches Covered</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card-number">24/7</span>
+            <span class="stat-card-label">Availability</span>
+          </div>
         </div>
-    </div>
-
-
-</section>
-
-<section class="gallery">
-
-    <div class="gallery-format">
-        <div class="gallery-header">
-            <h2 style="letter-spacing: 10px; color: rgb(196, 147, 0);">Island Life</h2>
-            <h1>Our Island Life Gallery</h1>
-
+ 
+        <button routerLink="/tours/list" class="btn-gold">Plan Your Stay</button>
+      </div>
+ 
+      <!-- RIGHT: stacked side slider + main image -->
+      <div class="why-us-right">
+ 
+        <!-- Side destination slider -->
+        <div class="side-slider">
+          <div class="side-slider-track" #sideTrack>
+            <div class="side-slide">
+              <img src="https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg" alt="Antigua Beach">
+              <div class="side-slide-label">Antigua Shores</div>
+            </div>
+            <div class="side-slide">
+              <img src="https://fittwotravel.com/wp-content/uploads/2024/01/Dickenson-Bay-Beach-Antigua-best-beaches-768x432.jpg" alt="Dickenson Bay">
+              <div class="side-slide-label">Dickenson Bay</div>
+            </div>
+            <div class="side-slide">
+              <img src="https://rumporter.com/wp-content/uploads/2024/10/antigua-distillerie.jpg" alt="Distillery">
+              <div class="side-slide-label">Local Distillery</div>
+            </div>
+            <div class="side-slide">
+              <img src="https://www.royalcaribbean.com/media-assets/pmc/content/dam/shore-x/st-johns-anu/anf1-stingray-and-kayak-adventure/stock-photo-stingrays-at-stingray-city-in-grand-cayman-islands-284293250.jpg?w=800" alt="Stingray City">
+              <div class="side-slide-label">Stingray City</div>
+            </div>
+            <div class="side-slide">
+              <img src="https://mediaim.expedia.com/localexpert/307516/388d0227-b286-4590-9ec8-97aced0908ee.jpg" alt="Zipline">
+              <div class="side-slide-label">Zipline Adventure</div>
+            </div>
+          </div>
+ 
+          <!-- Slider controls -->
+          <div class="side-slider-dots">
+            <button class="side-dot active" (click)="setSlide(0)"></button>
+            <button class="side-dot" (click)="setSlide(1)"></button>
+            <button class="side-dot" (click)="setSlide(2)"></button>
+            <button class="side-dot" (click)="setSlide(3)"></button>
+            <button class="side-dot" (click)="setSlide(4)"></button>
+          </div>
+ 
+          <div class="side-slider-arrows">
+            <button class="side-arrow" (click)="prevSlide()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="side-arrow" (click)="nextSlide()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
         </div>
-
-
-        <div class="gallery-images-container">
-            <div class="gallery-item">
-                <img src="https://fittwotravel.com/wp-content/uploads/2024/01/Dickenson-Bay-Beach-Antigua-best-beaches-768x432.jpg"
-                    alt="Taxi Service" />
-            </div>
-
-            <div class="gallery-item">
-                <img src="https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg"
-                    alt="Beach" />
-            </div>
-
-            <div class="gallery-item">
-                <img src="https://rumporter.com/wp-content/uploads/2024/10/antigua-distillerie.jpg" alt="Tour" />
-            </div>
-
-            <div class="gallery-item">
-                <img src="https://www.bookantigua.travel/wp-content/uploads/2024/09/beaches-in-antigua-2048x2048.jpg"
-                    alt="Beach" />
-            </div>
-
-        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="gallery-header">
+      <span class="section-eyebrow gold">Island Life</span>
+      <h2>Our Island Gallery</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item tall">
+        <img src="https://fittwotravel.com/wp-content/uploads/2024/01/Dickenson-Bay-Beach-Antigua-best-beaches-768x432.jpg" alt="Beach">
+        <div class="gallery-overlay"><span>Dickenson Bay</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/img4.jpg" alt="Beach">
+        <div class="gallery-overlay"><span>Antigua Shores</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://discoverantiguabarbuda.com/wp-content/uploads/2021/01/DSC00882-Custom.jpg" alt="Tour">
+        <div class="gallery-overlay"><span>Fort James</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/10/45/33/d9.jpg" alt="Beach">
+        <div class="gallery-overlay"><span>Nelson Dockyard</span></div>
+      </div>
+      <div class="gallery-item tall">
+        <img src="images/img12.jpg" alt="Beach">
+        <div class="gallery-overlay"><span>Devil's Bridge</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/img7.jpg" alt="Beach">
+        <div class="gallery-overlay"><span>Betty's Hope</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/img10.jpg" alt="Tour">
+        <div class="gallery-overlay"><span>Fort James</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/img11.jpg" alt="Beach">
+        <div class="gallery-overlay"><span>Antigua Shores</span></div>
+      </div>
 
     </div>
-
-</section>
+  </section>
+ 
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>Ready to Explore Antigua?</h2>
+      <p>Book your taxi or tour today and start your island adventure.</p>
+      <div class="cta-banner-btns">
+        <button routerLink="/taxi/list" class="btn-primary">Book a Taxi</button>
+        <button routerLink="/tours/list" class="btn-outline-white">Explore Tours</button>
+      </div>
+    </div>
+  </section>
+ 
+</div>

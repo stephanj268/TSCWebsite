@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MapComponent } from '../../../shared/map/map';
 import { TaxiService, ITaxi } from '../../../service/taxi.service';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-view-taxi',
   templateUrl: './view-taxi.html',
