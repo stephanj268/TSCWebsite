@@ -35,12 +35,17 @@ export const routes: Routes = [
         ]
     },
 
+
+    // Booking Route 📖
+
     {
-        path: 'booking/:booking_id', component: BookingComponent,
+        path: 'booking', component: BookingComponent, children: [],
     },
 
+    {
+        path: 'booking/:booking_id', component: BookingComponent, children: [],
+    },
+
+    // ‼️
     { path: '**', component: ErrorPage },
-
-
-
 ];

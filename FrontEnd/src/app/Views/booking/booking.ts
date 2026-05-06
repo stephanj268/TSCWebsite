@@ -103,7 +103,7 @@ export class BookingComponent implements OnInit {
     
     //get id from browser
     this.activatedRoute.paramMap.subscribe(params => {
-      const id = params.get("booking_id");
+      const id = params.get("booking_id") ? params.get("booking_id") : 0;
       this.browserId = id; 
     });
 

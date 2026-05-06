@@ -5,6 +5,7 @@ import { NzButtonComponent, NzButtonModule } from "ng-zorro-antd/button";
 import { RouterOutlet } from '@angular/router';
 
 import { OperationHidden } from '../../../Directives/Operation-Time/OperationTimeHiddenDirective';
+import { NavigationComponent } from "../../../shared/navigation/navigation";
 
 
 @Component({
@@ -16,8 +17,9 @@ import { OperationHidden } from '../../../Directives/Operation-Time/OperationTim
 
   imports: [
     NzButtonModule,
-    RouterOutlet
-  ],
+    RouterOutlet,
+    NavigationComponent
+],
   templateUrl: './tours.html',
   styleUrl: './tours.css',
 })
