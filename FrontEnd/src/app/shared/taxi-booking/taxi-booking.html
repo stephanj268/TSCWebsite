@@ -111,11 +111,15 @@
 
       <div class="form-item">
         <label class="form-label">Taxi Type</label>
-      
+
         <nz-select [ngModel]="taxiType" (ngModelChange)="onTaxiTypeChange($event)">
           <nz-option nzValue="default" nzLabel="Select a taxi type" />
-          <nz-option nzValue="Vip Airport Transfer" nzLabel="Vip Airport Transfer" />
-          <nz-option nzValue="Restaurant" nzLabel="Restaurant" />
+
+          @for(item of allTaxi; track item) {
+          <nz-option [nzValue]="item.name" [nzLabel]="item.name" />
+
+          }
+
         </nz-select>
 
       </div>

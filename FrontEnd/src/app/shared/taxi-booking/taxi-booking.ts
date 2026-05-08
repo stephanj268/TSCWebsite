@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { getISOWeek } from 'date-fns';
 
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
-import { en_US, NzI18nService, zh_CN } from 'ng-zorro-antd/i18n';
+import { en_US, NzI18nService, ta_IN, zh_CN } from 'ng-zorro-antd/i18n';
 
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
@@ -44,13 +44,14 @@ import { NavigationComponent } from '../../shared/navigation/navigation';
   templateUrl: './taxi-booking.html',
   styleUrl: './taxi-booking.css',
 })
-export class TaxiBookingComponent implements OnInit{
+export class TaxiBookingComponent implements OnInit {
 
 
   booking: any;
 
   tour: any;
   taxi: any;
+  allTaxi: any;
 
   browserId: any;
 
@@ -61,9 +62,8 @@ export class TaxiBookingComponent implements OnInit{
   email: string = '';
   phone: string = '';
   passengers: number = 1;
-  serviceType: string = 'default';
+  serviceType: string = '';
   taxiType: string = 'default';
-  tourType: string = 'default';
 
   pickupLocation: string = '';
   specialRequests: boolean = false;
@@ -94,16 +94,15 @@ export class TaxiBookingComponent implements OnInit{
     });
 
     this.taxiservice.getAllTaxiEvent.subscribe((data) => {
-      this.taxi = this.taxiservice.getTaxiById(data);
-    })
+      this.taxi = data.filter(taxi => taxi._id == this.browserId);
+      this.taxiType = this.taxi[0].name ? 'default' : 'default';
+
+    });
+
+    this.allTaxi = this.taxi
+
 
     this.taxiservice.onGetTaxiEvent(this.taxi)
-
-
-    console.log(this.browserId)
-    //Get appropriate tour
-    
-    
 
   }
 
@@ -114,15 +113,16 @@ export class TaxiBookingComponent implements OnInit{
       lastname: this.lastname,
       email: this.email,
       phonenumber: this.phone,
-      tourType: this.tourType,
       maxPersons: this.passengers,
-      serviceType: this.serviceType,
+      serviceType: 'taxi',
       taxiType: this.taxiType,
       startDate: this.date,
       endDate: this.date,
       createdAt: this.date ? new Date(this.date) : new Date()
 
     };
+
+    // Validate Data
 
     if (!build.firstname || !build.lastname) {
       return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Incomplete name fields!', styleClass: 'blue' });
@@ -154,7 +154,6 @@ export class TaxiBookingComponent implements OnInit{
 
 
     this.bookingservice.createTaxiBooking(build).subscribe((data) => {
-      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
 
       const emailTemplate = {
         to_email: build.email,        // ← recipient (set {{to_email}} in EmailJS "To" field)
@@ -171,14 +170,18 @@ export class TaxiBookingComponent implements OnInit{
 
       console.log({ ...emailTemplate });
 
-      // emailjs.send("service_qczeclo", "template_vjcukzya", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
-      //   .then(() => {
-      //     console.log("sent!")
-      //   }, (error) => {
-      //     console.log(error)
-      //   }
-      //   );
 
+
+      // Send Email
+      emailjs.send("service_qczeclo", "template_vjcukzya", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
+        .then(() => {
+
+          console.log("sent!")
+        }, (error) => {
+          console.log(error);
+        });
+
+      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
     }, (error) => {
       console.log(error)
       this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error}` });
@@ -191,7 +194,7 @@ export class TaxiBookingComponent implements OnInit{
   onChange(result: Date): void {
     console.log('onChange: ', result);
   }
-  
+
   onTaxiTypeChange(data: any) {
     this.taxiType = data
   }
