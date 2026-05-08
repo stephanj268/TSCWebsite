@@ -159,7 +159,10 @@ export class TourBookingComponent implements OnInit {
       const emailTemplate = {
         to_email: build.email,        // ← recipient (set {{to_email}} in EmailJS "To" field)
         first_name: build.firstname,       // ← "Hi {{first_name}},"  (use whatever field has their name)
+        last_name: build.lastname,
         type: build.serviceType,       // ← was "Service:", now must be "type"
+        service_type: build.tourType,
+        duration: `${this.tour[0].duration} hours`,
         date: build.startDate,              // ← was "Date:"
         time: build.startDate,              // ← was "Time:"
         persons: build.maxPersons,    // ← was "Persons:"
@@ -174,7 +177,7 @@ export class TourBookingComponent implements OnInit {
 
 
       // Send Email
-      emailjs.send("service_qczeclo", "template_vjcukzya", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
+      emailjs.send("service_qczeclo", "template_nj864t5", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
         .then(() => {
 
           console.log("sent!")
