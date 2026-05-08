@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
-import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { NzMarks, NzSliderModule } from 'ng-zorro-antd/slider';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 
 import { NzInputModule } from 'ng-zorro-antd/input';
@@ -25,7 +25,9 @@ import { en_US, NzI18nService, zh_CN } from 'ng-zorro-antd/i18n';
     NzDatePickerModule,
     NzGridModule,
     NzInputNumberModule,
+
     NzSliderModule,
+
     NzModalModule,
     NzRadioModule,
     NzRateModule

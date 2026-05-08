@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { TaxiService, ITaxi } from '../../../service/taxi.service';
 import { SliderComponent } from '../../../shared/slider/slider';
-import { SearchFilter } from '../../Body/search-filter/search-filter';
+import { SearchFilter } from '../../../shared/search-filter/search-filter';
 
 
 @Component({

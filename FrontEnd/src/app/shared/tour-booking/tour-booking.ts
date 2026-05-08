@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 
-import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { BookingService } from '../../service/booking/booking.service';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 

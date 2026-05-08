@@ -21,7 +21,7 @@
     width: max-content;
 
     border-right: 1px solid rgb(223, 223, 223);
-    
+
     padding-right: 10px;
     margin-right: 10px;
 }
@@ -31,14 +31,14 @@
     flex-direction: row;
     overflow: auto;
 
-    scrollbar-width:thin;
+    scrollbar-width: thin;
 }
 
 .nz-date-picker {
     margin: 0 8px 12px 0;
     width: max-content;
     border-radius: 18px;
-    
+
     height: 40px;
 }
 
@@ -67,4 +67,13 @@
     width: 300px;
     height: 300px;
 
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+    padding-bottom: 10px;
 }

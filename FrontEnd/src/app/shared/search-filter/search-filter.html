@@ -28,33 +28,21 @@
 <nz-modal [(nzVisible)]="isVisible" nzTitle="Filters" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
     <ng-container *nzModalContent>
 
-        <div>
-            <h3>Languages</h3>
-            <nz-radio-group [(ngModel)]="radioValue">
-                @for (o of options; track o.value) {
-                <label nz-radio [nzValue]="o.value">{{ o.label }}</label>
-                }
-            </nz-radio-group>
-        </div>
-
-
-        <div>
-            Time
-        </div>
-
-        <label>Rating</label>
-        <nz-rate [ngModel]="2" nzAllowHalf />
-
-        <div>
-            Duration
+        <div class="section">
+            <label>Duration</label>
 
         </div>
 
-        <div
-            style="display: flex; flex-direction: row; width: 100%; border-bottom: 1px solid rgb(221, 221, 221); padding-bottom: 10px;">
+        <div class="section">
+            <label>Rating</label>
+            <nz-rate [ngModel]="2" nzAllowHalf />
+
+        </div>
+
+
+        <div class="section">
             <label>Price</label>
-            <nz-slider nzRange [nzStep]="5" [(ngModel)]="rangeValue" (ngModelChange)="onPriceSliderChange($event)"
-                (nzOnAfterChange)="onAfterPriceSliderChange($event)" />
+
 
         </div>
     </ng-container>
