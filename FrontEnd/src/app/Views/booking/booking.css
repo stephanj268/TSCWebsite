@@ -14,7 +14,7 @@
 
 .text {
     line-height: -10px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 50px;
     font-weight: 800;
 
@@ -38,6 +38,7 @@
     background-color: rgba(74, 160, 236, 0.575);
 
 }
+
 
 .tag-text {
 

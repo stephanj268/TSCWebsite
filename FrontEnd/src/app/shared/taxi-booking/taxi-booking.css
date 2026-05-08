@@ -19,7 +19,7 @@ nz-range-picker {
 }
 
 .footer-ico {
-    width: 90px; 
+    width: 90px;
     height: 90px;
 }
 
@@ -189,4 +189,8 @@ button:disabled {
         flex-direction: column;
     }
 
+}
+
+nz-select {
+    width: 200px;
 }

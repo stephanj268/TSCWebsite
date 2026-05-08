@@ -110,18 +110,21 @@
       </div>
 
       <div class="form-item">
-        <label class="form-label">Taxi Type</label>
 
-        <nz-select [ngModel]="taxiType" (ngModelChange)="onTaxiTypeChange($event)">
-          <nz-option nzValue="default" nzLabel="Select a taxi type" />
+        <div class="column">
+          <h2 class="form-label">Taxi Type</h2>
 
-          @for(item of allTaxi; track item) {
-          <nz-option [nzValue]="item.name" [nzLabel]="item.name" />
+          <nz-select class="nz-option" nzShowSearch nzAllowClear [ngModel]="taxiType"
+            (ngModelChange)="onTaxiTypeChange($event)">
+            <nz-option nzValue="default" nzLabel="Select a taxi type" />
 
-          }
+            @for(item of allTaxi; track item) {
+            <nz-option [nzValue]="item.name" [nzLabel]="item.name" />
 
-        </nz-select>
+            }
 
+          </nz-select>
+        </div>
       </div>
 
 
