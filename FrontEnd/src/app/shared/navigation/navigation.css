@@ -120,7 +120,8 @@
 }
 
 .nav-label:hover {
-    color: #ffffff;
+    animation: none;
+    color: #2aa3ff;
     transition: 0.5s;
 
 }

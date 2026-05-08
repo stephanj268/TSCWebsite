@@ -15,7 +15,7 @@
 
 .footer {
   background: #01154a;
-  background: linear-gradient(180deg, rgba(1, 21, 74, 1) 0%, rgba(4, 5, 43, 1) 100%);
+  background: linear-gradient(0deg, rgba(1, 21, 74, 1) 0%, rgba(4, 5, 43, 1) 100%);
 
   color: rgb(207, 207, 207);
   padding: 40px;
