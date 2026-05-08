@@ -1,5 +1,5 @@
 import { Component, inject, model, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { GalleriaModule } from 'primeng/galleria';
@@ -24,9 +24,11 @@ export class ViewToursComponent implements OnInit {
   images: any = model([]);
   responsiveOptions?: any[];
 
-  constructor(private tourservice: TourService, private activatedRoute: ActivatedRoute) {
-
-  }
+  constructor(
+    private tourservice: TourService, 
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.loadBorwserId();
@@ -44,7 +46,6 @@ export class ViewToursComponent implements OnInit {
         this.tourIncludedDetails.push(data);
       }
 
-
     });
 
     this.tourservice.onGetToursEvent(this.tour);
@@ -59,6 +60,10 @@ export class ViewToursComponent implements OnInit {
       this.browserId = id;
     });
 
+  }
+
+  onBookNow() {
+    this.router.navigateByUrl(`booking/tour/${this.tour[0]._id}`)
   }
 
 }

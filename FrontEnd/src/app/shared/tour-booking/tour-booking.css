@@ -1,0 +1,196 @@
+nz-date-picker,
+nz-range-picker {
+    margin: 0 8px 12px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.form {
+    margin: 20px 0px 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    width: fit-content;
+    height: max-content;
+
+    border-radius: 12px;
+}
+
+.footer-ico {
+    width: 90px;
+    height: 90px;
+}
+
+.footer-tile {
+    background-image: url('https://png.pngtree.com/png-vector/20240415/ourmid/pngtree-starry-night-sky-a-outer-space-transparent-background-with-a-star-png-image_11975126.png');
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+    padding: 20px 20px 20px 20px;
+    height: 150px;
+
+    background-color: rgb(11, 35, 71);
+}
+
+.footer-tile h1 {
+    color: white;
+    margin-left: 40px;
+    margin-right: auto;
+    line-height: 0.7;
+}
+
+.footer-tile p {
+    color: white;
+    margin-left: 40px;
+    margin-right: auto;
+}
+
+
+.form-content {
+    padding: 20px 20px 20px 20px;
+}
+
+.form-label-int {
+    width: 100%;
+}
+
+.booking-form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #f0f8ff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+}
+
+h2 {
+    color: #014389;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+input,
+select {
+    padding-left: 30px;
+    border: 1px solid #b6c7f1;
+    border-radius: 4px;
+    width: fit-content;
+    height: 40px;
+}
+
+.phone {
+    width: 100%;
+}
+
+.input-email {
+    width: 400px;
+    padding-left: 35px;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+.submit-button {
+    font-weight: 600;
+}
+
+button:hover {
+
+    background-color: #0667cf;
+}
+
+button:disabled {
+    background-color: #28a745;
+    cursor: not-allowed;
+    margin-top: 15px;
+}
+
+.success-message {
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+.error-message {
+    margin-top: 20px;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+.left {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .form {
+        margin: 20px 0px 10px 10px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        width: 95%;
+
+        border-radius: 4px;
+    }
+
+    .input-email {
+        width: 200px;
+    }
+
+    .form-item {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin-bottom: 20px;
+
+    }
+
+    .left {
+        margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+nz-select {
+    width: 200px;
+}
