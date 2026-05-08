@@ -15,6 +15,9 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { en_US, NzI18nService, zh_CN } from 'ng-zorro-antd/i18n';
 
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+
+
 @Component({
   selector: 'app-search-filter',
   imports: [
@@ -27,6 +30,7 @@ import { en_US, NzI18nService, zh_CN } from 'ng-zorro-antd/i18n';
     NzInputNumberModule,
 
     NzSliderModule,
+    NzCheckboxModule,
 
     NzModalModule,
     NzRadioModule,
@@ -56,9 +60,13 @@ export class SearchFilter {
 
   ratingNumber = 2
 
-  // Slider Component Variables
-  singleValue = 30;
-  rangeValue = [20, 50];
+  //check box
+  value = ['A'];
+
+  log(value: string[]): void {
+    console.log(value);
+  }
+
 
 
   readonly listOfOption: Array<{ value: string; label: string }> = this.filterTypes().map(item => ({
