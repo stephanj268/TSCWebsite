@@ -19,14 +19,17 @@
   --radius-md:  12px;
   --radius-lg:  16px;
   --t:          0.2s ease;
+  --bg:         rgb(207, 227, 249)
 }
  
 /* ── Page ── */
 .page-wrapper {
   font-family: 'Jost', sans-serif;
-  
-background-color: rgb(211, 229, 253);
   color: var(--text-1);
+
+
+  
+  background-color: var(--bg);
   
   min-height: 100vh;
 
@@ -35,8 +38,6 @@ background-color: rgb(211, 229, 253);
  
 /* ── Hero Layout: content left, image right ── */
 .hero-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   min-height: 80vh;
   align-items: stretch;
 }
@@ -45,8 +46,7 @@ background-color: rgb(211, 229, 253);
 .hero-layout .item {
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0 clamp(24px, 5vw, 60px);
+  
 }
  
 .hero-layout .item-block {
@@ -54,23 +54,22 @@ background-color: rgb(211, 229, 253);
   flex-direction: column;
   width: 100%;
   justify-content: center;
-  padding: 60px 0 48px;
 }
  
 /* ─Image ── */
-.tour-img {
-  position: relative;
-  overflow: hidden;
-  min-height: 200px;
-}
+
  
 .tour-img img {
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-  display: block;
-  padding-top: 10%;
+  object-fit:fill;
+  width: 40vw;
+  height: 300px;
+
   transition: transform 0.6s ease;
+
+  border-radius: 10px;
+
+  margin-left: 20px;
+  margin-right: 50px;
 }
  
 .tour-img:hover img {
@@ -104,14 +103,34 @@ background-color: rgb(211, 229, 253);
 .item {
   display: flex;
   flex-direction: row;
-  margin: 0 clamp(16px, 5vw, 60px);
+  width: 100%;
 }
  
 .item-block {
   display: flex;
   flex-direction: column;
+  padding-left: 20px;
+  padding-top: 15px;
+
   width: 100%;
+  
+  background-color: rgb(207, 227, 249);
+
 }
+
+.item-block.top {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top: 100px;
+  padding-bottom: 10px;
+  background-color: rgb(223, 235, 249);
+
+  border-bottom: 1px solid rgb(191, 210, 234);
+
+}
+
+
  
 /* ── Eyebrow ── */
 .eyebrow {
@@ -151,12 +170,15 @@ h1 {
   padding: 6px 16px;
   font-size: 13px;
   color: var(--primary);
-  background: rgba(255,255,255,0.08);
-  transition: border-color var(--t), var(--t);
+  background: rgba(255, 255, 255, 0.674);
+
+  transition: 0.5s;
 }
  
 .meta-pill:hover {
-  border-color: rgba(255,255,255,0.4);
+  transition: 0.5s;
+
+  border-color: rgba(255, 255, 255, 0.489);
   background: rgba(255,255,255,0.14);
 }
  
@@ -278,7 +300,7 @@ h2 {
 .included-card:hover {
   transition: 0.4s;
 
-  background: rgba(255,255,255,0.13);
+  background: rgba(255, 255, 255, 0.365);
   border-color: rgba(255,255,255,0.3);
   transform: translateY(-10px);
 }
@@ -323,14 +345,14 @@ h2 {
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(255,255,255,0.14);
   border-radius: var(--radius-md);
-  transition: background var(--t), box-shadow var(--t), transform var(--t);
+  transition: var(--t), box-shadow var(--t), transform var(--t);
 
   color: var(--primary);
 }
  
 .card:hover {
-  background: rgba(255,255,255,0.12);
-  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   transform: translateY(-3px);
 }
  
@@ -415,30 +437,50 @@ h2 {
   gap: 10px;
   padding: 15px 36px;
   background: var(--gold);
-  color: var(--navy);
+  color: white;
   border-radius: var(--radius-sm);
   font-family: 'Jost', sans-serif;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.06em;
-  transition: background var(--t), transform var(--t), box-shadow var(--t);
+  transition: 1s;
 }
  
 .submit-button [nz-icon] {
   font-size: 16px;
   margin-right: 0;
-  transition: transform var(--t);
+
+  transition: 0.4s;
+}
+
+.submit-button:hover [nz-icon] {
+  animation-name: toleft;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  
+}
+
+@keyframes toleft {
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(8px);
+  }
 }
  
 .submit-button:hover {
+  transition: 0.4s;
+
   background: #6bbde3;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(77, 168, 218, 0.4);
 }
  
-.submit-button:hover [nz-icon] {
-  transform: translateX(4px);
-}
+
  
 .submit-button:active {
   transform: translateY(0);
