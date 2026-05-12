@@ -1,40 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap');
  
-/* ── CSS Variables ─────────────────────────────── */
+/* ── Variables ─*/
 :host {
-  --gold: #B07D2A;
-  --gold-light: #FFDE23;
-  --gold-dark: #DFBF0A;
-  --navy: #15376f;
-  --bg-page: #f8f4ee;
-  --bg-card: #ffffff;
-  --bg-card-alt: #f3ede4;
-  --border-color: #e0d9d0;
-  --text-primary: #1a1714;
-  --text-secondary: #5c5650;
-  --text-muted: #9a9088;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --transition: 0.2s ease;
+  --navy:       #0f1e38;
+  --navy-mid:   #162d54;
+  --gold:       #b07928;
+  --gold-pale:  #fdf5e6;
+  --bg:         #75726f;
+  --surface:    #ffffff;
+  --border:     #e4ddd4;
+  --border-mid: #cec6bb;
+  --text-1:     #1c1710;
+  --text-2:     #4a433c;
+  --text-3:     #9a8f82;
+  --green:      #1a7f5a;
+  --green-pale: #eaf5ef;
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --t:          0.2s ease;
 }
  
-/* ── Page Shell ────────────────────────────────── */
-.container {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--bg-page);
+/* ── Page ── */
+.page-wrapper {
+  font-family: 'Jost', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-1);
   min-height: 100vh;
-  font-family: 'DM Sans', sans-serif;
 }
  
-/* ── Hero Image ────────────────────────────────── */
+/* ── Hero Image ──────────────────────────────── */
 .tour-img {
   width: 100%;
-  height: 420px;
-  background-color: #e4ddd3;
+  height: 480px;
+  background-color: #c8bfb0;
   overflow: hidden;
-  /* no border-radius — bleeds edge to edge for drama */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
  
 .tour-img img {
@@ -42,313 +46,428 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s ease;
 }
  
-/* ── Content Row ───────────────────────────────── */
+.tour-img:hover img {
+  transform: scale(1.03);
+}
+ 
+.img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+}
+ 
+.img-placeholder [nz-icon] {
+  font-size: 36px;
+  margin-right: 0;
+}
+ 
+.img-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: var(--radius-sm);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background var(--t), transform var(--t);
+  backdrop-filter: blur(4px);
+}
+ 
+.img-badge:hover {
+  background: var(--surface);
+  transform: translateY(-1px);
+}
+ 
+/* ── Content ─────────────────────────────────── */
 .item {
   display: flex;
   flex-direction: row;
-  margin: 0 clamp(16px, 5vw, 64px);
+  margin: 0 clamp(16px, 5vw, 60px);
 }
  
 .item-block {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  max-width: 720px;
-  padding-bottom: 40px;
+  width: 100%;
+  max-width: 780px;
 }
  
-/* ── Tour Header ───────────────────────────────── */
-.tour-header {
-  padding-top: 40px;
-}
- 
+/* ── Eyebrow ─────────────────────────────────── */
 .eyebrow {
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-muted);
-  margin: 0 0 12px;
+  color: var(--text-3);
+  margin-top: 40px;
+  margin-bottom: 12px;
 }
  
-.tour-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 6vw, 60px);
+/* ── Title ───────────────────────────────────── */
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 6vw, 68px);
   font-weight: 400;
-  line-height: 1.1;
-  color: var(--text-primary);
+  line-height: 1.05;
+  color: var(--navy);
+  letter-spacing: -0.01em;
   margin: 0 0 24px;
 }
  
-/* ── Meta Pills ────────────────────────────────── */
-.meta-pills {
+/* ── Meta Pills ──────────────────────────────── */
+.meta-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 8px;
 }
  
 .meta-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
+  gap: 7px;
+  border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 6px 16px;
+  padding: 7px 18px;
   font-size: 13px;
-  color: var(--text-secondary);
-  font-weight: 400;
+  color: var(--text-2);
+  background: var(--surface);
+  transition: border-color var(--t), box-shadow var(--t);
 }
  
-.meta-pill nz-icon,
+.meta-pill:hover {
+  border-color: var(--border-mid);
+  box-shadow: 0 2px 8px rgba(15, 30, 56, 0.07);
+}
+ 
 .meta-pill [nz-icon] {
+  color: var(--gold);
   font-size: 14px;
   margin-right: 0;
-  color: var(--gold);
 }
  
-/* ── Divider ───────────────────────────────────── */
+/* ── Divider ─────────────────────────────────── */
 .divider {
   border: none;
-  border-top: 1px solid var(--border-color);
-  margin: 32px 0;
+  border-top: 1px solid var(--border);
+  margin: 36px 0;
 }
  
-/* ── Section Label ─────────────────────────────── */
+/* ── Section Label ───────────────────────────── */
 .section-label {
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
-  margin: 0 0 12px;
+  color: var(--text-3);
+  margin-bottom: 12px;
 }
  
-/* ── Overview ──────────────────────────────────── */
-.overview-section {
-  /* no extra padding — dividers handle spacing */
-}
- 
-.overview-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(24px, 3.5vw, 34px);
+/* ── Overview Heading ────────────────────────── */
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3.5vw, 38px);
   font-weight: 400;
-  line-height: 1.25;
-  color: var(--text-primary);
-  margin: 0 0 16px;
+  color: var(--navy);
+  margin-bottom: 16px;
+  line-height: 1.2;
 }
  
-.highlight-word {
+.heading-em {
   font-style: italic;
   color: var(--gold);
 }
  
+/* ── Body Text ───────────────────────────────── */
 .body-text {
   font-size: 15px;
-  line-height: 1.8;
-  color: var(--text-secondary);
+  line-height: 1.9;
+  color: var(--text-2);
   font-weight: 300;
-  margin: 0 0 20px;
+  margin: 0 0 24px;
 }
  
-/* ── Highlights List ───────────────────────────── */
-.highlights-list {
+/* ── Highlight List ──────────────────────────── */
+.hi-list {
   list-style: none;
   padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
  
-.highlights-list li {
+.hi-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+ 
+.hi-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--green-pale);
+  color: var(--green);
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--text-secondary);
-}
- 
-.highlight-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--gold);
+  justify-content: center;
   flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 12px;
 }
  
-/* ── Tour Details Border ───────────────────────── */
+.hi-dot [nz-icon] {
+  font-size: 12px;
+  margin-right: 0;
+}
+ 
+/* ── Tour Details Border ─────────────────────── */
 .tour-details-border {
-  padding: 0;
-  /* dividers above/below handle spacing */
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 36px 0;
 }
  
-/* ── Included List ─────────────────────────────── */
-.included-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+/* ── Included Grid ───────────────────────────── */
+.included-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 4px;
 }
  
 .included-item {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 0;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
   font-size: 14px;
-  color: var(--text-primary);
-  border-bottom: 1px solid var(--border-color);
+  color: var(--text-2);
 }
  
-.included-item:last-child {
+.included-item:nth-last-child(-n+2) {
   border-bottom: none;
 }
  
-.check-icon {
-  width: 22px;
-  height: 22px;
+.included-check {
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  background-color: #1D9E75;
+  background: var(--navy);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  font-size: 12px;
 }
  
-.check-icon [nz-icon] {
-  font-size: 11px;
-  color: #ffffff;
+.included-check [nz-icon] {
+  font-size: 12px;
   margin-right: 0;
 }
  
-/* ── Card Grid ─────────────────────────────────── */
+/* ── Cards Section ───────────────────────────── */
 .section {
-  margin-top: 40px;
+  margin-top: 0;
+  margin-bottom: 16px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
 }
  
 .card {
   width: 100%;
-  height: fit-content;
-  min-height: 120px;
-  padding: 20px;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
+  padding: 24px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  transition: box-shadow var(--transition);
+  transition: box-shadow var(--t), transform var(--t);
 }
  
 .card:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 8px 28px rgba(15, 30, 56, 0.1);
+  transform: translateY(-3px);
 }
  
-/* ── Book Now Footer ───────────────────────────── */
-.book-footer {
+.card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background: var(--gold-pale);
+  color: var(--gold);
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 24px clamp(16px, 5vw, 64px) 32px;
-  border-top: 1px solid var(--border-color);
-  margin-top: 16px;
-  background-color: var(--bg-page);
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 14px;
 }
  
-.price-row {
+.card-icon [nz-icon] {
+  font-size: 22px;
+  margin-right: 0;
+}
+ 
+.card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+ 
+.card p {
+  font-size: 13px;
+  color: var(--text-3);
+  line-height: 1.7;
+  font-weight: 300;
+  margin: 0;
+}
+ 
+/* ── Book Bar ────────────────────────────────── */
+.book-bar {
+  margin: 32px clamp(16px, 5vw, 60px) 0;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 24px 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 16px rgba(15, 30, 56, 0.07);
+  flex-wrap: wrap;
+}
+ 
+.price-block {
   display: flex;
   align-items: baseline;
   gap: 6px;
 }
  
 .price-from {
-  font-size: 12px;
-  color: var(--text-muted);
+  font-size: 13px;
+  color: var(--text-3);
 }
  
 .price-amount {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
   font-weight: 400;
-  color: var(--text-primary);
+  color: var(--navy);
+  line-height: 1;
 }
  
 .price-per {
-  font-size: 13px;
-  color: var(--text-muted);
+  font-size: 14px;
+  color: var(--text-3);
 }
  
-/* ── Submit Button ─────────────────────────────── */
+/* ── Submit Button ───────────────────────────── */
 .submit-button {
+  margin-left: auto;
   cursor: pointer;
   border: none;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  background-color: var(--gold-light);
+  gap: 10px;
+  padding: 15px 36px;
+  background: var(--navy);
+  color: #ffffff;
   border-radius: var(--radius-sm);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.03em;
-  color: var(--text-primary);
-  transition:
-    background-color var(--transition),
-    transform var(--transition);
-  white-space: nowrap;
+  letter-spacing: 0.06em;
+  transition: background var(--t), transform var(--t), box-shadow var(--t);
 }
  
 .submit-button [nz-icon] {
   font-size: 16px;
   margin-right: 0;
-  transition: transform var(--transition);
+  transition: transform var(--t);
 }
  
 .submit-button:hover {
-  background-color: var(--gold-dark);
+  background: var(--navy-mid);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(15, 30, 56, 0.28);
 }
  
 .submit-button:hover [nz-icon] {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
  
 .submit-button:active {
   transform: translateY(0);
+  box-shadow: none;
 }
+ 
+/* ── Trust Row ─*/
+.trust-row {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin: 14px clamp(16px, 5vw, 60px) 48px;
+  padding: 0 28px;
+}
+ 
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--text-3);
+}
+ 
+.trust-item [nz-icon] {
+  font-size: 15px;
+  color: var(--navy);
+  margin-right: 0;
+}
+ 
 
 nz-icon,
 [nz-icon] {
-  margin-right: 6px;
-  font-size: 18px;
   vertical-align: middle;
+  font-size: 16px;
 }
  
 
-@media (max-width: 600px) {
-  .tour-img {
-    height: 260px;
-  }
+@media (max-width: 768px) {
+  .tour-img { height: 300px; }
  
-  .book-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
+  .included-grid { grid-template-columns: 1fr; }
+  .included-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .included-item:last-child { border-bottom: none; }
  
-  .submit-button {
-    width: 100%;
-    justify-content: center;
-  }
+  .section { grid-template-columns: 1fr; }
  
-  .section {
-    grid-template-columns: 1fr;
-  }
+  .book-bar { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .submit-button { margin-left: 0; width: 100%; justify-content: center; }
+  .trust-row { padding: 0; }
+}
+ 
+@media (max-width: 480px) {
+  .tour-img { height: 240px; }
+  .book-bar { padding: 20px; margin-left: 16px; margin-right: 16px; }
+  .trust-row { margin-left: 16px; margin-right: 16px; }
+
 }
