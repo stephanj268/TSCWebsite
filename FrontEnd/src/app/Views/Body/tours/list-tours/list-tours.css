@@ -2,32 +2,54 @@
     display: flex;
     flex-direction: column;
 
+    margin-top: 50px;
     margin-left: 30px;
 }
 
+.text-tag {
+    font-family: monospace;
+    font-weight: 600;
 
-.card {
+    font-size: large;
 
-    margin: 10px 10px 50px 10px;
-    width: 350px;
+    color: rgb(0, 102, 191);
 
+    line-height: 0;
 }
+
+
+
 
 .section {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-direction: column;
 }
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 10px 10px 100px 10px;
+    width: fit-content
+}
+
+.card.reverse {
+    flex-direction: row-reverse;
+}
+
+
 
 .img {
 
     object-fit: fill;
     margin-bottom: 10px;
     width: 350px;
-    
+
     height: 190px;
 
     border-radius: 10px;
-    
+
     background-color: rgb(190, 190, 190);
 }
 
@@ -38,22 +60,49 @@
 }
 
 .see-more-button {
-    transition:  0.3s;
+    transition: 0.3s;
 
     width: 150px;
     height: 40px;
 
     font-size: large;
+    color: white;
 
-    
-    background-color: rgb(255, 212, 19);
+    background-color: rgb(188, 223, 255);
+    border: 1.6px solid rgb(30, 161, 232);
+}
+
+.see-more-button:hover {
+    transition: 0.3s;
+
+    width: 150px;
+    height: 40px;
+
+    font-size: large;
+    color: white;
+
+    background-color: rgb(148, 198, 244);
+    border: 1.6px solid rgb(162, 212, 239);
 }
 
 
 .see-more-button:hover {
     cursor: pointer;
-    transition:  0.3s;
-    background-color: rgb(216, 178, 9);
+    transition: 0.3s;
 
     font-size: large;
+}
+
+.bubble {
+    background-color: rgb(191, 220, 245);
+    padding: 5px 15px;
+    
+    width: max-content;
+    height: 5px;
+
+    font-family: monospace;
+
+    border-radius: 10px;
+
+    font-weight: 600;
 }

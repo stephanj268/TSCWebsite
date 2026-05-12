@@ -22,6 +22,7 @@ export class TourService {
             img: this.defaultImg,
             alt: 'dummy alt',
             name: 'Full Day Tours',
+            slogo: 'ALL DAY',
             type: [],
             duration: 6,
             tourOptions: [
@@ -38,6 +39,7 @@ export class TourService {
             img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
             alt: 'dummy alt',
             name: 'Half Day Tours',
+            slogo: 'SHORT',
             type: [],
             duration: 4,
             tourOptions: [
@@ -56,6 +58,7 @@ export class TourService {
             img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
             alt: 'dummy alt',
             name: 'Short Tours',
+            slogo: 'A FEW HOURS',
             type: [],
             duration: 1,
             tourOptions: [
@@ -71,6 +74,7 @@ export class TourService {
             _id: 4,
             img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
             alt: 'dummy alt',
+            slogo: 'YOUR SATISFACTION',
             name: 'Custom Tours',
             type: [],
             duration: 0,
@@ -81,6 +85,7 @@ export class TourService {
             _id: 5,
             img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
             alt: 'dummy alt',
+            slogo: 'BEACH VIEWS',
             name: 'Beach Hopping Tours',
             type: [],
             duration: 5,

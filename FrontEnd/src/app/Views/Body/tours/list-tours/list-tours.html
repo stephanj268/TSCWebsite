@@ -2,22 +2,34 @@
     <app-slider></app-slider>
 </div>
 
-<h1 style="text-align: center;">What We offer</h1>
+
 
 
 <div class="container">
 
+    <div>
+        <label class="text-tag">Our Services</label>
+
+        <h1>What we offer</h1>
+
+    </div>
+
     <div class="section">
 
-        @for(tours of tour; track tours){
-        <div class="card">
+        @for(tours of tour; track tours; let i = $index){
+        <div class="card" [class.reverse]="i % 2 !== 0">
             <div class="img">
 
             </div>
-            <h1>{{tours.name}}</h1>
-            <h3 style="margin-bottom: 20px;"> {{tours.description }}</h3>
 
-            <button class="button see-more-button" routerLink="../view/{{tours._id}}">See More</button>
+            <div style="margin-left: 30px;">
+                <label class="bubble">{{tours.slogo}}</label>
+                <h1>{{tours.name}}</h1>
+                <h3 style="margin-bottom: 20px;"> {{tours.description}}</h3>
+
+                <button class="button see-more-button" routerLink="../view/{{tours._id}}">Explore</button>
+            </div>
+
         </div>
 
         }
