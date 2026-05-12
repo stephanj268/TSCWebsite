@@ -76,7 +76,43 @@
               </span>
               {{item.label}}
             </div>
-          }
+
+
+            <h2 style="margin-top: 50px; font-size: 15px; color: #15376f;">Overview -></h2>
+            <h1 style="font-family: 'Times New Roman', Times, serif;">The Perfect Island <br> <span
+                    style="color: rgb(194, 151, 10);">Experience</span></h1>
+            <h3>{{tour[0].description}}</h3>
+            <ul>
+                <li>A view of beaches to view</li>
+                <li>Lunches (Optional)</li>
+            </ul>
+
+
+            <div class="tour-details-border">
+                <h2>What's Included?</h2>
+
+                <ul>
+                    @for (item of tourIncludedDetails; track item) {
+                    <li>{{item.label}} </li>
+                    }
+                </ul>
+
+            </div>
+
+
+
+            <div class="section">
+
+                <div class="card">
+
+                </div>
+
+                <div class="card">
+
+                </div>
+
+            </div>
+
         </div>
       </div>
  
