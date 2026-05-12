@@ -30,14 +30,15 @@
     flex-direction: row;
     justify-content: space-between;
 
-    margin: 10px 10px 100px 10px;
-    width: fit-content
+    margin: 10px 10px 50px 10px;
+    padding-bottom: 25px;
+    width: fit-content;
+    border-bottom: 1px solid rgba(217, 217, 217, 0.422);
 }
 
 .card.reverse {
     flex-direction: row-reverse;
 }
-
 
 
 .img {
