@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap');
  
-/* ── Variables ─*/
+/* ── Variables ── */
 :host {
-  --primary: #EBF3FB;
+  --primary:    #04090d;
   --navy:       #0f1e38;
   --navy-mid:   #162d54;
   --gold:       #4DA8DA;
@@ -30,16 +30,35 @@
   min-height: 100vh;
 }
  
-/* ── Hero Image ──────────────────────────────── */
-.tour-img {
-  width: 100%;
-  height: 20vh;
-  background-color: #1B3A5C;
-  overflow: hidden;
-  position: relative;
+/* ── Hero Layout: content left, image right ── */
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+  align-items: stretch;
+}
+ 
+/* ── Left content inside hero ── */
+.hero-layout .item {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0 clamp(24px, 5vw, 60px);
+}
+ 
+.hero-layout .item-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   justify-content: center;
+  padding: 60px 0 48px;
+}
+ 
+/* ─Image ── */
+.tour-img {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
 }
  
 .tour-img img {
@@ -52,21 +71,6 @@
  
 .tour-img:hover img {
   transform: scale(1.03);
-}
- 
-.img-placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 14px;
-  letter-spacing: 0.06em;
-}
- 
-.img-placeholder [nz-icon] {
-  font-size: 36px;
-  margin-right: 0;
 }
  
 .img-badge {
@@ -92,7 +96,7 @@
   transform: translateY(-1px);
 }
  
-/* ── Content ─────────────────────────────────── */
+/* ── Content below hero ── */
 .item {
   display: flex;
   flex-direction: row;
@@ -103,24 +107,23 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 780px;
+  max-width: 900px;
 }
  
-/* ── Eyebrow ─────────────────────────────────── */
+/* ── Eyebrow ── */
 .eyebrow {
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-3);
-  margin-top: 40px;
+  color: rgba(235, 243, 251, 0.957);
   margin-bottom: 12px;
 }
  
-/* ── Title ───────────────────────────────────── */
+/* ── Title ── */
 h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(38px, 6vw, 68px);
+  font-size: clamp(36px, 5vw, 62px);
   font-weight: 400;
   line-height: 1.05;
   color: var(--primary);
@@ -128,11 +131,11 @@ h1 {
   margin: 0 0 24px;
 }
  
-/* ── Meta Pills ──────────────────────────────── */
+/* ── Meta Pills ── */
 .meta-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 8px;
 }
  
@@ -140,18 +143,18 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 999px;
-  padding: 7px 18px;
+  padding: 6px 16px;
   font-size: 13px;
-  color: var(--text-2);
-  background: var(--surface);
-  transition: border-color var(--t), box-shadow var(--t);
+  color: var(--primary);
+  background: rgba(255,255,255,0.08);
+  transition: border-color var(--t), background var(--t);
 }
  
 .meta-pill:hover {
-  border-color: var(--border-mid);
-  box-shadow: 0 2px 8px rgba(15, 30, 56, 0.07);
+  border-color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.14);
 }
  
 .meta-pill [nz-icon] {
@@ -160,30 +163,30 @@ h1 {
   margin-right: 0;
 }
  
-/* ── Divider ─────────────────────────────────── */
+/* ── Divider ── */
 .divider {
   border: none;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin: 28px 0;
 }
  
-/* ── Section Label ───────────────────────────── */
+/* ── Section Label ── */
 .section-label {
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  
   color: var(--primary);
   margin-bottom: 12px;
 }
  
-/* ── Overview Heading ────────────────────────── */
+/* ── Overview Heading ── */
 h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(26px, 3.5vw, 38px);
+  font-size: clamp(24px, 3vw, 36px);
   font-weight: 400;
-  color: var(--navy);
-  margin-bottom: 16px;
+  color: var(--primary);
+  margin-bottom: 14px;
   line-height: 1.2;
 }
  
@@ -192,23 +195,22 @@ h2 {
   color: var(--gold);
 }
  
-/* ── Body Text ───────────────────────────────── */
+/* ── Body Text ── */
 .body-text {
   font-size: 15px;
   line-height: 1.9;
-  color: var(--primary);
+  color: rgba(235, 243, 251, 0.8);
   font-weight: 300;
-  margin: 0 0 24px;
+  margin: 0 0 20px;
 }
  
-/* ── Highlight List ──────────────────────────── */
+/* ── Highlight List ── */
 .hi-list {
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-
+  gap: 10px;
 }
  
 .hi-list li {
@@ -216,8 +218,7 @@ h2 {
   align-items: flex-start;
   gap: 12px;
   font-size: 14px;
-  
-  color: var(--primary);
+  color: rgba(235, 243, 251, 0.85);
   line-height: 1.65;
 }
  
@@ -240,56 +241,66 @@ h2 {
   margin-right: 0;
 }
  
-/* ── Tour Details Border ─────────────────────── */
+/* ── Tour Details Border ── */
 .tour-details-border {
   padding: 28px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
   margin: 36px 0;
 }
  
-/* ── Included Grid ───────────────────────────── */
+/* ── Included Grid (icon cards) ── */
 .included-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  margin-top: 4px;
-}
- 
-.included-item {
-  display: flex;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 14px;
-  
-  color: var(--primary);
+  margin-top: 8px;
 }
  
-.included-item:nth-last-child(-n+2) {
-  border-bottom: none;
+.included-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  transition: background var(--t), border-color var(--t), transform var(--t);
 }
  
-.included-check {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--navy);
-  color: #fff;
+.included-card:hover {
+  background: rgba(255,255,255,0.13);
+  border-color: rgba(255,255,255,0.3);
+  transform: translateY(-2px);
+}
+ 
+.included-card .card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: rgba(243, 245, 246, 0.964);
+  color: var(--gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  font-size: 12px;
+  font-size: 20px;
+  margin-bottom: 0;
 }
  
-.included-check [nz-icon] {
-  font-size: 12px;
+.included-card .card-icon [nz-icon] {
+  font-size: 20px;
   margin-right: 0;
 }
  
-/* ── Cards Section ───────────────────────────── */
+.card-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary);
+  line-height: 1.3;
+}
+ 
+/* ── Cards Section ── */
 .section {
   margin-top: 0;
   margin-bottom: 16px;
@@ -301,14 +312,15 @@ h2 {
 .card {
   width: 100%;
   padding: 24px 20px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255,255,255,0.14);
   border-radius: var(--radius-md);
-  transition: box-shadow var(--t), transform var(--t);
+  transition: background var(--t), box-shadow var(--t), transform var(--t);
 }
  
 .card:hover {
-  box-shadow: 0 8px 28px rgba(15, 30, 56, 0.1);
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
   transform: translateY(-3px);
 }
  
@@ -316,7 +328,7 @@ h2 {
   width: 46px;
   height: 46px;
   border-radius: var(--radius-sm);
-  background: var(--gold-pale);
+  background: rgba(245, 247, 248, 0.971);
   color: var(--gold);
   display: flex;
   align-items: center;
@@ -334,29 +346,28 @@ h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
   font-weight: 500;
-  color: var(--navy);
+  color: var(--primary);
   margin-bottom: 8px;
 }
  
 .card p {
   font-size: 13px;
-  color: var(--text-3);
+  color: rgba(235, 243, 251, 0.6);
   line-height: 1.7;
   font-weight: 300;
   margin: 0;
 }
  
-/* ── Book Bar ────────────────────────────────── */
+/* ── Book Bar ── */
 .book-bar {
   margin: 32px clamp(16px, 5vw, 60px) 0;
   display: flex;
   align-items: center;
   gap: 28px;
   padding: 24px 28px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.964);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: var(--radius-lg);
-  box-shadow: 0 2px 16px rgba(15, 30, 56, 0.07);
   flex-wrap: wrap;
 }
  
@@ -368,23 +379,23 @@ h2 {
  
 .price-from {
   font-size: 13px;
-  color: var(--text-3);
+  color: rgba(8, 8, 8, 0.6);
 }
  
 .price-amount {
   font-family: 'Cormorant Garamond', serif;
   font-size: 42px;
   font-weight: 400;
-  color: var(--navy);
+  color: var(--primary);
   line-height: 1;
 }
  
 .price-per {
   font-size: 14px;
-  color: var(--text-3);
+  color: rgba(4, 8, 11, 0.718);
 }
  
-/* ── Submit Button ───────────────────────────── */
+/* ── Submit Button ── */
 .submit-button {
   margin-left: auto;
   cursor: pointer;
@@ -393,12 +404,12 @@ h2 {
   align-items: center;
   gap: 10px;
   padding: 15px 36px;
-  background: var(--navy);
-  color: #ffffff;
+  background: var(--gold);
+  color: var(--navy);
   border-radius: var(--radius-sm);
   font-family: 'Jost', sans-serif;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.06em;
   transition: background var(--t), transform var(--t), box-shadow var(--t);
 }
@@ -410,9 +421,9 @@ h2 {
 }
  
 .submit-button:hover {
-  background: var(--navy-mid);
+  background: #6bbde3;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(15, 30, 56, 0.28);
+  box-shadow: 0 6px 20px rgba(77, 168, 218, 0.4);
 }
  
 .submit-button:hover [nz-icon] {
@@ -424,15 +435,13 @@ h2 {
   box-shadow: none;
 }
  
-/* ── Trust Row ─*/
+/* ── Trust Row ── */
 .trust-row {
   display: flex;
   gap: 28px;
   flex-wrap: wrap;
-  margin-top: 14px;
-  padding-bottom: 20px;
-  margin-left: auto;
-  
+  margin: 14px clamp(16px, 5vw, 60px) 0;
+  padding-bottom: 40px;
 }
  
 .trust-item {
@@ -440,40 +449,48 @@ h2 {
   align-items: center;
   gap: 7px;
   font-size: 12px;
-  color: var(--primary);
+  color: rgba(235, 243, 251, 0.55);
 }
  
 .trust-item [nz-icon] {
   font-size: 15px;
-  color: var(--navy);
+  color: var(--gold);
   margin-right: 0;
 }
  
-
+/* ── nz-icon global ── */
 nz-icon,
 [nz-icon] {
   vertical-align: middle;
   font-size: 16px;
 }
  
-
-@media (max-width: 768px) {
-  .tour-img { height: 300px; }
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
  
-  .included-grid { grid-template-columns: 1fr; }
-  .included-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
-  .included-item:last-child { border-bottom: none; }
+  .tour-img {
+    min-height: 320px;
+    order: -1;
+  }
  
-  .section { grid-template-columns: 1fr; }
+  .hero-layout .item {
+    padding: 0 clamp(16px, 5vw, 40px);
+  }
  
-  .book-bar { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .submit-button { margin-left: 0; width: 100%; justify-content: center; }
-  .trust-row { padding: 0; }
+  .hero-layout .item-block {
+    padding: 36px 0 32px;
+  }
 }
  
 @media (max-width: 480px) {
-  .tour-img { height: 240px; }
   .book-bar { padding: 20px; margin-left: 16px; margin-right: 16px; }
   .trust-row { margin-left: 16px; margin-right: 16px; }
-
+  .submit-button { margin-left: 0; width: 100%; justify-content: center; }
+  .book-bar { flex-direction: column; align-items: flex-start; }
+  .section { grid-template-columns: 1fr; }
 }
+ 
