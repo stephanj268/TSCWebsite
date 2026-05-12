@@ -1,107 +1,354 @@
-nz-icon {
-    margin-right: 6px;
-    font-size: 24px;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+ 
+/* ── CSS Variables ─────────────────────────────── */
+:host {
+  --gold: #B07D2A;
+  --gold-light: #FFDE23;
+  --gold-dark: #DFBF0A;
+  --navy: #15376f;
+  --bg-page: #f8f4ee;
+  --bg-card: #ffffff;
+  --bg-card-alt: #f3ede4;
+  --border-color: #e0d9d0;
+  --text-primary: #1a1714;
+  --text-secondary: #5c5650;
+  --text-muted: #9a9088;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --transition: 0.2s ease;
 }
-
+ 
+/* ── Page Shell ────────────────────────────────── */
 .container {
-    display: flex;
-    flex-direction: column;
-    background-color: #f8f4ee;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
 }
-
+ 
+/* ── Hero Image ────────────────────────────────── */
 .tour-img {
-
-    border-radius: 8px;
-
-    background-color: rgb(233, 233, 233);
-    width: 100%;
-    height: 450px;
+  width: 100%;
+  height: 420px;
+  background-color: #e4ddd3;
+  overflow: hidden;
+  /* no border-radius — bleeds edge to edge for drama */
 }
-
-.tour-details-border {
-    padding-top: 10px;
-    padding-bottom: 10px;
-
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-    border-top: 1.5px solid rgb(203, 203, 203);
-    border-bottom: 1px solid rgb(203, 203, 203);
-
+ 
+.tour-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
-
+ 
+/* ── Content Row ───────────────────────────────── */
 .item {
-    display: flex;
-    flex-direction: row;
-
-    margin-left: 30px;
-    margin-right: 30px;
+  display: flex;
+  flex-direction: row;
+  margin: 0 clamp(16px, 5vw, 64px);
 }
-
+ 
 .item-block {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 720px;
+  padding-bottom: 40px;
 }
-
-.banner {
-    background-color: rgb(43, 43, 43);
-    width: 100%;
-    height: auto;
-
-    border-radius: 8px;
-    border: 1.5px solid rgb(220, 220, 220);
-
-    margin-top: 110px;
+ 
+/* ── Tour Header ───────────────────────────────── */
+.tour-header {
+  padding-top: 40px;
 }
-
-
+ 
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+}
+ 
+.tour-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 60px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin: 0 0 24px;
+}
+ 
+/* ── Meta Pills ────────────────────────────────── */
+.meta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+ 
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+ 
+.meta-pill nz-icon,
+.meta-pill [nz-icon] {
+  font-size: 14px;
+  margin-right: 0;
+  color: var(--gold);
+}
+ 
+/* ── Divider ───────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 32px 0;
+}
+ 
+/* ── Section Label ─────────────────────────────── */
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+}
+ 
+/* ── Overview ──────────────────────────────────── */
+.overview-section {
+  /* no extra padding — dividers handle spacing */
+}
+ 
+.overview-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3.5vw, 34px);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin: 0 0 16px;
+}
+ 
+.highlight-word {
+  font-style: italic;
+  color: var(--gold);
+}
+ 
+.body-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin: 0 0 20px;
+}
+ 
+/* ── Highlights List ───────────────────────────── */
+.highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+ 
+.highlights-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+ 
+.highlight-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--gold);
+  flex-shrink: 0;
+}
+ 
+/* ── Tour Details Border ───────────────────────── */
+.tour-details-border {
+  padding: 0;
+  /* dividers above/below handle spacing */
+}
+ 
+/* ── Included List ─────────────────────────────── */
+.included-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+ 
+.included-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 14px;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+ 
+.included-item:last-child {
+  border-bottom: none;
+}
+ 
+.check-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #1D9E75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+ 
+.check-icon [nz-icon] {
+  font-size: 11px;
+  color: #ffffff;
+  margin-right: 0;
+}
+ 
+/* ── Card Grid ─────────────────────────────────── */
 .section {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: auto auto auto;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
 }
-
+ 
 .card {
-    width: 300px;
-    height: fit-content;
-
-    padding: 10px 10px 10px 10px;
-    margin-top: 20px;
-
-    background-color: rgb(237, 237, 237);
-
-    border-radius: 10px;
-
+  width: 100%;
+  height: fit-content;
+  min-height: 120px;
+  padding: 20px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: box-shadow var(--transition);
 }
-
+ 
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+ 
+/* ── Book Now Footer ───────────────────────────── */
+.book-footer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px clamp(16px, 5vw, 64px) 32px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 16px;
+  background-color: var(--bg-page);
+}
+ 
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+ 
+.price-from {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+ 
+.price-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+ 
+.price-per {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+ 
+/* ── Submit Button ─────────────────────────────── */
 .submit-button {
-    cursor: pointer;
-    border: none;
-
-    width: 200px;
-    height: 30px;
-
-    background-color: rgb(255, 222, 35);
-
-    transition: 0.5s;
-
-    border-radius: 8px;
-
-    margin-top: 30px;
-
-    margin-left: 30px;
-    margin-right: 30px;
-
-    margin-bottom: 30px;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background-color: var(--gold-light);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  transition:
+    background-color var(--transition),
+    transform var(--transition);
+  white-space: nowrap;
+}
+ 
+.submit-button [nz-icon] {
+  font-size: 16px;
+  margin-right: 0;
+  transition: transform var(--transition);
+}
+ 
+.submit-button:hover {
+  background-color: var(--gold-dark);
+  transform: translateY(-2px);
+}
+ 
+.submit-button:hover [nz-icon] {
+  transform: translateX(3px);
+}
+ 
+.submit-button:active {
+  transform: translateY(0);
 }
 
-.submit-button:hover {
-    border: none;
+nz-icon,
+[nz-icon] {
+  margin-right: 6px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+ 
 
-    background-color: rgb(223, 191, 10);
-
-    transition: 0.5s;
-
-    width: 200px;
-    height: 40px;
+@media (max-width: 600px) {
+  .tour-img {
+    height: 260px;
+  }
+ 
+  .book-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+ 
+  .submit-button {
+    width: 100%;
+    justify-content: center;
+  }
+ 
+  .section {
+    grid-template-columns: 1fr;
+  }
 }

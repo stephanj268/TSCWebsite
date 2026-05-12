@@ -1,82 +1,109 @@
+
 <div class="container">
-
-    <!-- <div class="card">
-        <p-galleria [(ngModel)]="images" [numVisible]="5" [circular]="true" [showItemNavigators]="true"
-            [showThumbnails]="false" [responsiveOptions]="responsiveOptions"
-            [containerStyle]="{ 'max-width': '640px' }">
-            <ng-template #item let-item>
-                <img [src]="item.img" style="width: 100%; display: block;" />
-            </ng-template>
-        </p-galleria>
-    </div> -->
-
-    <div class="item">
-        <div class="item-block">
-
-            <div style="padding-left: 10px; padding-right: 10px; width: 100%">
-                <h1 style="margin-top: 50px; font-size: 60px;">{{tour[0].name}}</h1>
-
-                <div class="tour-img">
-
-                </div>
-
-                <div class="tour-details-border">
-                    @if (tour[0].duration > 1) {
-                    <h3><span nz-icon nzType="clock-circle" nzTheme="outline"></span> {{tour[0].duration}} hours</h3>
-                    } @else {
-                    <h3><span nz-icon nzType="clock-circle" nzTheme="outline"></span> {{tour[0].duration}} hour</h3>
-                    }
-                </div>
-
-            </div>
-
-
-            <h2 style="margin-top: 50px; font-size: 15px; color: #15376f;">Overview -></h2>
-            <h1 style="font-family: 'Times New Roman', Times, serif;">The Perfect Island <br> <span
-                    style="color: rgb(194, 151, 10);">Experience</span></h1>
-            <h3>{{tour[0].description}}</h3>
-            <ul>
-                <li>A view of beaches to view</li>
-                <li>Lunches (Optional)</li>
-            </ul>
-
-
-            <div class="tour-details-border">
-                <h2>What's Included?</h2>
-
-                <ul>
-                    @for (item of tourIncludedDetails; track item) {
-                    <li>{{item.label}} </li>
-                    }
-                </ul>
-
-
-            </div>
-
-
-
-            <div class="section">
-
-
-
-                <div class="card">
-
-                </div>
-
-                <div class="card">
-
-                </div>
-
-            </div>
-
+ 
+  
+  <div class="tour-img">
+    <img [src]="tour[0].image" alt="Tour image" /> 
+  </div>
+ 
+  <div class="item">
+    <div class="item-block">
+ 
+      
+      <div class="tour-header">
+        <p class="eyebrow">Island Tours &middot; Antigua</p>
+        <h1 class="tour-title">{{ tour[0].name }}</h1>
+ 
+        <div class="meta-pills">
+          <span class="meta-pill">
+            <span nz-icon nzType="clock-circle" nzTheme="outline"></span>
+            @if (tour[0].duration > 1) {
+              {{ tour[0].duration }} hours
+            } @else {
+              {{ tour[0].duration }} hour
+            }
+          </span>
+          <span class="meta-pill">
+            <span nz-icon nzType="environment" nzTheme="outline"></span>
+            Departure daily
+          </span>
+          <span class="meta-pill">
+            <span nz-icon nzType="team" nzTheme="outline"></span>
+            Small groups
+          </span>
         </div>
-
+      </div>
+ 
+      <hr class="divider" />
+ 
+      <!-- Overview -->
+      <div class="overview-section">
+        <p class="section-label">Overview</p>
+        <h2 class="overview-heading">
+          The perfect island<br />
+          <span class="highlight-word">experience</span> awaits
+        </h2>
+        <p class="body-text">{{ tour[0].description }}</p>
+ 
+        <ul class="highlights-list">
+          <li>
+            <span class="highlight-dot"></span>
+            Stunning beaches to explore
+          </li>
+          <li>
+            <span class="highlight-dot"></span>
+            Lunch available (optional)
+          </li>
+        </ul>
+      </div>
+ 
+      <hr class="divider" />
+ 
+      <!-- What's Included -->
+      <div class="tour-details-border">
+        <p class="section-label">What's included</p>
+        <ul class="included-list">
+          @for (item of tourIncludedDetails; track item) {
+            <li class="included-item">
+              <span class="check-icon">
+                <span nz-icon nzType="check" nzTheme="outline"></span>
+              </span>
+              {{ item.label }}
+            </li>
+          }
+        </ul>
+      </div>
+ 
+      <hr class="divider" />
+ 
+      <!-- Cards Section -->
+      <div class="section">
+        <div class="card">
+          <!-- Card content here -->
+        </div>
+        <div class="card">
+          <!-- Card content here -->
+        </div>
+      </div>
+ 
     </div>
-
-
-
-
-    <button class="submit-button" (click)="onBookNow()" routerLink="../../../booking/{{browserId}}">Book Now</button>
-
-
+  </div>
+ 
+  <!-- Book Now Footer -->
+  <div class="book-footer">
+    <div class="price-row">
+      <span class="price-from">From</span>
+      <span class="price-amount">$120</span>
+      <span class="price-per">/ person</span>
+    </div>
+    <button
+      class="submit-button"
+      (click)="onBookNow()"
+      routerLink="../../../booking/{{ browserId }}"
+    >
+      Book Now
+      <span nz-icon nzType="arrow-right" nzTheme="outline"></span>
+    </button>
+  </div>
+ 
 </div>
