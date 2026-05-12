@@ -41,8 +41,8 @@ export class ViewToursComponent implements OnInit {
 
       console.log(this.tour[0].tourOptions)
 
-      for (let i = 0; i <= this.tour[0].tourOptions.length; i++) {
-        let data = {label: this.tour[0].tourOptions[i].label};
+      for (let i = 0; i <= this.tour[0].tourOptions.length-1; i++) {
+        let data = {label: this.tour[0].tourOptions[i]?.label};
         this.tourIncludedDetails.push(data);
       }
 
