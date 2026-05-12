@@ -1,26 +1,25 @@
-
 <div class="container">
- 
-  
+
+
   <div class="tour-img">
-    <img [src]="tour[0].image" alt="Tour image" /> 
+    <img [src]="tour[0].image" alt="Tour image" />
   </div>
- 
+
   <div class="item">
     <div class="item-block">
- 
-      
+
+
       <div class="tour-header">
         <p class="eyebrow">Island Tours &middot; Antigua</p>
         <h1 class="tour-title">{{ tour[0].name }}</h1>
- 
+
         <div class="meta-pills">
           <span class="meta-pill">
             <span nz-icon nzType="clock-circle" nzTheme="outline"></span>
             @if (tour[0].duration > 1) {
-              {{ tour[0].duration }} hours
+            {{ tour[0].duration }} hours
             } @else {
-              {{ tour[0].duration }} hour
+            {{ tour[0].duration }} hour
             }
           </span>
           <span class="meta-pill">
@@ -33,9 +32,9 @@
           </span>
         </div>
       </div>
- 
+
       <hr class="divider" />
- 
+
       <!-- Overview -->
       <div class="overview-section">
         <p class="section-label">Overview</p>
@@ -44,38 +43,52 @@
           <span class="highlight-word">experience</span> awaits
         </h2>
         <p class="body-text">{{ tour[0].description }}</p>
- 
+
         <ul class="highlights-list">
           <li>
             <span class="highlight-dot"></span>
             Stunning beaches to explore
           </li>
+
           <li>
             <span class="highlight-dot"></span>
             Lunch available (optional)
           </li>
+
+          <li>
+            <span class="highlight-dot"></span>
+            perfect for cruise guests / travelers on limited time
+          </li>
+
+          <li>
+            <span class="highlight-dot"></span>
+            Historic landmarks to discover
+            Scenic viewpoints across the island
+          </li>
+
+
         </ul>
       </div>
- 
+
       <hr class="divider" />
- 
+
       <!-- What's Included -->
       <div class="tour-details-border">
         <p class="section-label">What's included</p>
         <ul class="included-list">
           @for (item of tourIncludedDetails; track item) {
-            <li class="included-item">
-              <span class="check-icon">
-                <span nz-icon nzType="check" nzTheme="outline"></span>
-              </span>
-              {{ item.label }}
-            </li>
+          <li class="included-item">
+            <span class="check-icon">
+              <span nz-icon nzType="check" nzTheme="outline"></span>
+            </span>
+            {{ item.label }}
+          </li>
           }
         </ul>
       </div>
- 
+
       <hr class="divider" />
- 
+
       <!-- Cards Section -->
       <div class="section">
         <div class="card">
@@ -85,10 +98,10 @@
           <!-- Card content here -->
         </div>
       </div>
- 
+
     </div>
   </div>
- 
+
   <!-- Book Now Footer -->
   <div class="book-footer">
     <div class="price-row">
@@ -96,14 +109,10 @@
       <span class="price-amount">$120</span>
       <span class="price-per">/ person</span>
     </div>
-    <button
-      class="submit-button"
-      (click)="onBookNow()"
-      routerLink="../../../booking/{{ browserId }}"
-    >
+    <button class="submit-button" (click)="onBookNow()" routerLink="../../../booking/{{ browserId }}">
       Book Now
       <span nz-icon nzType="arrow-right" nzTheme="outline"></span>
     </button>
   </div>
- 
+
 </div>

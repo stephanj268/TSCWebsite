@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { TaxiService, ITaxi } from '../../../service/taxi.service';
+import { TaxiService, ITaxi } from '../../../service/Taxi/taxi.service';
 import { SliderComponent } from '../../../shared/slider/slider';
 import { SearchFilter } from '../../../shared/search-filter/search-filter';
 

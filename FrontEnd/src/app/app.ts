@@ -7,8 +7,8 @@ import { SliderComponent } from './shared/slider/slider';
 import { Footer } from './shared/footer/footer';
 
 import { BookingService } from './service/booking/booking.service';
-import { TaxiService } from './service/taxi.service';
-import { TourService } from './service/tours.service';
+import { TaxiService } from './service/Taxi/taxi.service';
+import { TourService } from './service/tour/tours.service';
 import { Operationservice } from './Directives/Operation-Time/Operationservice';
 
 @Component({

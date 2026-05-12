@@ -6,7 +6,7 @@ import { GalleriaModule } from 'primeng/galleria';
 
 import { OperationTimeDirectvie } from '../../../../Directives/Operation-Time/OperationTimeDirective';
 import { OperationHidden } from '../../../../Directives/Operation-Time/OperationTimeHiddenDirective';
-import { TourService } from '../../../../service/tours.service';
+import { TourService } from '../../../../service/tour/tours.service';
 
 @Component({
   selector: 'app-view-tours',
