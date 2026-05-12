@@ -6,7 +6,7 @@ import { GalleriaModule } from 'primeng/galleria';
 
 import { OperationTimeDirectvie } from '../../../../Directives/Operation-Time/OperationTimeDirective';
 import { OperationHidden } from '../../../../Directives/Operation-Time/OperationTimeHiddenDirective';
-import { TourService } from '../../../../service/tours.service';
+import { TourService } from '../../../../service/tour/tours.service';
 
 @Component({
   selector: 'app-view-tours',
@@ -41,8 +41,8 @@ export class ViewToursComponent implements OnInit {
 
       console.log(this.tour[0].tourOptions)
 
-      for (let i = 0; i <= this.tour[0].tourOptions.length; i++) {
-        let data = {label: this.tour[0].tourOptions[i].label};
+      for (let i = 0; i <= this.tour[0].tourOptions.length-1; i++) {
+        let data = {label: this.tour[0].tourOptions[i]?.label};
         this.tourIncludedDetails.push(data);
       }
 

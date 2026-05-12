@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, } from '@angular/router';
 import { MapComponent } from '../../../shared/map/map';
-import { TaxiService, ITaxi } from '../../../service/taxi.service';
+import { TaxiService, ITaxi } from '../../../service/Taxi/taxi.service';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 @Component({

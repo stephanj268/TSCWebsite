@@ -20,7 +20,7 @@ import { MessageService } from 'primeng/api';
 import { validateEmail } from '../../../environment';
 
 import { InputTextModule } from 'primeng/inputtext';
-import { ITours, TourService } from '../../service/tours.service';
+import { ITours, TourService } from '../../service/tour/tours.service';
 import { ActivatedRoute } from '@angular/router';
 
 import { NavigationComponent } from '../../shared/navigation/navigation';

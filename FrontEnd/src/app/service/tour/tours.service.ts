@@ -25,10 +25,11 @@ export class TourService {
             type: [],
             duration: 6,
             tourOptions: [
-                {label: "lunches"},
-                {label: "24/7 wifi"}
+                { label: "Optional Lunch" },
+                { label: "24/7 wifi" },
+                { label: "View Beaches" }
             ],
-            
+
             description: 'Make the most of your time with our full day tours, designed for a deeper and more immersive experience. Explore top attractions, hidden gems, and local culture at a relaxed pace, with plenty of time to take in the sights, enjoy activities, and create lasting memories.'
         },
 
@@ -39,6 +40,14 @@ export class TourService {
             name: 'Half Day Tours',
             type: [],
             duration: 4,
+            tourOptions: [
+                { label: "Lunch/Drinks stop" },
+                { label: "pickup/drop-off" },
+                { label: "Guided sightseeing" },
+                { label: "Short photo stops at scenic locations" },
+
+            ],
+
             description: 'Enjoy the perfect balance with our half day tours ideal for exploring key highlights without taking up your entire day. Discover top sights, local culture, and scenic spots in a well-paced experience that leaves you time to relax or continue your adventures.'
         },
 
@@ -49,6 +58,12 @@ export class TourService {
             name: 'Short Tours',
             type: [],
             duration: 1,
+            tourOptions: [
+                { label: "Pickup/drop-off" },
+                { label: "Local guide / driver" },
+                { label: "Photo stops at viewpoints" },
+            ],
+
             description: 'Discover the highlights in just a few hours with our short day tours—perfect for travelers on a tight schedule. Enjoy guided visits to top attractions, scenic views, and cultural hotspots, all carefully planned to give you a memorable experience without taking up your entire day.'
         },
 
