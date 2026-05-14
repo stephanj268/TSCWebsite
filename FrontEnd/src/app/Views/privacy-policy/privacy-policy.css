@@ -3,6 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    background-color: rgb(255, 255, 255);
 }
 
 h1 {
@@ -28,7 +30,7 @@ h1 {
     --text-muted: #5a5a5a;
     --border: rgba(239, 60, 60, 0.1);
     --bg: #f7f8fa;
-    --surface: #ffffff;
+    --surface: #dc1d1d;
 }
 
 body {
@@ -105,12 +107,12 @@ body {
 
 /* Sections */
 .section {
-    background-color: var(--surface);
+    background-color: rgba(237, 237, 237, 0.395);
     border: 1px solid var(--border);
     border-radius: 14px;
     padding: 1.5rem 1.75rem;
     margin-bottom: 1rem;
-    animation: fadeUp 0.5s ease both;
+    animation: fadeUp 1.5s ease both;
 }
 
 .section:nth-child(1) {
