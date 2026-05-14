@@ -14,6 +14,7 @@ import { ViewTaxiComponent } from './Views/taxi/view-taxi/view-taxi';
 import { BookingComponent } from './Views/booking/booking';
 import { TourBookingComponent } from './shared/tour-booking/tour-booking';
 import { TaxiBookingComponent } from './shared/taxi-booking/taxi-booking';
+import { PrivacyPolicyComponent } from './Views/privacy-policy/privacy-policy';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -44,6 +45,11 @@ export const routes: Routes = [
             { path: 'taxi/:booking_id', component: TaxiBookingComponent },
             { path: 'tour/:booking_id', component: TourBookingComponent },
         ]
+    },
+
+
+    {
+        path: 'privacy-policy', component: PrivacyPolicyComponent
     },
 
     // ‼️
