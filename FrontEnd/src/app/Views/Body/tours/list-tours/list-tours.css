@@ -31,7 +31,7 @@
     flex-direction: row;
     justify-content: space-between;
 
-    margin: 10px 1px 50px 10px;
+    margin-top: 10px;
     padding-bottom: 25px;
     width: 100%;
     border-bottom: 1px solid rgba(217, 217, 217, 0.422);
