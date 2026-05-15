@@ -12,7 +12,7 @@
     top: 0;
     z-index: 3;
 
-    
+
 
     padding: 25px;
 
@@ -37,6 +37,19 @@
         color: #000000;
         background-color: rgb(255, 255, 255);
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+    }
+
+}
+
+
+@keyframes openList {
+    from {
+        color: red
+    }
+
+    to {
+        height: 300px;
 
     }
 
@@ -128,8 +141,27 @@
 
 }
 
+.mobile-menu-event {
+    display: none;
+    animation: nav-label-transition;
+    animation-timeline: scroll(y);
+}
+
+.mobile-menu-event:focus {
+    animation: openList;
+    animation-duration: 1s;
+    color: red;
+}
+
 
 @media only screen and (max-width: 900px) {
+
+    .mobile-menu-event {
+        display: block;
+    }
+
+
+
     .section {
         display: flexbox;
         flex-direction: column;
