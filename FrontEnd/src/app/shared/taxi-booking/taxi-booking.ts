@@ -158,13 +158,14 @@ export class TaxiBookingComponent implements OnInit {
       const emailTemplate = {
         to_email: build.email,        // ← recipient (set {{to_email}} in EmailJS "To" field)
         first_name: build.firstname,       // ← "Hi {{first_name}},"  (use whatever field has their name)
-        type: build.serviceType,       // ← was "Service:", now must be "type"
+        service_type: build.taxiType,       
+        type: build.serviceType,
         date: build.startDate,              // ← was "Date:"
         time: build.startDate,              // ← was "Time:"
         persons: build.maxPersons,    // ← was "Persons:"
         phone: build.phonenumber,     // ← was "Phone:"
         email: build.email,           // ← "{{email}}" in template body
-        company_email: 'info@spaceshiptaxi.com', // ← footer
+        company_email: 'spaceship1268@gmail.com', // ← footer
         company_name: 'Space Ship Taxi & Tours', // ← footer
       };
 
@@ -173,7 +174,7 @@ export class TaxiBookingComponent implements OnInit {
 
 
       // Send Email
-      emailjs.send("service_qczeclo", "template_vjcukzya", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
+      emailjs.send("website-2681", "template_pufnta4", { ...emailTemplate }, { publicKey: "_mHNnjfPFb_JcLfoY" })
         .then(() => {
 
           console.log("sent!")
