@@ -18,4 +18,8 @@ export class Footer {
 
   }
 
+  navigateToPolicy() {
+    this.rotuer.navigateByUrl(`privacy-policy`);
+  }
+
 }
