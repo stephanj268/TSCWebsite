@@ -39,7 +39,6 @@ export const routes: Routes = [
         ]
     },
 
-
     // Booking Route 📖
     {
         path: 'booking', component: BookingComponent, children: [
@@ -47,7 +46,6 @@ export const routes: Routes = [
             { path: 'tour/:booking_id', component: TourBookingComponent },
         ]
     },
-
 
     {
         path: 'privacy-policy', component: PrivacyPolicyComponent
