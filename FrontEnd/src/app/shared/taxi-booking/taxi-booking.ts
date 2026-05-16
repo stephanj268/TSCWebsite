@@ -157,9 +157,10 @@ export class TaxiBookingComponent implements OnInit {
 
       const emailTemplate = {
         to_email: build.email,        // ← recipient (set {{to_email}} in EmailJS "To" field)
-        first_name: build.firstname,       // ← "Hi {{first_name}},"  (use whatever field has their name)
-        service_type: build.taxiType,       
+        first_name: build.firstname,       // ← "Hi {{first_name}},"  (use whatever field has their name)     
         type: build.serviceType,
+        service_type: build.taxiType,
+        duration: `-`,  
         date: build.startDate,              // ← was "Date:"
         time: build.startDate,              // ← was "Time:"
         persons: build.maxPersons,    // ← was "Persons:"
@@ -175,6 +176,16 @@ export class TaxiBookingComponent implements OnInit {
 
       // Send Email
       emailjs.send("website-2681", "template_pufnta4", { ...emailTemplate }, { publicKey: "_mHNnjfPFb_JcLfoY" })
+        .then(() => {
+
+          console.log("sent!")
+        }, (error) => {
+          console.log(error);
+        });
+
+      
+        // send Email To Driver
+      emailjs.send("website-2681", "template_w62rr9i", { ...emailTemplate }, { publicKey: "_mHNnjfPFb_JcLfoY" })
         .then(() => {
 
           console.log("sent!")
