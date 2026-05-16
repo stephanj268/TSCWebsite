@@ -20,7 +20,7 @@ export class TourService {
     allTours: ITours[] = [
         {
             _id: 1,
-            img: this.defaultImg,
+            img: 'images/img12.jpg',
             alt: 'dummy alt',
             name: 'Full Day Tours',
             slogo: 'ALL DAY',
@@ -39,7 +39,7 @@ export class TourService {
 
         {
             _id: 2,
-            img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
+            img: 'https://www.sandals.co.uk/blog/content/images/2023/10/Ffryes-Beach-Antigua---3.jpg',
             alt: 'dummy alt',
             name: 'Half Day Tours',
             slogo: 'SHORT',
