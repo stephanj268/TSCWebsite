@@ -168,7 +168,7 @@ export class TourBookingComponent implements OnInit {
         persons: build.maxPersons,    // ← was "Persons:"
         phone: build.phonenumber,     // ← was "Phone:"
         email: build.email,           // ← "{{email}}" in template body
-        company_email: 'info@spaceshiptaxi.com', // ← footer
+        company_email: 'spaceship1268@gmail.com', // ← footer
         company_name: 'Space Ship Taxi & Tours', // ← footer
       };
 
@@ -176,8 +176,8 @@ export class TourBookingComponent implements OnInit {
 
 
 
-      // Send Email
-      emailjs.send("service_qczeclo", "template_nj864t5", { ...emailTemplate }, { publicKey: "z1egiScnRlhO4BYaD" })
+      // Send Email To Client
+      emailjs.send("website-2681", "template_pufnta4", { ...emailTemplate }, { publicKey: "_mHNnjfPFb_JcLfoY" })
         .then(() => {
 
           console.log("sent!")
@@ -185,11 +185,29 @@ export class TourBookingComponent implements OnInit {
           console.log(error);
         });
 
+
+        // send Email To Driver
+      emailjs.send("website-2681", "template_w62rr9i", { ...emailTemplate }, { publicKey: "_mHNnjfPFb_JcLfoY" })
+        .then(() => {
+
+          console.log("sent!")
+        }, (error) => {
+          console.log(error);
+        });
+
+
+
+
       this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Booking Sent!' });
+
+
     }, (error) => {
       console.log(error)
       this.messageService.add({ severity: 'error', summary: 'Error', detail: `${error.error}` });
     });
+
+
+
 
   };
 
