@@ -1,58 +1,41 @@
 <div class="page-wrapper">
-
+ 
   <div class="hero-layout">
-
+ 
     <!-- ── Left ── -->
     <div class="item">
-
-      <div class="item-block top">
-
-        <!-- ── Header ── -->
-        <div style="display: flex; flex-direction: row; width: 100%; justify-content: space-between">
-
-          <div>
-            <p class="eyebrow">Island Tours &middot; Antigua</p>
-            <h1>{{tour[0].name}}</h1>
-
-            <div class="meta-row">
-              <span class="meta-pill">
-                <span nz-icon nzType="clock-circle" nzTheme="outline"></span>
-                @if (tour[0].duration > 1) {
-                {{tour[0].duration}} hour
-                } @else {
-                {{tour[0].duration}} hour
-                }
-              </span>
-              <span class="meta-pill">
-                <span nz-icon nzType="environment" nzTheme="outline"></span>
-                Daily departures
-              </span>
-              <span class="meta-pill">
-                <span nz-icon nzType="team" nzTheme="outline"></span>
-                Small groups
-              </span>
-            </div>
-
-          </div>
-
-          <!-- ── Right ── -->
-          <div class="tour-img">
-            <img src="images/img12.jpg" alt="Tour photo" />
-          </div>
-
-
-        </div>
-
-      </div>
-
-
       <div class="item-block">
-
+ 
+        <!-- ── Header ── -->
+        <p class="eyebrow">Island Tours &middot; Antigua</p>
+        <h1>{{tour[0].name}}</h1>
+ 
+        <div class="meta-row">
+          <span class="meta-pill">
+            <span nz-icon nzType="clock-circle" nzTheme="outline"></span>
+            @if (tour[0].duration > 1) {
+              {{tour[0].duration}} hours
+            } @else {
+              {{tour[0].duration}} hour
+            }
+          </span>
+          <span class="meta-pill">
+            <span nz-icon nzType="environment" nzTheme="outline"></span>
+            Daily departures
+          </span>
+          <span class="meta-pill">
+            <span nz-icon nzType="team" nzTheme="outline"></span>
+            Small groups
+          </span>
+        </div>
+ 
+        <hr class="divider" />
+ 
         <!-- ── Overview ── -->
         <p class="section-label">Overview &rarr;</p>
         <h2>The perfect island <span class="heading-em">experience</span></h2>
         <p class="body-text">{{tour[0].description}}</p>
-
+ 
         <ul class="hi-list">
           <li>
             <span class="hi-dot">
@@ -73,16 +56,20 @@
             Knowledgeable local guide throughout
           </li>
         </ul>
-
+ 
       </div>
     </div>
-
-
+ 
+    <!-- ── Right ── -->
+    <div class="tour-img">
+      <img src="images/img12.jpg" alt="Tour photo" />
+    </div>
+ 
   </div>
-
+ 
   <div class="item">
     <div class="item-block">
-
+ 
       <!-- ── What's Included ── -->
       <div class="tour-details-border">
         <p class="section-label">What's included</p>
@@ -113,7 +100,7 @@
           </div>
         </div>
       </div>
-
+ 
       <!-- ── Highlight Cards ── -->
       <div class="section">
         <div class="card">
@@ -138,10 +125,10 @@
           <p>Taste authentic Antiguan cuisine at handpicked local dining spots.</p>
         </div>
       </div>
-
+ 
     </div>
   </div>
-
+ 
   <!-- ── Book Bar ── -->
   <div class="book-bar">
     <div class="price-block">
@@ -149,12 +136,16 @@
       <span class="price-amount">$120</span>
       <span class="price-per">/ person</span>
     </div>
-    <button class="submit-button" (click)="onBookNow()" routerLink="../../../booking/{{browserId}}">
+    <button
+      class="submit-button"
+      (click)="onBookNow()"
+      routerLink="../../../booking/{{browserId}}"
+    >
       Book Now
       <span nz-icon nzType="arrow-right" nzTheme="outline"></span>
     </button>
   </div>
-
+ 
   <div class="trust-row">
     <span class="trust-item">
       <span nz-icon nzType="lock" nzTheme="outline"></span>
@@ -169,5 +160,5 @@
       Payments on site
     </span>
   </div>
-
+ 
 </div>
