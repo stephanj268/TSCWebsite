@@ -15,15 +15,13 @@
   --t: 0.2s ease;
 }
  
-/* ── Wrapper ── */
 .tos-wrapper {
   font-family: 'Georgia', 'Times New Roman', serif;
   color: var(--text-1);
   background: var(--surface);
   min-height: 100vh;
 }
- 
-/* ── Hero ── */
+
 .tos-hero {
   background: var(--primary);
   padding: 72px 24px 64px;
@@ -301,7 +299,6 @@
   margin-top: 3px;
 }
  
-/* ── Contact grid ── */
 .tos-contact-grid {
   display: flex;
   flex-direction: column;
@@ -322,8 +319,6 @@
   color: var(--primary);
   flex-shrink: 0;
 }
- 
-/* ── Footer strip ── */
 .tos-footer-strip {
   background: var(--surface-2);
   border-top: 1px solid var(--border);
@@ -338,7 +333,6 @@
   margin: 0;
 }
  
-/* ── Responsive ── */
 @media (max-width: 768px) {
   .tos-body {
     grid-template-columns: 1fr;
@@ -357,5 +351,4 @@
   .tos-policy-cards {
     grid-template-columns: 1fr;
   }
-
 }

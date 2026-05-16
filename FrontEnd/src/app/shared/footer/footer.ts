@@ -22,4 +22,8 @@ export class Footer {
     this.rotuer.navigateByUrl(`privacy-policy`);
   }
 
+  navigateToTerms() {
+    this.rotuer.navigateByUrl(`terms-service`);
+  }
+
 }

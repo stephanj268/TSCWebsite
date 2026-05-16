@@ -15,6 +15,7 @@ import { BookingComponent } from './Views/booking/booking';
 import { TourBookingComponent } from './shared/tour-booking/tour-booking';
 import { TaxiBookingComponent } from './shared/taxi-booking/taxi-booking';
 import { PrivacyPolicyComponent } from './Views/privacy-policy/privacy-policy';
+import { TermsServiceComponent } from './Views/terms-service/terms-service';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -50,6 +51,10 @@ export const routes: Routes = [
 
     {
         path: 'privacy-policy', component: PrivacyPolicyComponent
+    },
+
+    {
+        path: 'terms-service', component: TermsServiceComponent
     },
 
     // ‼️
