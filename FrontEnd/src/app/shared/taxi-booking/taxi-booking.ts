@@ -157,7 +157,8 @@ export class TaxiBookingComponent implements OnInit {
 
       const emailTemplate = {
         to_email: build.email,        // ← recipient (set {{to_email}} in EmailJS "To" field)
-        first_name: build.firstname,       // ← "Hi {{first_name}},"  (use whatever field has their name)     
+        first_name: build.firstname,       // ← "Hi {{first_name}},"  (use whatever field has their name)  
+        last_name: build.lastname,   
         type: build.serviceType,
         service_type: build.taxiType,
         duration: `-`,  
