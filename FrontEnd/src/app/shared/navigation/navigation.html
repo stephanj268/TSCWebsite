@@ -13,7 +13,7 @@
 
     </div>
 
-    <div class="mobile-menu-event">
+    <div class="section mobile-menu-event">
         <label class="nav-label" (click)="open()">Menu</label>
     </div>
 
@@ -22,7 +22,7 @@
 </div>
 
 <div class="mobile-nav">
-    <nz-drawer [nzClosable]="true" [nzVisible]="visible" nzPlacement="right" nzTitle="Links" (nzOnClose)="close()">
+    <nz-drawer [nzClosable]="true" [nzVisible]="visible" nzPlacement="right" nzTitle="Menu" (nzOnClose)="close()">
         <ng-container *nzDrawerContent>
             <h2 class="nav-label-mobile" routerLink="/home" routerLinkActive="active">Home</h2>
             <h2 class="nav-label-mobile" routerLink="/tours/list" routerLinkActive="active">Tours</h2>

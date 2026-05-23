@@ -63,6 +63,10 @@
 
 }
 
+.section:nth-child(2) {
+        display: flex;
+}
+
 .nav-input-search {
     transition: 0.5s;
 
@@ -165,7 +169,7 @@
 
 
 
-@media only screen {
+@media only screen and (max-width: 600px) {
 
     .mobile-menu-event {
         display: block;
@@ -174,9 +178,11 @@
 
 
     .section {
-        display: flexbox;
-        flex-direction: column;
-        width: 100%;
+        display: flex;
+        
+        justify-content: space-between;
+        flex-direction: row;
+    
     }
 
     .section:nth-child(2) {
