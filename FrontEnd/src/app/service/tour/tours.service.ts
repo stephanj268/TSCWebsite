@@ -20,7 +20,7 @@ export class TourService {
     allTours: ITours[] = [
         {
             _id: 1,
-            img: this.defaultImg,
+            img: 'https://www.atastefortravel.ca/wp-content/uploads/2022/02/Shirley-Heights-Daytime.webp',
             alt: 'dummy alt',
             name: 'Full Day Tours',
             slogo: 'ALL DAY',
@@ -39,7 +39,7 @@ export class TourService {
 
         {
             _id: 2,
-            img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
+            img: 'https://www.nationalparksantigua.com/wp-content/uploads/elementor/thumbs/7-copy-scaled-qgxbxqgqhauv2gc599wqywtgc6l9yf8c6x0rtll2fc.jpg',
             alt: 'dummy alt',
             name: 'Half Day Tours',
             slogo: 'SHORT',
@@ -59,7 +59,7 @@ export class TourService {
 
         {
             _id: 3,
-            img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
+            img: 'https://www.vincentvacations.com/sandals/images/Shirley-Heights-Antigua-Harbor-View.jpg',
             alt: 'dummy alt',
             name: 'Short Tours',
             slogo: 'A FEW HOURS',
@@ -77,7 +77,7 @@ export class TourService {
 
         {
             _id: 4,
-            img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
+            img: 'https://antiguacruiseport.com/wp-content/uploads/sites/58/2025/12/FortJames.jpg',
             alt: 'dummy alt',
             slogo: 'YOUR SATISFACTION',
             name: 'Custom Tours',
@@ -89,7 +89,7 @@ export class TourService {
 
         {
             _id: 5,
-            img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
+            img: 'https://www.shoreexcursionsgroup.com/img/tour/CAAGTWOBCH-2.jpg',
             alt: 'dummy alt',
             slogo: 'BEACH VIEWS',
             name: 'Beach Hopping Tours',
