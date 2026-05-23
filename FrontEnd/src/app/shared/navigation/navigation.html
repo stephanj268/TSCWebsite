@@ -11,11 +11,25 @@
         <h2 class="nav-label" routerLink="/taxi/list">Taxi Service</h2>
         <h2 class="nav-label" routerLink="/about">About Us</h2>
 
-        
     </div>
 
     <div class="mobile-menu-event">
-        <label class="nav-label">Menu</label>
+        <label class="nav-label" (click)="open()">Menu</label>
     </div>
 
+
+
+</div>
+
+<div class="mobile-nav">
+    <nz-drawer [nzClosable]="true" [nzVisible]="visible" nzPlacement="right" nzTitle="Links" (nzOnClose)="close()">
+        <ng-container *nzDrawerContent>
+            <h2 class="nav-label-mobile" routerLink="/home" routerLinkActive="active">Home</h2>
+            <h2 class="nav-label-mobile" routerLink="/tours/list" routerLinkActive="active">Tours</h2>
+
+            <h2 class="nav-label-mobile" routerLink="/taxi/list">Taxi Service</h2>
+            <h2 class="nav-label-mobile" routerLink="/about">About Us</h2>
+
+        </ng-container>
+    </nz-drawer>
 </div>
