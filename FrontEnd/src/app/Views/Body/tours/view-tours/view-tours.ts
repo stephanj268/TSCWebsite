@@ -39,8 +39,6 @@ export class ViewToursComponent implements OnInit {
       this.tour = this.tour.filter((tour: any) => { return tour._id == this.browserId });
       this.images.set(this.tour.img);
 
-      console.log(this.tour[0].tourOptions)
-
       for (let i = 0; i <= this.tour[0].tourOptions.length-1; i++) {
         let data = {label: this.tour[0].tourOptions[i]?.label};
         this.tourIncludedDetails.push(data);

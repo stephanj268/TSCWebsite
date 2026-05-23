@@ -39,7 +39,7 @@
 
     animation-name: scroll ease;
     animation-timeline: view();
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-range: entry 5%;
     
 }

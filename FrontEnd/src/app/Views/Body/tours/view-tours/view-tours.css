@@ -56,6 +56,7 @@
  
 /* ── Image Container ── */
 .tour-img {
+  margin-top: 9px;
   position: relative;
   overflow: hidden;
   min-height: 200px;          
