@@ -36,6 +36,24 @@
 
     padding-bottom: 25px;
     width: 100%;
+
+    animation-name: scroll;
+    animation-timeline: view();
+    animation-duration: 5s;
+    animation-range: entry 5%;
+    
+}
+
+@keyframes scroll {
+    from {
+        opacity: 0;
+        transform: translateY(150px);
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
     
 }
 

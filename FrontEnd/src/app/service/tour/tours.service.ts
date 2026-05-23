@@ -39,7 +39,7 @@ export class TourService {
 
         {
             _id: 2,
-            img: '',
+            img: 'images/tours/halfdaytours.png',
             alt: 'dummy alt',
             name: 'Half Day Tours',
             slogo: 'SHORT',
