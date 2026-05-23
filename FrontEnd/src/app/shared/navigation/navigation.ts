@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { RouterLink } from "@angular/router";
+import { RouterLink, RouterLinkActive } from "@angular/router";
 
 
 @Component({
@@ -9,7 +9,8 @@ import { RouterLink } from "@angular/router";
   imports: [
     NzInputModule,
     NzIconModule,
-    RouterLink
+    RouterLink,
+    RouterLinkActive
 ],
   templateUrl: './navigation.html',
   styleUrl: './navigation.css',

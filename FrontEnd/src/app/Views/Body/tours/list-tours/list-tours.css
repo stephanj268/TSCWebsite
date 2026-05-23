@@ -37,7 +37,7 @@
     padding-bottom: 25px;
     width: 100%;
 
-    animation-name: scroll;
+    animation-name: scroll ease;
     animation-timeline: view();
     animation-duration: 5s;
     animation-range: entry 5%;
