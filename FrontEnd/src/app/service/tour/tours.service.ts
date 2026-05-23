@@ -20,7 +20,7 @@ export class TourService {
     allTours: ITours[] = [
         {
             _id: 1,
-            img: this.defaultImg,
+            img: 'images/tours/fulldaytoursthumbnail.png',
             alt: 'dummy alt',
             name: 'Full Day Tours',
             slogo: 'ALL DAY',
@@ -39,7 +39,7 @@ export class TourService {
 
         {
             _id: 2,
-            img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
+            img: '',
             alt: 'dummy alt',
             name: 'Half Day Tours',
             slogo: 'SHORT',
@@ -59,7 +59,7 @@ export class TourService {
 
         {
             _id: 3,
-            img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
+            img: 'images/tours/shorttours.png',
             alt: 'dummy alt',
             name: 'Short Tours',
             slogo: 'A FEW HOURS',

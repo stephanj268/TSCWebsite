@@ -32,9 +32,11 @@
     justify-content: space-between;
 
     margin-top: 10px;
+    margin-bottom: 50px;
+    
     padding-bottom: 25px;
     width: 100%;
-    border-bottom: 1px solid rgba(217, 217, 217, 0.422);
+    
 }
 
 .card.reverse {
@@ -47,9 +49,9 @@
 
     object-fit: fill;
     margin-bottom: 10px;
-    width: 40%;
+    width: 50%;
 
-    height: 190px;
+    height: 100%;
 
     border-radius: 10px;
 
