@@ -77,7 +77,7 @@ export class TourService {
 
         {
             _id: 4,
-            img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
+            img: 'https://antiguacruiseport.com/wp-content/uploads/sites/58/2025/12/FortJames.jpg',
             alt: 'dummy alt',
             slogo: 'YOUR SATISFACTION',
             name: 'Custom Tours',
@@ -89,7 +89,7 @@ export class TourService {
 
         {
             _id: 5,
-            img: 'https://img.icons8.com/pulsar-color/1200/placeholder-thumbnail-document.jpg',
+            img: 'https://www.shoreexcursionsgroup.com/img/tour/CAAGTWOBCH-2.jpg',
             alt: 'dummy alt',
             slogo: 'BEACH VIEWS',
             name: 'Beach Hopping Tours',
