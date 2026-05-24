@@ -172,7 +172,7 @@
 @media only screen and (max-width: 600px) {
 
     .mobile-menu-event {
-        display: block;
+        display: inline;
     }
 
 
