@@ -59,7 +59,9 @@
           <p style="color: rgb(115, 115, 115); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 13px;">Make
             sure your email is correct</p>
 
-          <span style="position: relative; left: 10px; bottom: 60px;" nz-icon nzType="mail" nzTheme="outline"></span>
+          <span
+            style="position: relative; width: fit-content; left: 10px; bottom: 59px; display: block; color: rgb(0, 0, 0);"
+            nz-icon nzType="mail" nzTheme="outline"></span>
 
         </div>
 
@@ -87,7 +89,8 @@
 
         <div class="column">
           <h2 class="form-label">Desired Booking Date & Time</h2>
-          <nz-date-picker [nzRenderExtraFooter]="plainFooter" [(ngModel)]="date" nzShowTime />
+          <nz-date-picker [nzRenderExtraFooter]="" [(ngModel)]="date" [nzShowTime]="{ nzFormat: 'hh:mm a' }"
+            [nzFormat]="'yyyy-MM-dd hh:mm a'"/>
         </div>
 
       </div>

@@ -44,14 +44,8 @@ export class ViewTaxiComponent implements OnInit {
 
       for (let i = 0; i < this.taxi[0].taxiOptions.length; i++) {
         this.taxiOptions.push(this.taxi[0].taxiOptions[i]);
-        
+
       }
-
-
-      
-
-      
-
 
     });
   }
@@ -63,17 +57,16 @@ export class ViewTaxiComponent implements OnInit {
   getWhatsAppLink(): string {
     const message = encodeURIComponent(
       `Hello, I would like to book:
-      
-Service: ${this.taxi?.name}
-Date: ${this.selectedDate || 'Not selected'}
-Time: ${this.selectedTime || 'Not selected'}`
+      Service: ${this.taxi?.name}
+      Date: ${this.selectedDate || 'Not selected'}
+      Time: ${this.selectedTime || 'Not selected'}`
     );
 
     return `https://wa.me/${this.whatsappNumber}?text=${message}`;
   }
 
 
-  onBookNowClicked(){
+  onBookNowClicked() {
     this.router.navigateByUrl(`/booking/taxi/${this.browserId}`)
 
   }

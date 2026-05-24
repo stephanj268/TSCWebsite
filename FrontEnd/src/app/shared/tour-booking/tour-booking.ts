@@ -24,6 +24,7 @@ import { ITours, TourService } from '../../service/tour/tours.service';
 import { ActivatedRoute } from '@angular/router';
 
 import { NavigationComponent } from '../../shared/navigation/navigation';
+import { NzColDirective } from "ng-zorro-antd/grid";
 
 @Component({
   selector: 'app-tour-booking',
@@ -34,11 +35,11 @@ import { NavigationComponent } from '../../shared/navigation/navigation';
     FormsModule,
     NzSelectModule,
     NzIconModule,
-
     ToastModule,
     InputTextModule,
-
-    NavigationComponent,],
+    NavigationComponent,
+    NzColDirective
+],
   templateUrl: './tour-booking.html',
   styleUrl: './tour-booking.css',
 })
@@ -95,15 +96,13 @@ export class TourBookingComponent implements OnInit {
 
     this.tourservice.getToursEvent.subscribe((data) => {
       this.tour = data.filter(tour => tour._id == this.browserId);
-      this.tourType = this.tour[0].name ? 'default' : 'default';
+      this.tourType = this.tour[0].name ? this.tour[0].name : 'default';
 
     });
 
     this.allTours = this.tour;
 
     this.tourservice.onGetToursEvent(this.tour);
-
-    console.log(this.tour);
 
   }
 
@@ -126,31 +125,31 @@ export class TourBookingComponent implements OnInit {
     // Validate Data
 
     if (!build.firstname || !build.lastname) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Incomplete name fields!', styleClass: 'blue' });
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Incomplete name fields!', styleClass: 'blue' });
     }
 
     if (!validateEmail(build.email)) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Email' });
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid Email' });
     }
 
-    if (!build.phonenumber && build.phonenumber.length >= 5) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number Field Invalid!' });
+    if (!build.phonenumber || build.phonenumber.length <= 5) {
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Phone Number Field Invalid!' });
     }
 
     if (!build.startDate) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Date field Empty!' });
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Date field Empty!' });
     }
 
     if (build.maxPersons < 1) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Persons!' });
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid Persons!' });
     }
 
     if (build.serviceType == 'default') {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Service type!' });
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid Service type!' });
     }
 
     if (build.tourType == 'default') {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Tour Type is Empty!' });
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Tour Type is Empty!' });
     }
 
 

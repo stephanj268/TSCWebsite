@@ -25,7 +25,6 @@ export class ListTaxiComponenet implements OnInit {
   }
  
   viewDetails(id: number): void {
-    console.log('Navigating with ID:', id);
     this.router.navigate(['/taxi/view', id]);
   }
 

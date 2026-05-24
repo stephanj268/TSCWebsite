@@ -95,7 +95,7 @@ export class TaxiBookingComponent implements OnInit {
 
     this.taxiservice.getAllTaxiEvent.subscribe((data) => {
       this.taxi = data.filter(taxi => taxi._id == this.browserId);
-      this.taxiType = this.taxi[0].name ? 'default' : 'default';
+      this.taxiType = this.taxi[0].name ? this.taxi[0].name : 'default';
 
     });
 
@@ -125,31 +125,31 @@ export class TaxiBookingComponent implements OnInit {
     // Validate Data
 
     if (!build.firstname || !build.lastname) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Incomplete name fields!', styleClass: 'blue' });
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Incomplete Name Fields!', styleClass: 'blue' });
     }
 
     if (!validateEmail(build.email)) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Email' });
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid Email' });
     }
 
     if (!build.phonenumber && build.phonenumber.length >= 5) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Phone Number Field Invalid!' });
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Phone Number Field Invalid!' });
     }
 
     if (!build.startDate) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Date field Empty!' });
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Date field Empty!' });
     }
 
     if (build.maxPersons < 1) {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Persons!' });
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid Persons!' });
     }
 
     if (build.serviceType == 'default') {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Invalid Service type!' });
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid Service type!' });
     }
 
     if (build.taxiType == 'default') {
-      return this.messageService.add({ severity: 'warn', summary: 'Error', detail: 'Taxi Type is Empty!' });
+      return this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Taxi Type is Empty!' });
     }
 
 
@@ -170,9 +170,6 @@ export class TaxiBookingComponent implements OnInit {
         company_email: 'spaceship1268@gmail.com', // ← footer
         company_name: 'Space Ship Taxi & Tours', // ← footer
       };
-
-      console.log({ ...emailTemplate });
-
 
 
       // Send Email
