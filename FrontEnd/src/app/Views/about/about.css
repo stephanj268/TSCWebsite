@@ -57,6 +57,21 @@ h1 {
 
     padding-left: 50px;
 
+
+
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+
+    }
+
+    to {
+        opacity: 1;
+    }
+
 }
 
 .card-heading {
@@ -149,7 +164,7 @@ ul:nth-child(1) {
     font-weight: 600;
 }
 
-/* @media only screen and (width >=300px) {
+@media only screen and (max-width: 600px) {
     .section {
         display: flex;
         flex-direction: column;
@@ -169,10 +184,23 @@ ul:nth-child(1) {
         background-color: white;
 
 
-        width: 100px;
-        height: 200px;
+        width: 80%;
+        height: fit-content;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding-left: 0px;
+
+        animation-name: fadeIn;
+        animation-timeline: view();
+        animation-range-start: entry 5%;
     }
 
 
 
-} */
+}
