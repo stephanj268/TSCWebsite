@@ -72,6 +72,7 @@ nz-range-picker {
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    width: 100%;
 
 }
 
@@ -103,7 +104,7 @@ select {
 }
 
 .input-email {
-    width: 400px;
+    width: 100%;
 }
 
 button {

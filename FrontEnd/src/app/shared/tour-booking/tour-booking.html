@@ -51,7 +51,7 @@
 
       </div>
 
-      <div class="form-item">
+      <div>
         <div style="display: flex; flex-direction: column;">
           <h2 class="form-label">Email Address</h2>
           <input nz-input type="text" [(ngModel)]="email" class="input-email" placeholder="example@gmail.com">
@@ -89,8 +89,8 @@
 
         <div class="column">
           <h2 class="form-label">Desired Booking Date & Time</h2>
-          <nz-date-picker [nzRenderExtraFooter]="" [(ngModel)]="date" [nzShowTime]="{ nzFormat: 'hh:mm a' }"
-            [nzFormat]="'yyyy-MM-dd hh:mm a'"/>
+          <nz-date-picker [nzRenderExtraFooter]="" [(ngModel)]="date"
+            [nzShowTime]="{ nzFormat: 'hh:mm a', nzUse12Hours: true }" [nzFormat]="'yyyy-MM-dd hh:mm a'" />
         </div>
 
       </div>

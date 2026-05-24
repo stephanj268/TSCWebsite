@@ -87,7 +87,8 @@
 
         <div class="column">
           <h2 class="form-label">Desired Booking Date & Time</h2>
-          <nz-date-picker [nzRenderExtraFooter]="plainFooter" [(ngModel)]="date" nzShowTime />
+          <nz-date-picker [nzRenderExtraFooter]="plainFooter" [(ngModel)]="date"
+            [nzShowTime]="{ nzFormat: 'hh:mm a', nzUse12Hours: true }" [nzFormat]="'yyyy-MM-dd hh:mm a'" />
         </div>
 
       </div>
