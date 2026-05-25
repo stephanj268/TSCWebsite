@@ -24,7 +24,6 @@ import { ITours, TourService } from '../../service/tour/tours.service';
 import { ActivatedRoute } from '@angular/router';
 
 import { NavigationComponent } from '../../shared/navigation/navigation';
-import { NzColDirective } from "ng-zorro-antd/grid";
 
 @Component({
   selector: 'app-tour-booking',
@@ -38,7 +37,6 @@ import { NzColDirective } from "ng-zorro-antd/grid";
     ToastModule,
     InputTextModule,
     NavigationComponent,
-    NzColDirective
 ],
   templateUrl: './tour-booking.html',
   styleUrl: './tour-booking.css',
