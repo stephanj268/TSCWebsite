@@ -173,15 +173,15 @@
 
   position: relative;
   left: 5px;
-  
+
 }
 
-@keyframes test{
+@keyframes test {
   0% {
     position: relative;
     left: 0px;
     opacity: 1;
-    
+
 
   }
 
@@ -325,6 +325,25 @@
   text-align: left;
   position: relative;
   transition: box-shadow 0.2s;
+}
+
+.service-card:nth-child(1) {
+
+  animation: slideLeft ease-in-out;
+  animation-duration: 10s;
+  animation-timeline: view();
+  animation-range: entry 5%;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .service-card:hover {
