@@ -34,7 +34,7 @@ export class TourService {
 
             description: 'Make the most of your time with our full day tours, designed for a deeper and more immersive experience. Explore top attractions, hidden gems, and local culture at a relaxed pace, with plenty of time to take in the sights, enjoy activities, and create lasting memories.',
             miniDesc: 'Immersive full-day experiences through top attractions, hidden gems, and local culture at a pace you\'ll actually enjoy.'
-        
+
         },
 
         {
@@ -96,8 +96,8 @@ export class TourService {
             type: [],
             duration: 5,
             description: 'Soak up the sun with our beach hopping tours, taking you to some of the most stunning spots in one unforgettable trip. Swim in crystal-clear waters, relax on soft, and experience the unique vibe of each beach—all in a fun and refreshing island adventure.',
-            miniDesc: ''
-        
+            miniDesc: 'Explore multiple stunning Caribbean beaches with crystal-clear waters, white sand, and unforgettable island vibes all in one relaxing adventure.'
+
         },
 
     ]

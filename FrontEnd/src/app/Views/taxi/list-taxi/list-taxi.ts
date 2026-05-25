@@ -9,7 +9,7 @@ import { SearchFilter } from '../../../shared/search-filter/search-filter';
   selector: 'app-list-taxi',
   templateUrl: './list-taxi.html',
   styleUrl: './list-taxi.css',
-  imports: [SliderComponent, SearchFilter, RouterModule]
+  imports: [SliderComponent, RouterModule]
 })
 export class ListTaxiComponenet implements OnInit {
  
